@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>List of Items</h1>
+<ul id="items"></ul>
+<input type="text" id="newText" />
+<input type="button" value="Add"
+       onclick="addItem()">
+<script>
+    function addItem() {
+/*        let item = document.createElement('li');
+        item.textContent = document.getElementById('newText').value + ' ';
+        document.getElementById('items').appendChild(item);
+        document.getElementById('newText').value ='';
+        //създаваме линк 'Delete':
+        let deleteLink = document.createElement('a');
+        deleteLink.textContent = '[Delete]';
+        deleteLink.href = '#';
+        deleteLink.addEventListener('click', deleteItem);
+        item.appendChild(deleteLink);*/
+        let text = document.getElementById('newText').value;
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(text + " "));
+        let span = document.createElement('span');
+        span.innerHTML = "<a href='#'>[Delete]</a>";
+        span.firstChild.addEventListener('click', deleteItem);
+        li.appendChild(span);
+        document.getElementById("items").appendChild(li);
+        document.getElementById('newText').value = '';
+        function deleteItem() {
+            let li = this.parentNode.parentNode;
+            let ul = li.parentNode;
+            ul.removeChild(li);
+        }
+      /*  function deleteItem() {
+            document.getElementById('items').removeChild(item);
+        }*/
+    }
+   /* function deleteItem() {
+        document.getElementById('items').removeChild(this.parentNode);
+    }*/
+</script>
+
+</body>
+</html>

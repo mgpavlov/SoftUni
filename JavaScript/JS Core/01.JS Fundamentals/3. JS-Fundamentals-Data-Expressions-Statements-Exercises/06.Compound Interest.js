@@ -1,0 +1,4 @@
+function compoundInterest(arr) {
+    
+
+}

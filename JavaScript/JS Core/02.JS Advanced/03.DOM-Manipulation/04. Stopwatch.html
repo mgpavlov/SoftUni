@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+</head>
+<body>
+<div id="time" style="border:3px solid blue; text-align:center; font-size:2em; margin-bottom:10px">00:00</div>
+<button id="startBtn">Start</button>
+<button id="stopBtn" disabled="true">Stop</button>
+<script>
+    window.onload = function() {
+        stopwatch();
+    }
+</script>
+<script>
+    function stopwatch() {
+        let output = document.getElementById('time');
+        let startBtn = document.getElementById('startBtn');
+        startBtn.addEventListener('click', startPressed); // задаваме ивент 'click' с функция startPressed
+        let stopBtn = document.getElementById('stopBtn');
+        stopBtn.addEventListener('click', stopPressed);// задаваме ивент 'click' с функция stopPressed
+        let timer = null;
+        let seconds = 0;
+
+		function startPressed() {
+            seconds = 0;
+            outputTimer(seconds);
+            stopBtn.disabled = false; // правим бутона stop активен
+            startBtn.disabled = true; // правим бутона start неактивен като го натиснем
+            timer = setInterval(tick, 1000); //правим таймър
+        }
+		
+        function outputTimer(value) {
+            output.textContent = ('0'+ Math.floor(value/60)).slice(-2) + ':' + ('0'+value%60).slice(-2);
+        }
+
+        function tick() {
+           seconds++;
+            outputTimer(seconds);
+        }
+
+      
+        function stopPressed() {
+            stopBtn.disabled = true; // правим бутона stop неактивен като го натиснем
+            startBtn.disabled = false; // правим бутона start активен
+            clearInterval(timer);
+        }
+    }
+</script>
+
+</body>
+</html>
