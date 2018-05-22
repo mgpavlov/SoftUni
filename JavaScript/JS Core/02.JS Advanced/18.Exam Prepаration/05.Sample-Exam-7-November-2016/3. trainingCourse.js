@@ -8,8 +8,6 @@ class TrainingCourse {
     addTopic(title, date) {
         this.topics.push({title, date});
         this.topics.sort((a, b) => a.date > b.date);
-
-        return this;
     }
 
     get firstTopic() {

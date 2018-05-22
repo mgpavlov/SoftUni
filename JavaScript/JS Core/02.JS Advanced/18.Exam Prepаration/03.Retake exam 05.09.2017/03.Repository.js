@@ -13,7 +13,7 @@ class Repository{
         if(!this.data.has(id)){
             throw new Error(`Entity with id: ${id} does not exist!`)
         }
-        return this.data.get(id)
+        return this.data.get(id);
     }
     update (id, newEntity){
         if(!this.data.has(id)){
@@ -44,8 +44,8 @@ class Repository{
             if(this.props.hasOwnProperty(key)){
                 if(typeof entity[key] !== this.props[key])
                     throw new TypeError(`Property ${key} is of incorrect type!`)
-            }
-        }
+    }
+}
 /*        for (let key in this.props) {
             if(!entity.hasOwnProperty(key)) {
                 throw new Error(`Property ${key} is missing from the entity!`)

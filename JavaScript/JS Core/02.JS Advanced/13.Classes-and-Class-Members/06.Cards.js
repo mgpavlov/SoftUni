@@ -1,4 +1,4 @@
-(function () {
+let result = (function () {
     let suits = {
         SPADES: '♠',
         HEARTS: '♥',
@@ -13,13 +13,12 @@
             this.suit = suit;
         }
 
-
         get face() {
             return this._face;
         }
 
         set face(face) {
-            if(!faces.includes(face)){
+            if (!faces.includes(face)) {
                 throw new Error('Face does not exist!');
             }
 
@@ -32,7 +31,7 @@
         }
 
         set suit(suit) {
-            if(!Object.keys(suits).map(k => suits[k]).includes(suit)){
+            if (!Object.keys(suits).map(k => suits[k]).includes(suit)) {
                 throw new Error('Suit does not exist!');
             }
 
@@ -45,3 +44,11 @@
         Card: Card
     }
 })();
+let Card = result.Card;
+let Suits = result.Suits;
+
+let card = new Card('Q', Suits.CLUBS);
+console.log(card);
+card.face = "A";
+card.suit = Suits.DIAMONDS;
+/*let card2 = new Card("1", Suits.DIAMONDS);*/

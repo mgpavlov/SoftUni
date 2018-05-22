@@ -14,104 +14,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="04.solution.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Exam18March2018/04.solution.js">
+      <file leaf-file-name="02.problem-2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="44" column="37" lean-forward="false" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+            <state relative-caret-position="357">
+              <caret line="85" column="64" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
               <folding>
-                <marker date="1521534096122" expanded="true" signature="773:2305" ph="..." />
+                <element signature="n#SubscriptionCard#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02.SortedList-test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/02.SortedList-test.js">
+      <file leaf-file-name="03.problem-3.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/03.problem-3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1309">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="408">
+              <caret line="24" column="9" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="04.Payment Manager.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Exam18March2018/04.Payment Manager.html">
+      <file leaf-file-name="03.2.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/03.2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="03.Payment Processor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Exam18March2018/03.Payment Processor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/19.Modules/01. Person/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/19.Modules/16-Modules/01-people/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="27" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02.Sumator-test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/02.Sumator-test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1424">
-              <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02.StringBuilder-test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="45" column="8" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exam-test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/exam-test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/demo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-1030">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -126,59 +54,65 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>overla</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/03.Storm Watcher.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/04.titleBar.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/04. Title Bar_HTML Skeleton.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/01. Select and Print/01.СелецтАндПринт.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/01. Select and Print/01.SelectAndPrint.html" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/Repeat/03..js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/Repeat/04.js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/05.Point Distance.js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/Repeat/05.js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/Repeat/test.js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/06.Cards.js" />
+        <option value="$PROJECT_DIR$/13.Classes-and-Class-Members/Repeat/06..js" />
+        <option value="$PROJECT_DIR$/14.Classes-and-Members-Exercises/repeat/01..js" />
+        <option value="$PROJECT_DIR$/14.Classes-and-Members-Exercises/03. Unity.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/repeat/03.StormWatcher.js" />
         <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/03. Task/03.Task.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04.Contact.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04.Contacts.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/02.Sumator.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/02.Sumator-test.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/01.SortTable.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/sort-table.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/01.sort-table.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/demo.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/03. Task/repeat/03..js" />
         <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/03.Repository.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/demo.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/04.index.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/04.Dialog.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/01.AddRemoveTowns.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/02.AddSwapShiftLeftRight-test.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/03.MailBox.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/04.Cards.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/1. deleteTownByName.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/04.Cards.html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/repeat/03.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/repeat/03..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/repeat/03..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/3. trainingCourse.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/repeat/03..js" />
+        <option value="$PROJECT_DIR$/Exam18March2018/03..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/04. Title Bar_HTML Skeleton.html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/repeat/04..html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/repeat/04..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04..html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/repeat/04..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/repeat/04..html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/repeat/04..html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/repeat/04..js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/repeat/04.title.html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/repeat/04.title.js" />
         <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/4. tableBuilder.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/01.solution.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/01.index.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/01.index.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/02.solution.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/03.solution.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/04.ListBuilder.html" />
-        <option value="$PROJECT_DIR$/Exam18March2018/01.problem1.html" />
-        <option value="$PROJECT_DIR$/Exam18March2018/03.problem3.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/03.problem3.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/06/04.solution.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/02.problem2-test.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/04.problem4.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/04.problem4.html" />
-        <option value="$PROJECT_DIR$/Exam18March2018/01.Restaurant Bill.html" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/exam-test.js" />
-        <option value="$PROJECT_DIR$/18.Exam Prepаration/test.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/demo.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/04.Payment Manager.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/04.Payment Manager.html" />
-        <option value="$PROJECT_DIR$/Exam18March2018/03.Payment Processor.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/solution.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/04.solution.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/repeat/04.builder.html" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/repeat/04.builder.js" />
+        <option value="$PROJECT_DIR$/Exam18March2018/repeat/manager.html" />
+        <option value="$PROJECT_DIR$/Exam18March2018/repeat/04.manager.js" />
+        <option value="$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/03.Char Lookup/char-Lookup-test.js" />
+        <option value="$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/04.Math Enforcer/math-enforcer-test.js" />
         <option value="$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/02.SortedList-test.js" />
-        <option value="$PROJECT_DIR$/Exam18March2018/02.Payment Package.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js" />
+        <option value="$PROJECT_DIR$/Exam18March2018/02.PaymentPackageSolution.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/04.проблем-4.js" />
+        <option value="$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/2. add-delete-tests.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/01.html" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/02..js" />
+        <option value="$PROJECT_DIR$/Exam18March2018/02.PaymentPackage.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/04.problem-4.html" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/04.problem-4.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/01.problem-1.html" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/03.problem-3.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js" />
+        <option value="$PROJECT_DIR$/Retake-Exam 25 April 2018/03.2.js" />
       </list>
     </option>
   </component>
@@ -212,31 +146,35 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1087" />
+    <option name="width" value="1572" />
     <option name="height" value="867" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="02.JS Advanced" type="b2602c69:ProjectViewProjectNode" />
               <item name="02.JS Advanced" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="02.JS Advanced" type="b2602c69:ProjectViewProjectNode" />
+              <item name="02.JS Advanced" type="462c0819:PsiDirectoryNode" />
+              <item name="13.Classes-and-Class-Members" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="02.JS Advanced" type="b2602c69:ProjectViewProjectNode" />
+              <item name="02.JS Advanced" type="462c0819:PsiDirectoryNode" />
+              <item name="18.Exam Prepаration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="02.JS Advanced" type="b2602c69:ProjectViewProjectNode" />
+              <item name="02.JS Advanced" type="462c0819:PsiDirectoryNode" />
+              <item name="Retake-Exam 25 April 2018" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -246,29 +184,33 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Exam18March2018" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$USER_HOME$/AppData/Roaming/npm/node_modules/mocha" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\03.Retake exam 05.09.2017\repeat" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\14.Classes-and-Members-Exercises" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\13.Classes-and-Class-Members" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\19.Modules" />
       <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\Exam18March2018" />
       <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\06" />
       <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\05.Sample-Exam-7-November-2016" />
       <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\19.Modules" />
-      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\06.exam_19.12.2016" />
-      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\05.Sample-Exam-7-November-2016" />
-      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов" />
-      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\02.JS Advanced\18.Exam Prepаration\03.Retake exam 05.09.2017" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -283,18 +225,61 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.04.Payment Manager.html">
-    <configuration name="01.Restaurant Bill.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.JS Advanced/Exam18March2018/01.Restaurant Bill.html" />
-    <configuration name="04.Payment Manager.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.JS Advanced/Exam18March2018/04.Payment Manager.html" />
-    <configuration name="03.Payment Processor.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="03.Payment Processor.js" working-dir="$PROJECT_DIR$/Exam18March2018" />
-    <configuration name="demo.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="demo.js" working-dir="$PROJECT_DIR$/Exam18March2018" />
-    <configuration name="solution.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="$PROJECT_DIR$/Exam18March2018/04.solution.js" working-dir="$PROJECT_DIR$/Exam18March2018" />
+  <component name="RunManager" selected="Node.js.03.2.js">
+    <configuration name="01.problem-1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.JS Advanced/Retake-Exam 25 April 2018/01.problem-1.html" />
+    <configuration name="04.problem-4.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.JS Advanced/Retake-Exam 25 April 2018/04.problem-4.html" />
+    <configuration name="02..js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="02..js" working-dir="$PROJECT_DIR$/Retake-Exam 25 April 2018" />
+    <configuration name="03.2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="03.2.js" working-dir="$PROJECT_DIR$/Retake-Exam 25 April 2018" />
+    <configuration name="03.problem-3.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="03.problem-3.js" working-dir="$PROJECT_DIR$/Retake-Exam 25 April 2018" />
+    <configuration name="12.02" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/02.Even or Odd</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/02.Even or Odd</test-directory>
+      <recursive>false</recursive>
+    </configuration>
+    <configuration name="12.03" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/03.Char Lookup</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/03.Char Lookup</test-directory>
+      <recursive>false</recursive>
+    </configuration>
+    <configuration name="12.04" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/04.Math Enforcer</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/04.Math Enforcer</test-directory>
+      <recursive>false</recursive>
+    </configuration>
+    <configuration name="12.05" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/05.Shared Object</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/05.Shared Object</test-directory>
+      <recursive>false</recursive>
+    </configuration>
     <configuration name="Unnamed" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>DIRECTORY</test-kind>
@@ -306,31 +291,47 @@
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory>$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов</test-directory>
-      <recursive>false</recursive>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/02.AddSwapShiftLeftRight-test.js</test-file>
     </configuration>
     <configuration name="examTest" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>DIRECTORY</test-kind>
       <test-directory>$PROJECT_DIR$/Exam18March2018</test-directory>
       <recursive>false</recursive>
     </configuration>
+    <configuration name="paymentPackage" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/Exam18March2018/02.PaymentPackageSolution.js</test-file>
+    </configuration>
+    <configuration name="retakeExam26.4.18" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js</test-file>
+    </configuration>
     <configuration name="sortedList" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST_FILE</test-kind>
@@ -341,50 +342,50 @@
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory>$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017</test-directory>
-      <recursive>false</recursive>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js</test-file>
     </configuration>
     <configuration name="sumator" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
-      <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>DIRECTORY</test-kind>
       <test-directory>$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator</test-directory>
       <recursive>false</recursive>
     </configuration>
-    <list size="11">
-      <item index="0" class="java.lang.String" itemvalue="Mocha.examTest" />
-      <item index="1" class="java.lang.String" itemvalue="Mocha.Unnamed" />
-      <item index="2" class="java.lang.String" itemvalue="Mocha.createList" />
-      <item index="3" class="java.lang.String" itemvalue="Mocha.stringBuilder" />
-      <item index="4" class="java.lang.String" itemvalue="Mocha.sumator" />
-      <item index="5" class="java.lang.String" itemvalue="Mocha.sortedList" />
-      <item index="6" class="java.lang.String" itemvalue="JavaScript Debug.04.Payment Manager.html" />
-      <item index="7" class="java.lang.String" itemvalue="JavaScript Debug.01.Restaurant Bill.html" />
-      <item index="8" class="java.lang.String" itemvalue="Node.js.03.Payment Processor.js" />
-      <item index="9" class="java.lang.String" itemvalue="Node.js.demo.js" />
-      <item index="10" class="java.lang.String" itemvalue="Node.js.solution.js" />
+    <list>
+      <item itemvalue="Mocha.12.04" />
+      <item itemvalue="Mocha.12.05" />
+      <item itemvalue="Mocha.12.02" />
+      <item itemvalue="Mocha.12.03" />
+      <item itemvalue="Mocha.examTest" />
+      <item itemvalue="Mocha.Unnamed" />
+      <item itemvalue="Mocha.createList" />
+      <item itemvalue="Mocha.paymentPackage" />
+      <item itemvalue="Mocha.retakeExam26.4.18" />
+      <item itemvalue="Mocha.stringBuilder" />
+      <item itemvalue="Mocha.sumator" />
+      <item itemvalue="Mocha.sortedList" />
+      <item itemvalue="Node.js.03.problem-3.js" />
+      <item itemvalue="Node.js.02..js" />
+      <item itemvalue="JavaScript Debug.04.problem-4.html" />
+      <item itemvalue="Node.js.03.2.js" />
+      <item itemvalue="JavaScript Debug.01.problem-1.html" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.04.Payment Manager.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.solution.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.03.Payment Processor.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.demo.js" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.01.Restaurant Bill.html" />
+      <list>
+        <item itemvalue="Node.js.03.2.js" />
+        <item itemvalue="JavaScript Debug.01.problem-1.html" />
+        <item itemvalue="JavaScript Debug.04.problem-4.html" />
+        <item itemvalue="Node.js.02..js" />
+        <item itemvalue="Node.js.03.problem-3.js" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -410,43 +411,55 @@
       <workItem from="1521457802475" duration="64000" />
       <workItem from="1521527513600" duration="8547000" />
       <workItem from="1521615006367" duration="3341000" />
+      <workItem from="1521634430287" duration="50000" />
+      <workItem from="1522090096182" duration="1407000" />
+      <workItem from="1523394988820" duration="335000" />
+      <workItem from="1524119536940" duration="9646000" />
+      <workItem from="1524129555795" duration="7017000" />
+      <workItem from="1524208797715" duration="33754000" />
+      <workItem from="1524430460339" duration="285000" />
+      <workItem from="1524431355633" duration="30723000" />
+      <workItem from="1524551134100" duration="32246000" />
+      <workItem from="1524638932797" duration="22006000" />
+      <workItem from="1524746841060" duration="20683000" />
+      <workItem from="1524807117166" duration="641000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="sortedList - 2018.03.18 at 17h 09m 29s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 28m 51s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 10m 52s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 28m 56s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 13m 12s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 29m 00s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 13m 20s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 29m 27s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 21m 11s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 29m 33s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 22m 09s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 29m 41s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 22m 24s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 17h 30m 10s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 22m 42s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 20h 08m 09s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 22m 59s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 20h 08m 24s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="sortedList - 2018.03.18 at 17h 23m 19s.xml">
-      <configuration name="sortedList" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="retakeExam26_4_18 - 2018.04.26 at 21h 33m 38s.xml">
+      <configuration name="retakeExam26.4.18" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128365000" />
+    <option name="totallyTimeSpent" value="287158000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,25 +471,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1087" height="867" extended-state="0" />
+    <frame x="-7" y="0" width="1572" height="867" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5443279" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8761905" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07619048" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38911563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3605442" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23598436" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3442177" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.17204301" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30612245" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.8761905" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,376 +501,256 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Retake-Exam 25 April 2018/03.2.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/04.Cards.html">
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="1683">
+          <caret line="99" lean-forward="true" selection-start-line="55" selection-end-line="99" />
+          <folding>
+            <element signature="n#SubscriptionCard#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/1. deleteTownByName.html">
+    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/06.ArmageDOM/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
+        <state relative-caret-position="-2703" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/3. trainingCourse.js">
+    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/06.ArmageDOM/armagedom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/4. tableBuilder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06/01.index.js" />
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/01.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/01.solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/03.problem3.html" />
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/03.solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/04.ListBuilder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/04.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04.Contacts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04.Contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/06.ArmageDOM/armagedom-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/05.Shared Object/shared-object-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/04.Math Enforcer/math-enforcer-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/04. Elemelons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2011">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/05. C# Console.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/06. Computer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-31">
+          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/07. Mixins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-130" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/05. C# Console.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-626">
+          <caret line="50" column="58" selection-start-line="50" selection-end-line="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/01.Request Validator/request-validetor-test.js">
+    <entry file="file://$PROJECT_DIR$/16.Inheritance-Unit-Testing-Exercises/06. Computer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+        <state relative-caret-position="-1224" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/02.Even or Odd/even-or-odd.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/02.SortedList-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/02.Even or Odd/even-or-odd-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/03.Char Lookup/char-Lookup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/03.Char Lookup/char-Lookup-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12.Unit-Testing-with-Mocha-Exercises/04.Math Enforcer/math-enforcer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/03.Storm Watcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/03. Task/03.Task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/03.MailBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="48" lean-forward="true" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/04.Cards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/4. tableBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/04.solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/04.Dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/03.Repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/01.Restaurant Bill.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/02.solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/2. add-delete-tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/02.AddSwapShiftLeftRight-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/exam-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1972">
+          <caret line="116" column="38" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/02. Sumator/02.Sumator-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1424">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="-170">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/test.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/04.JS Advanced Exam - 13 Nov 2016-Exam Preparation - юни 2017 - Васил Грамов/02.AddSwapShiftLeftRight-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="309">
+          <caret line="200" column="24" lean-forward="true" selection-start-line="200" selection-start-column="24" selection-end-line="200" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/02.SortedList-test.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/05.Sample-Exam-7-November-2016/2. add-delete-tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1309">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/19.Modules/01. Person/app.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/06.exam_19.12.2016/02.solution.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/19.Modules/16-Modules/01-people/app.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/02.StringBuilder-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="27" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/02.Payment Package.js">
+    <entry file="file://$PROJECT_DIR$/Exam18March2018/01.Restaurant Bill.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="41" lean-forward="true" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/03.Payment Processor.js">
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/04. Contacts/04.Contacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exam18March2018/04.solution.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="44" column="37" lean-forward="false" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
-          <folding>
-            <marker date="1521534096122" expanded="true" signature="773:2305" ph="..." />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Exam18March2018/04.Payment Manager.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="23" lean-forward="true" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exam18March2018/04.solution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/01. JS Advanced - Sample Exam - 31 Oct 2016 - Exam Preparation - юни 2017 - Кирил Кирилов/03.Storm Watcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="true" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exam18March2018/02.PaymentPackage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/02..js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exam18March2018/02.PaymentPackageSolution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="85" column="11" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="85" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/04.problem-4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/04.problem-4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Classes-and-Members-Exercises/07. Instance Validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Classes-and-Members-Exercises/06. Sorted List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Classes-and-Members-Exercises/02. Tickets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/13.Classes-and-Class-Members/06.Cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exam18March2018/03.Payment Processor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/02.Exam 23.07.2017/03. Task/03.Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-822" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18.Exam Prepаration/03.Retake exam 05.09.2017/03.Repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/01.problem-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="61" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/02.problem-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="85" column="64" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
+          <folding>
+            <element signature="n#SubscriptionCard#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/03.problem-3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Retake-Exam 25 April 2018/03.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1030">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
         </state>
       </provider>
     </entry>

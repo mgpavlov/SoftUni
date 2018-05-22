@@ -19,7 +19,8 @@ class Rat {
         return result.trim();
     }*/
     toString(){
-        let result = this.name+'\n'+this.arr.filter(e=>e!=='').join('\n');
+        let r1 = '##'+this.arr.filter(e=>e!=='').join('\n##');
+        let result = this.name+'\n'+r1;
         return result.trim();
     }
 }
@@ -29,6 +30,8 @@ console.log(test.toString()); //Pesho
 console.log(test.getRats()); //[]
 
 test.unite(new Rat("Gosho"));
+test.unite(new Rat("Sasho"));
+test.unite(new Rat("Sasho"));
 test.unite(new Rat("Sasho"));
 console.log(test.getRats());
 //[ Rat { name: 'Gosho', unitedRats: [] },

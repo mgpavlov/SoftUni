@@ -5,7 +5,7 @@ describe('CharLookup Test', function () {
     it('should return M for lookupChar(Misho, 0)', function () {
         expect(lookupChar('Misho', 0)).to.equal('M');
     });
-    it('should return o for lookupChar(misho, 4)', function () {
+    it('should return о for lookupChar(misho, 4)', function () {
         expect(lookupChar('Misho', 4)).to.equal('o');
     });
     it('should return i for lookupChar(misho, 1)', function () {

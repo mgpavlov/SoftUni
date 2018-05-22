@@ -43,10 +43,10 @@ class StringBuilder {
 let expect = require('chai').expect;
 
 describe("StringBuilder tests", function() {
-    let builder
+    let builder;
     beforeEach(function () {
         builder = new StringBuilder('test')
-    })
+    });
 
     it("It should have initialized all methods", function() {
         expect(Object.getPrototypeOf(builder).hasOwnProperty('append')).to.be.equal(true)
@@ -61,7 +61,7 @@ describe("StringBuilder tests", function() {
     })
 
     it("It should return same string", function() {
-        builder = new StringBuilder()
+        builder = new StringBuilder();
         expect(builder.toString()).to.be.equal('')
     })
 
@@ -70,9 +70,9 @@ describe("StringBuilder tests", function() {
     })
 
     it("append", function() {
-        builder.append(' function')
-        expect(builder._stringArray.length).to.be.equal(13)
-        expect(builder.toString()).to.be.equal('test function')
+        builder.append(' function');
+        expect(builder._stringArray.length).to.be.equal(13);
+        expect(builder.toString()).to.be.equal('test function');
     })
 
     it("append Error", function() {

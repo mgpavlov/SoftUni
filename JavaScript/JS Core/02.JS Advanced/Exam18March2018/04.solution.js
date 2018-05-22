@@ -35,7 +35,7 @@ class PaymentManager{
                 let tr2 = $('<tr>');
                 let pName = $(`<td>${ipName.find('input').val()}</td>`);
                 let pCategory = $(`<td>${ipCategory.find('input').val()}</td>`);
-                let pPrice = $(`<td>${Number(ipPrice.find('input').val()).toFixed(2)}</td>`);
+                let pPrice = $(`<td>${Number(ipPrice.find('input').val())}</td>`);
                 let tdDel = $('<td>');
                 let btnDel = $("<button>Delete</button>");
                 btnDel.click(()=> {

@@ -15,17 +15,7 @@ class Task {
         }
         this._deadline = value;
     }
-    get icon() {
-        if (this.isOverdue) {
-            return "\u26A0";
-        }else if (this.status === 'In Progress') {
-            return "\u219D";
-        } else if (this.status === 'Complete') {
-            return "\u2714";
-        }else if (this.status === 'Open') {
-            return "\u2731";
-        }
-    }
+
     get isOverdue() {
         //return this.deadline < Date.now() && this.status !== 'Complete';
         if (this.deadline < Date.now() && this.status !== 'Complete') {
@@ -54,6 +44,19 @@ class Task {
             return a.deadline - b.deadline;
         }
     }
+
+    get icon() {
+        if (this.isOverdue) {
+            return "\u26A0";
+        } else if (this.status === 'In Progress') {
+            return "\u219D";
+        } else if (this.status === 'Complete') {
+            return "\u2714";
+        } else if (this.status === 'Open') {
+            return "\u2731";
+        }
+    }
+
     toString() {
         let deadlineOverDue = this.isOverdue ? 'overdue' : 'deadline: ' + this.deadline;
         return `[${this.icon}] ${this.title} (${deadlineOverDue})`;
