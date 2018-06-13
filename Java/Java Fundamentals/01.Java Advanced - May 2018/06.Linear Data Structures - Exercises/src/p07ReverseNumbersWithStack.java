@@ -1,5 +1,4 @@
 import java.util.ArrayDeque;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class p07ReverseNumbersWithStack {

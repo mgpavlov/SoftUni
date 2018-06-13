@@ -1,0 +1,9 @@
+<h1 class="titleForm">Advertisements</h1>
+<div id="ads" class="ads">
+    {{#each ads}}
+        {{> ad}}
+    {{else}}
+        showError('No ads in database');
+
+    {{/each}}
+</div>

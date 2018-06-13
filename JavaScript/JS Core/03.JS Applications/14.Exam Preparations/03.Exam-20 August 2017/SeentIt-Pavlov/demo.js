@@ -1,0 +1,1 @@
+<ul><li class="action"><a class="commentsLink" href="#">comments</a></li><li class="action"><a class="editLink" href="#">edit</a></li><li class="action"><a class="deleteLink"href="#">delete</a></li></ul>'));

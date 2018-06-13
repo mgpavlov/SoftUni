@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/11.Patterns-and-Routing-Lab/ContactBook/app.js" line="6" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79ca5f7f-2ffb-428c-88f9-3bd5f80d6c7a" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.6570397">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="384">
+                  <caret line="306" column="42" selection-start-line="306" selection-start-column="42" selection-end-line="306" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chirperService.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/chirperService.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="43" column="34" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="requester.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/requester.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="680">
+                  <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/auth.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="612">
+                  <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="skeleton.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/skeleton.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="126" column="26" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="32" />
+                  <folding>
+                    <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package_json" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>teamMem</find>
+      <find>teamMember</find>
+      <find>save</find>
+      <find>target</find>
+      <find>loadAllUsers</find>
+      <find>noti</find>
+      <find>profile</find>
+      <find>commentForm</find>
+      <find>btnEditPost</find>
+      <find>linkCatalog</find>
+      <find>edit</find>
+      <find>editPostForm</find>
+      <find>textarea</find>
+      <find>submitForm</find>
+      <find>createCommentForm</find>
+      <find>profil</find>
+      <find>myForumPosts</find>
+      <find>msgRecipientUsername</find>
+      <find>postsService</find>
+      <find>Service</find>
+      <find>anon</find>
+      <find>butt</find>
+      <find>usernameId</find>
+      <find>toFi</find>
+      <find>Promise</find>
+      <find>Prom</find>
+      <find>06</find>
+      <find>promis</find>
+      <find>length</find>
+      <find>attr</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/10.Templating-Exercises/01.List Towns/templates/template.hbs" />
+        <option value="$PROJECT_DIR$/10.Templating-Exercises/01.List Towns/towns.js" />
+        <option value="$PROJECT_DIR$/10.Templating-Exercises/02.HTTP Status Cats/cats.html" />
+        <option value="$PROJECT_DIR$/10.Templating-Exercises/02.HTTP Status Cats/cat-template.hbs" />
+        <option value="$PROJECT_DIR$/10.Templating-Exercises/02.HTTP Status Cats/template.js" />
+        <option value="$PROJECT_DIR$/08.Single-Page-Applications-Exercises/Prodavachnik - Skeleton/templates/ads-catalog.html" />
+        <option value="$PROJECT_DIR$/08.Single-Page-Applications-Exercises/Prodavachnik - Skeleton/templates/ad-box-partial.html" />
+        <option value="$PROJECT_DIR$/08.Single-Page-Applications-Exercises/solved Prodavachnik/scripts/prodavachnik.js" />
+        <option value="$PROJECT_DIR$/11.Patterns-and-Routing-Lab/ContactBook/index.html" />
+        <option value="$PROJECT_DIR$/11.Patterns-and-Routing-Lab/ContactBook/app.js" />
+        <option value="$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/package.json" />
+        <option value="$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/package.json" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/messageService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/messages.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/messagesService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/messageServices.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/messages.css" />
+        <option value="$PROJECT_DIR$/08.Single-Page-Applications-Exercises/SPA-Homework/scripts/prodavachnik.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/auth.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/messagesService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/app_msg.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/messages.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/postsService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/commentsService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/demo.js" />
+        <option value="$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/demo.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/index.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/index.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/postsService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/models/postsService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/models/messagesService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/market.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/market.css" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/models/marketService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/models/requester.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/app.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/skeleton.html" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/chirperService.js" />
+        <option value="$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/11.Patterns-and-Routing-Lab/ContactBook/node_modules" />
+    <handled-path value="$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/node_modules" />
+    <handled-path value="$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1292" />
+    <option name="height" value="867" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="03.Exam-20 August 2017" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="03.Exam-20 August 2017" type="462c0819:PsiDirectoryNode" />
+              <item name="SeentIt-Pavlov" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="03.Exam-20 August 2017" type="462c0819:PsiDirectoryNode" />
+              <item name="SeentIt-Pavlov" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="04.Retake Exam-7 Sept 2017" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="04.Retake Exam-7 Sept 2017" type="462c0819:PsiDirectoryNode" />
+              <item name="Chirper-Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="04.Retake Exam-7 Sept 2017" type="462c0819:PsiDirectoryNode" />
+              <item name="Chirper-Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03.JS Applications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03.JS Applications" type="462c0819:PsiDirectoryNode" />
+              <item name="14.Exam Preparations" type="462c0819:PsiDirectoryNode" />
+              <item name="04.Retake Exam-7 Sept 2017" type="462c0819:PsiDirectoryNode" />
+              <item name="Chirper-Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AppJS-RetakeExam" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\04.Retake Exam-7 Sept 2017\Chirper-Resources" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\02.RetakeExam-22.12.2016\Pavlov-Market" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\03.Exam-20 August 2017\SeentIt-Pavlov" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\01.Exam-10.12.2016\Message\models" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\01.Exam-10.12.2016\Message" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\14.Exam Preparations\01.Exam-10.12.2016\Message\scripts" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\09.Templating-Lab" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\08.Single-Page-Applications-Exercises" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\07.Single-Page-Applications-Lab\BookLibrarySolved" />
+      <recent name="C:\Projects\SoftUni\JavaScript\JS Core\03.JS Applications\07.Single-Page-Applications-Lab\BookLibrarySkeleton" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.skeleton.html">
+    <configuration name="cats.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/03.JS Applications/10.Templating-Exercises/02.HTTP Status Cats/cats.html" />
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/03.JS Applications/08.Single-Page-Applications-Exercises/Prodavachnik - Skeleton/index.html" />
+    <configuration name="listTowns.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/03.JS Applications/10.Templating-Exercises/01.List Towns/listTowns.html" />
+    <configuration name="skeleton.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/03.JS Applications/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/skeleton.html" />
+    <configuration name="demo.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="demo.js" working-dir="$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov" />
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.listTowns.html" />
+      <item itemvalue="JavaScript Debug.cats.html" />
+      <item itemvalue="Node.js.demo.js" />
+      <item itemvalue="JavaScript Debug.skeleton.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.skeleton.html" />
+        <item itemvalue="Node.js.demo.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.cats.html" />
+        <item itemvalue="JavaScript Debug.listTowns.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79ca5f7f-2ffb-428c-88f9-3bd5f80d6c7a" name="Default" comment="" />
+      <created>1521634508743</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521634508743</updated>
+      <workItem from="1521634510068" duration="18485000" />
+      <workItem from="1521787651677" duration="22173000" />
+      <workItem from="1521985521045" duration="803000" />
+      <workItem from="1522045631793" duration="3134000" />
+      <workItem from="1522050685643" duration="11204000" />
+      <workItem from="1522090018665" duration="29322000" />
+      <workItem from="1522241449425" duration="30910000" />
+      <workItem from="1522390434916" duration="16600000" />
+      <workItem from="1522567680004" duration="175000" />
+      <workItem from="1522568011003" duration="75530000" />
+      <workItem from="1523093187203" duration="26000" />
+      <workItem from="1523095414384" duration="28589000" />
+      <workItem from="1523257294003" duration="41526000" />
+      <workItem from="1523394956839" duration="23000" />
+      <workItem from="1523427674742" duration="4843000" />
+      <workItem from="1523437883695" duration="18059000" />
+      <workItem from="1523522477146" duration="25139000" />
+      <workItem from="1523601768583" duration="15953000" />
+      <workItem from="1523626485967" duration="807000" />
+      <workItem from="1523627334104" duration="24161000" />
+      <workItem from="1523727839182" duration="7470000" />
+      <workItem from="1523796880063" duration="5795000" />
+      <workItem from="1524028495181" duration="628000" />
+      <workItem from="1524118087312" duration="286000" />
+      <workItem from="1524807839387" duration="22620000" />
+      <workItem from="1524898111398" duration="1062000" />
+      <workItem from="1524900144757" duration="1230000" />
+      <workItem from="1524913016188" duration="908000" />
+      <workItem from="1524919202726" duration="306000" />
+      <workItem from="1525594558216" duration="1316000" />
+      <workItem from="1525608228518" duration="9456000" />
+      <workItem from="1525691063159" duration="7822000" />
+      <workItem from="1525705967568" duration="952000" />
+      <workItem from="1525707190686" duration="9033000" />
+      <workItem from="1525716583249" duration="6416000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="442762000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29784536" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.36185044" side_tool="true" weight="0.30376345" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.08189655" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.63814956" weight="0.4952381" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.10215054" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.59543014" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29711375" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4272109" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.59543014" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.10215054" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.63814956" weight="0.46394557" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.36185044" side_tool="true" weight="0.30376345" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/app_msg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="4" selection-end-line="54" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08.Single-Page-Applications-Exercises/SPA-Homework/scripts/prodavachnik.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="165" column="65" selection-start-line="163" selection-start-column="8" selection-end-line="165" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/templates/register/registerPage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="73" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/postsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/commentsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/Message/scripts/models/messagesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="76" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/postsService.js" />
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/messages.html" />
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/messages.js" />
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/models/teamsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12..Patterns-and-Routing-Exercises/TeamManager/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08.Single-Page-Applications-Exercises/SPA-Homework/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="42" column="66" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/market.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="4" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/models/messagesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3876">
+          <caret line="228" column="5" selection-start-line="228" selection-start-column="5" selection-end-line="228" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/models/marketService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/entriesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/models/messagesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret column="16" lean-forward="true" selection-start-column="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="130" column="10" lean-forward="true" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Author-Market/market.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4539">
+          <caret line="300" column="83" lean-forward="true" selection-start-line="300" selection-start-column="83" selection-end-line="300" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="50" column="48" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="319" column="9" selection-start-line="319" selection-start-column="9" selection-end-line="319" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/models/postsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/models/commentsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/Forum-Exam-My-Solution/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="283" column="25" lean-forward="true" selection-start-line="283" selection-start-column="25" selection-end-line="283" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/01.Exam-10.12.2016/JS-Apps-Exam-Prep-Messages-Kiril-Misho/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/02.RetakeExam-22.12.2016/Pavlov-Market/market.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/skeleton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="126" column="26" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/03.Exam-20 August 2017/SeentIt-Pavlov/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="205" column="33" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="306" column="42" selection-start-line="306" selection-start-column="42" selection-end-line="306" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14.Exam Preparations/04.Retake Exam-7 Sept 2017/Chirper-Resources/scripts/models/chirperService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

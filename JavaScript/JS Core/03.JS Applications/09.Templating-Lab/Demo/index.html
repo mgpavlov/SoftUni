@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Handlebars</title>
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    let template = Handlebars.compile('<h1>Hello {{name}}</h1>');
+    let container = document.getElementById('app');
+    container.innerHTML = template({ name: 'Handlebars' });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+--SECTION 1--
+1. Create Kinvey app Messages
+2. Seed users via user.json
+3. Create messages collection & import message.json
+--SECTION 2--
+Use Postman to REST
+--SECTION 3--
+1. Get familiar with the given html & css
+2. Create a skeleton
+--SECTION 4--
+1. Navigation System
+--> showView func
+--> userLoggedOut func
+--> userLoggedIn func
+--> navigateTo func (add data-target attr)
+2. Attach event handlers for header
+3. Implement Register
+4. Implement Logout
+5. Implement Login
+6. Implement User Home
+7. Create the messages service

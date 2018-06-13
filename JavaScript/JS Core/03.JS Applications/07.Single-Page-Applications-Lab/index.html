@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Library</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="styles/book-library.css">
+</head>
+<body>
+<header id="menu">
+    <a href="#" id="linkHome">Home</a>
+    <a href="#" id="linkLogin">Login</a>
+    <a href="#" id="linkRegister">Register</a>
+    <a href="#" id="linkBooks">List Books</a>
+    <a href="#" id="linkCreate">Create</a>
+    <a href="#" id="linkLogout">Logout</a>
+    <span id="loggedInUser"></span>
+</header>
+<main>
+    <div id="loadingBox" class="notification">Loading &hellip;</div>
+    <div id="infoBox" class="notification">Info</div>
+    <div id="errorBox" class="notification">Error</div>
+
+    <section id="viewHome">
+        <h1>
+            Welcome
+        </h1>
+        <div class="content">
+            <p>
+                Welcome to our library.
+            </p>
+        </div>
+    </section>
+    <section id="viewLogin">
+        <h1>Please login</h1>
+        <div class="content">
+            <form>
+                <label for="inputUsername">Username:</label>
+                <input type="text" id="inputUsername">
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </section>
+    <section id="viewRegister">
+        <h1>Please register</h1>
+        <div class="content">
+            <form>
+                <label for="inputNewUsername">Username:</label>
+                <input type="text" id="inputNewUsername">
+                <label for="inputNewPassword">Password:</label>
+                <input type="password" id="inputNewPassword">
+                <label for="confirmNewPassword">Confirm password:</label>
+                <input type="password" id="confirmNewPassword">
+                <input type="submit" value="Register">
+            </form>
+
+        </div>
+    </section>
+    <section id="viewBooks">
+        <h1>Books</h1>
+        <div class="content">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Under the Yoke</td>
+                    <td>Ivan Vasov</td>
+                    <td>Description</td>
+                    <td><a href="#">[Edit]</a><a href="#">[Delete]</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="viewCreate">
+        <h1>Create new book</h1>
+        <div class="content">
+            <form>
+                <label for="inputNewTitle">Title:</label>
+                <input type="text" id="inputNewTitle">
+                <label for="inputNewAuthor">Author:</label>
+                <input type="text" id="inputNewAuthor">
+                <label for="inputNewDescription">Description:</label>
+                <textarea type="text" id="inputNewDescription"></textarea>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </section>
+    <section id="viewEdit">
+        <h1>Edit book</h1>
+        <div class="content">
+            <form>
+                <label for="inputTitle">Title:</label>
+                <input type="text" id="inputTitle">
+                <label for="inputAuthor">Author:</label>
+                <input type="text" id="inputAuthor">
+                <label for="inputDescription">Description:</label>
+                <textarea type="text" id="inputDescription"></textarea>
+                <input type="submit" value="Edit">
+            </form>
+        </div>
+    </section>
+</main>
+<footer>Book Library - Simple SPA Application</footer>
+</body>
+
+</html>
