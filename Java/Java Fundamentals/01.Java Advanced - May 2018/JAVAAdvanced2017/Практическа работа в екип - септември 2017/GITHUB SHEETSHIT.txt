@@ -1,0 +1,53 @@
+git config --global user.name "John Doe"            // добавям нов user
+git config --global user.email johndoe@example.com  // добавям нов email
+git config --global --list
+
+git clone https://github.com/Tuscann/GITBASH        // изтегляш копие (клонираш)от adress
+
+
+git init                       // ново repository
+Правим нов файл hello.html     // създаваме нов html файл
+git status                     // състояние на проекта 
+git add hello.html             // добавяме html файла
+git commit -m "First Commit"   // commit локолно
+git checkout -b ivan           // създаване на branch ivan и switch към него
+git branch -d ivan             // изтриване на branch ivan
+
+ 
+
+// създава се през сайта repoto и се достъпва на адрес
+git remote add origin https://github.com/try-git/try_git.git
+
+
+git push -u origin master    // добави локалните файлове към mastera в облака
+git checkout -- octocat.txt  // премахни локалните промени 
+git add . 
+
+
+git status              //status na repoto vav papkata
+git pull origin master  // дърпам от сървъра облака
+git checkout master     // switch to master
+git branch              // показва всички бранчове
+git log
+
+git config --list  // конфигурация може да видиш дали се ползва отправилния user
+
+
+git status
+git add .
+git commit -m "First commitdasd"
+git push 
+
+
+git checkout . --theirs
+git checkout . --ours
+
+git config --global diff.tool diffmerge
+git push  --set-upstream orign ivan (ivan name of branch)
+
+
+
+
+
+
+
