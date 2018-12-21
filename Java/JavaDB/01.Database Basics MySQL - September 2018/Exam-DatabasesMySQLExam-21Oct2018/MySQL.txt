@@ -1,0 +1,74 @@
+1.rename table:
+ALTER TABLE person RENAME TO persons;
+
+2. DROP PRIMARY KEY;
+премахване на primary key
+
+3. AUTO_INCREMENT = :
+CREATE TABLE models(
+	model_id INT UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	name VARCHAR(30) NOT NULL,
+    manufacturer_id INT UNSIGNED NOT NULL
+) AUTO_INCREMENT = 101;
+
+4.ADD CONSTRAINT FOREIGN KEY:
+ALTER TABLE manufacturers
+ADD CONSTRAINT `fk_manufactures_models`
+FOREIGN KEY(manufacturer_id)
+REFERENCES models(models_id);
+
+5.Date insert - '1916-03-01' correct format
+example:
+INSERT INTO manufacturers (name, established_on)
+VALUES 
+('BMW', '1916-03-01'),
+('Tesla', '2003-01-01'),
+('Lada', '1966-05-01');
+
+6. Date:
+
+WHERE
+    d.name IN ('Sales' , 'Finance')
+        AND DATE(e.hire_date) > '1999/1/1'
+		
+6.2. SELECT 
+    e.first_name,
+    e.last_name,
+    r.description,
+    DATE_FORMAT(r.open_date, '%Y-%m-%d') AS 'open_date'
+FROM
+    `reports` AS r
+        JOIN
+    `employees` AS e ON r.employee_id = e.id
+ORDER BY r.employee_id , r.open_date , r.id;
+
+6.3. -- 10. Birthday Report
+-- Select all categories in which users have submitted a report
+-- on their birthday. Order them by name alphabetically.
+-- Duplicates are not needed.
+
+SELECT DISTINCT
+    (c.`name`) AS 'category_name'
+FROM
+    `reports` AS r
+        JOIN
+    `users` AS u ON r.user_id = u.id
+        JOIN
+    `categories` AS c ON r.category_id = c.id
+WHERE
+    DAY(r.open_date) = DAY(u.birthdate)
+        AND MONTH(r.open_date) = MONTH(u.birthdate)
+ORDER BY `category_name`;
+	
+7.Function:
+ SET GLOBAL log_bin_trust_function_creators = 1;
+ 
+ 8. POW степенуване    RETURN initial_sum*pow((1+yearly_interest_rate): 
+ DELIMITER $$
+CREATE FUNCTION ufn_calculate_future_value (initial_sum INT, yearly_interest_rate DOUBLE, number_of_years INT) 
+RETURNS DOUBLE
+RETURN initial_sum*pow((1+yearly_interest_rate), number_of_years); $$
+DELIMITER ;
+
+
+
