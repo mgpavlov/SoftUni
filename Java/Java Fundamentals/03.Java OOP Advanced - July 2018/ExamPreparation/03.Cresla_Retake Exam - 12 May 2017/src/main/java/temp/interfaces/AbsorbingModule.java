@@ -1,0 +1,5 @@
+package temp.interfaces;
+
+public interface AbsorbingModule extends Module {
+    int getHeatAbsorbing();
+}
