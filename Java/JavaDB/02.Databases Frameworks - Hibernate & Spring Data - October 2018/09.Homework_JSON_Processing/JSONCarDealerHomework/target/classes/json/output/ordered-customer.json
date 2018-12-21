@@ -1,0 +1,511 @@
+[
+  {
+    "Id": 29,
+    "Name": "Louann Holzworth",
+    "BirthDate": "1960-10-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.4,
+        "customer": "Louann Holzworth",
+        "car": "Toyota"
+      },
+      {
+        "discount": 0.4,
+        "customer": "Louann Holzworth",
+        "car": "Citroen"
+      }
+    ]
+  },
+  {
+    "Id": 28,
+    "Name": "Donnetta Soliz",
+    "BirthDate": "1963-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.15000000000000002,
+        "customer": "Donnetta Soliz",
+        "car": "Nissan"
+      },
+      {
+        "discount": 0.35,
+        "customer": "Donnetta Soliz",
+        "car": "BMW"
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "Name": "Rema Revelle",
+    "BirthDate": "1970-05-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 16,
+    "Name": "Carri Knapik",
+    "BirthDate": "1972-02-02T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.05,
+        "customer": "Carri Knapik",
+        "car": "Fiat"
+      }
+    ]
+  },
+  {
+    "Id": 27,
+    "Name": "Garret Capron",
+    "BirthDate": "1975-07-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.0,
+        "customer": "Garret Capron",
+        "car": "Seat"
+      },
+      {
+        "discount": 0.4,
+        "customer": "Garret Capron",
+        "car": "Ford"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Garret Capron",
+        "car": "Mercedes"
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Teddy Hobby",
+    "BirthDate": "1975-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 10,
+    "Name": "Audrea Cardinal",
+    "BirthDate": "1976-10-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.1,
+        "customer": "Audrea Cardinal",
+        "car": "Mercedes"
+      },
+      {
+        "discount": 0.4,
+        "customer": "Audrea Cardinal",
+        "car": "Fiat"
+      },
+      {
+        "discount": 0.1,
+        "customer": "Audrea Cardinal",
+        "car": "Citroen"
+      },
+      {
+        "discount": 0.05,
+        "customer": "Audrea Cardinal",
+        "car": "Ford"
+      },
+      {
+        "discount": 0.0,
+        "customer": "Audrea Cardinal",
+        "car": "Toyota"
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Francis Mckim",
+    "BirthDate": "1977-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.35,
+        "customer": "Francis Mckim",
+        "car": "Toyota"
+      },
+      {
+        "discount": 0.15000000000000002,
+        "customer": "Francis Mckim",
+        "car": "Dacia"
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "Name": "Brett Brickley",
+    "BirthDate": "1980-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.45,
+        "customer": "Brett Brickley",
+        "car": "Opel"
+      },
+      {
+        "discount": 0.15000000000000002,
+        "customer": "Brett Brickley",
+        "car": "Fiat"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Brett Brickley",
+        "car": "Chevy"
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "Name": "Kristian Engberg",
+    "BirthDate": "1981-10-03T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.1,
+        "customer": "Kristian Engberg",
+        "car": "Great Wall"
+      }
+    ]
+  },
+  {
+    "Id": 26,
+    "Name": "Hipolito Lamoreaux",
+    "BirthDate": "1982-08-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.55,
+        "customer": "Hipolito Lamoreaux",
+        "car": "Ford"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Hipolito Lamoreaux",
+        "car": "Renault"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Zada Attwood",
+    "BirthDate": "1982-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 25,
+    "Name": "Sylvie Mcelravy",
+    "BirthDate": "1983-10-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.3,
+        "customer": "Sylvie Mcelravy",
+        "car": "BMW"
+      },
+      {
+        "discount": 0.3,
+        "customer": "Sylvie Mcelravy",
+        "car": "Lamborghini"
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Rico Peer",
+    "BirthDate": "1984-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.35,
+        "customer": "Rico Peer",
+        "car": "Dacia"
+      },
+      {
+        "discount": 0.55,
+        "customer": "Rico Peer",
+        "car": "Renault"
+      },
+      {
+        "discount": 0.45,
+        "customer": "Rico Peer",
+        "car": "Citroen"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Hai Everton",
+    "BirthDate": "1985-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 6,
+    "Name": "Lino Subia",
+    "BirthDate": "1985-12-21T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.5,
+        "customer": "Lino Subia",
+        "car": "Dacia"
+      },
+      {
+        "discount": 0.0,
+        "customer": "Lino Subia",
+        "car": "Ferrari"
+      },
+      {
+        "discount": 0.4,
+        "customer": "Lino Subia",
+        "car": "Seat"
+      },
+      {
+        "discount": 0.3,
+        "customer": "Lino Subia",
+        "car": "Skoda"
+      }
+    ]
+  },
+  {
+    "Id": 24,
+    "Name": "Jimmy Grossi",
+    "BirthDate": "1986-07-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 12,
+    "Name": "Carole Witman",
+    "BirthDate": "1987-10-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.0,
+        "customer": "Carole Witman",
+        "car": "BMW"
+      },
+      {
+        "discount": 0.0,
+        "customer": "Carole Witman",
+        "car": "Alfa Romeo"
+      },
+      {
+        "discount": 0.3,
+        "customer": "Carole Witman",
+        "car": "Nissan"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Carole Witman",
+        "car": "Fiat"
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "Name": "Oren Perlman",
+    "BirthDate": "1988-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.2,
+        "customer": "Oren Perlman",
+        "car": "Nissan"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Oren Perlman",
+        "car": "Citroen"
+      },
+      {
+        "discount": 0.1,
+        "customer": "Oren Perlman",
+        "car": "Peugeot"
+      },
+      {
+        "discount": 0.35,
+        "customer": "Oren Perlman",
+        "car": "Chevy"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Natalie Poli",
+    "BirthDate": "1990-10-04T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.4,
+        "customer": "Natalie Poli",
+        "car": "Nissan"
+      },
+      {
+        "discount": 0.15,
+        "customer": "Natalie Poli",
+        "car": "Renault"
+      },
+      {
+        "discount": 0.0,
+        "customer": "Natalie Poli",
+        "car": "Great Wall"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Marcelle Griego",
+    "BirthDate": "1990-10-04T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.05,
+        "customer": "Marcelle Griego",
+        "car": "Toyota"
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "Name": "Yvonne Mccalla",
+    "BirthDate": "1992-03-02T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.25,
+        "customer": "Yvonne Mccalla",
+        "car": "Mercedes"
+      },
+      {
+        "discount": 0.1,
+        "customer": "Yvonne Mccalla",
+        "car": "Ford"
+      }
+    ]
+  },
+  {
+    "Id": 30,
+    "Name": "Ann Mcenaney",
+    "BirthDate": "1992-03-02T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.45,
+        "customer": "Ann Mcenaney",
+        "car": "Lamborghini"
+      },
+      {
+        "discount": 0.05,
+        "customer": "Ann Mcenaney",
+        "car": "Citroen"
+      },
+      {
+        "discount": 0.45,
+        "customer": "Ann Mcenaney",
+        "car": "Opel"
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "Name": "Cinthia Lasala",
+    "BirthDate": "1992-11-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.35,
+        "customer": "Cinthia Lasala",
+        "car": "Ferrari"
+      }
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Emmitt Benally",
+    "BirthDate": "1993-11-20T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "discount": 0.35,
+        "customer": "Emmitt Benally",
+        "car": "Rolls-Royce"
+      },
+      {
+        "discount": 0.25,
+        "customer": "Emmitt Benally",
+        "car": "Opel"
+      }
+    ]
+  },
+  {
+    "Id": 20,
+    "Name": "Nisha Markwell",
+    "BirthDate": "1994-04-04T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.5,
+        "customer": "Nisha Markwell",
+        "car": "Skoda"
+      }
+    ]
+  },
+  {
+    "Id": 23,
+    "Name": "Faustina Burgher",
+    "BirthDate": "1994-06-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.05,
+        "customer": "Faustina Burgher",
+        "car": "Nissan"
+      },
+      {
+        "discount": 0.2,
+        "customer": "Faustina Burgher",
+        "car": "Ford"
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "Name": "Taina Achenbach",
+    "BirthDate": "1994-10-01T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.0,
+        "customer": "Taina Achenbach",
+        "car": "Toyota"
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Johnette Derryberry",
+    "BirthDate": "1995-10-01T12:00:00",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 22,
+    "Name": "Daniele Zarate",
+    "BirthDate": "1995-10-05T12:00:00",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "discount": 0.15,
+        "customer": "Daniele Zarate",
+        "car": "Opel"
+      }
+    ]
+  }
+]
