@@ -1,0 +1,17 @@
+nav{
+    background: darkslateblue;
+}
+ul, body{
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav ul li a {
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
