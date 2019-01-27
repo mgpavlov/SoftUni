@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8df9c144-80c4-429d-a239-019dd13d2a1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0941da56-e86d-4379-b93c-05ea9374d755" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../02.HTTP Protocol/Exercise/02.CreateClasses/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../02.HTTP Protocol/Exercise/02.CreateClasses/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,12 +12,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getCookies#0;class#Application#0" />
+                <element signature="method#getRequest#0;class#Application#0" />
+                <element signature="method#getHeaders#0;class#Application#0" />
+                <element signature="method#getBody#0;class#Application#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Cons</find>
-    </findStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
@@ -25,14 +45,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParser/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/Demo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParserClasses/HttpResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParserClasses/HttpResponseImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParserClasses/StatusCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParserClasses/HttpRequestImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/http/HttpResponseImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/http/HttpCookieImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/http/HttpCookie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/http/HttpRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/http/HttpRequestImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/httpParserEntities/HttpRequestImpl.java" />
       </list>
     </option>
   </component>
@@ -46,9 +64,9 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1287" />
-    <option name="width" value="320" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1223" />
     <option name="height" value="867" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,25 +77,51 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CreateClasses" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02.CreateClasses" type="462c0819:PsiDirectoryNode" />
+              <item name="ExtractingCookies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01.ExtractingCookies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExtractingCookies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01.ExtractingCookies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExtractingCookies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01.ExtractingCookies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExtractingCookies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01.ExtractingCookies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExtractingCookies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="01.ExtractingCookies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548441179958" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548595938340" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -88,9 +132,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SoftUni\Java\Java Web\01.Java Web Development Basics - January 2019\02.HTTP Protocol\Exercise\02.CreateClasses\src\main\java\app\httpParserClasses" />
-      <recent name="D:\SoftUni\Java\Java Web\01.Java Web Development Basics - January 2019\02.HTTP Protocol\Exercise\02.CreateClasses\src\main\java\app\httpParser" />
-      <recent name="D:\SoftUni\Java\Java Web\01.Java Web Development Basics - January 2019\02.HTTP Protocol\Exercise\02.CreateClasses\src\main\java\app" />
+      <recent name="D:\SoftUni\Java\Java Web\01.Java Web Development Basics - January 2019\03.State Management\Exercise\01.ExtractingCookies\src\main\java\app\http" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,7 +150,7 @@
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.app.Application" />
-      <module name="CreateClasses" />
+      <module name="ExtractingCookies" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.app.*" />
@@ -130,27 +172,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8df9c144-80c4-429d-a239-019dd13d2a1e" name="Default Changelist" comment="" />
-      <created>1548421379120</created>
+      <changelist id="0941da56-e86d-4379-b93c-05ea9374d755" name="Default Changelist" comment="" />
+      <created>1548588920012</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548421379120</updated>
-      <workItem from="1548421382148" duration="4248000" />
-      <workItem from="1548425711673" duration="9000" />
-      <workItem from="1548426154279" duration="2891000" />
-      <workItem from="1548440763565" duration="647000" />
-      <workItem from="1548587867606" duration="275000" />
-      <workItem from="1548588270947" duration="650000" />
+      <updated>1548588920012</updated>
+      <workItem from="1548588925252" duration="6401000" />
+      <workItem from="1548595880263" duration="82000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8720000" />
+    <option name="totallyTimeSpent" value="6483000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-7" y="0" width="1223" height="867" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.218509" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2527945" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -160,8 +199,8 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2974428" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23978202" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39918256" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -186,63 +225,57 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/regex/Pattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="775" column="19" selection-start-line="775" selection-start-column="19" selection-end-line="775" selection-end-column="19" />
-          <folding>
-            <element signature="e#54666#54667#0" expanded="true" />
-            <element signature="e#54710#54711#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserClasses/StatusCode.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserClasses/Constants.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserEntities/HttpResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserEntities/HttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpResponse.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpResponseImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/app/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        <state relative-caret-position="482">
+          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getCookies#0;class#Application#0" />
+            <element signature="method#getRequest#0;class#Application#0" />
+            <element signature="method#getHeaders#0;class#Application#0" />
+            <element signature="method#getBody#0;class#Application#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpCookie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpCookieImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserEntities/HttpRequestImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/http/HttpRequestImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-          <folding>
-            <element signature="method#parseRequest#0;class#HttpRequestImpl#0" />
-          </folding>
+        <state relative-caret-position="1377">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/httpParserEntities/HttpResponseImpl.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Spliterators.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#HttpResponseImpl#0;class#HttpResponseImpl#0" />
-            <element signature="method#getStatusCodeMessage#0;class#HttpResponseImpl#0" />
-            <element signature="method#getBytes#0;class#HttpResponseImpl#0" />
-          </folding>
+        <state relative-caret-position="15385">
+          <caret line="947" selection-start-line="947" selection-end-line="947" />
         </state>
       </provider>
     </entry>
@@ -298,7 +331,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>CreateClasses</last-edited>
+          <last-edited>ExtractingCookies</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
