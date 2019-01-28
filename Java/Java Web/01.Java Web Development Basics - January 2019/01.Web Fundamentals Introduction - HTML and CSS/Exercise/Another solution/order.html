@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftUni Beers</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+<nav>
+    <div class="topnav">
+        <a class="logo" href="index.html"><img src="images/logo.png" alt="Display logo"></a>
+        <a href="index.html">Home</a>
+        <a href="all-beers.html">See All Beers</a>
+        <a class="active" href="order.html">Order a beer</a>
+        <a class="right" href="register.html">Register</a>
+        <a class="right" href="login.html">Log in</a>
+    </div>
+</nav>
+
+<main>
+    <center>
+        <h1>Order a beer</h1>
+        <hr/>
+        <form class="order-form">
+            <label>
+                <div class="field">
+                    <h3>Brand</h3>
+                    <select  placeholder="Select a brand">
+                        <option selected disabled>Select a brand</option>
+                        <option>Corona Extra 330ml</option>
+                        <option>Stella Artois 500ml</option>
+                        <option>Carlsberg 330ml</option>
+                        <option>Haineken 500ml</option>
+                    </select>
+                </div>
+            </label>
+            <label>
+                <div class="field">
+                    <h3>Quantity</h3>
+                    <input type="number" min="1" max="15" placeholder="Enter amount of beers (1-15)">
+                </div>
+            </label>
+            <label>
+                <div class="field">
+                    <h3>Destination</h3>
+                    <select placeholder="Select a destination">
+                        <option selected disabled>Select a destination</option>
+                        <option>Take away</option>
+                        <option>For here</option>
+                        <option>Bring home</option>
+                    </select>
+                </div>
+            </label>
+            <label>
+                <div class="field">
+                    <h3>Enter your birth date</h3>
+                    <input type="date">
+                </div>
+            </label>
+            <label>
+                <div class="field">
+                    <h3>Got an opinion, comment, recommendation? Share  it with us!</h3>
+                    <input class="comment-input" type="text" placeholder="Confirm Password">
+                </div>
+            </label>
+            <input class="btn" type="submit" value="Register">
+        </form>
+    </center>
+</main>
+
+<footer class="foot">
+    <hr/>
+    <p><em>&copy; 2017 &ndash; SoftUni Beers</em></p>
+</footer>
+</body>
+</html>
