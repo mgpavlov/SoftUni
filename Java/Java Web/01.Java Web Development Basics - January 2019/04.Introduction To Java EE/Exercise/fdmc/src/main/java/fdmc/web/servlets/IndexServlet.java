@@ -1,5 +1,6 @@
 package fdmc.web.servlets;
 
+import fdmc.Constants;
 import fdmc.util.HtmlReader;
 
 import javax.inject.Inject;
@@ -13,8 +14,6 @@ import java.io.PrintWriter;
 
 @WebServlet("/")
 public class IndexServlet extends HttpServlet {
-    private final static String INDEX_HTML_FILE_PATH =
-            "D:\\SoftUni\\Java\\Java Web\\01.Java Web Development Basics - January 2019\\04.Introduction To Java EE\\Exercise\\fdmc\\src\\main\\resources\\views\\index.html";
     private final HtmlReader htmlReader;
 
     @Inject
@@ -26,6 +25,6 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
 
-        writer.println(this.htmlReader.readHtmlFile(INDEX_HTML_FILE_PATH));
+        writer.println(this.htmlReader.readHtmlFile(Constants.INDEX_HTML_FILE_PATH));
     }
 }

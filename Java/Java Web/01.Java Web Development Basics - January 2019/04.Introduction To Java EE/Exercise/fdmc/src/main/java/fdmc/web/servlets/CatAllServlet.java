@@ -1,5 +1,6 @@
 package fdmc.web.servlets;
 
+import fdmc.Constants;
 import fdmc.domain.entities.Cat;
 import fdmc.util.HtmlReader;
 
@@ -10,13 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @WebServlet("/cats/all")
 public class CatAllServlet extends HttpServlet {
-    private final static String ALL_CATS_HTML_FILE_PATH =
-            "D:\\SoftUni\\Java\\Java Web\\01.Java Web Development Basics - January 2019\\04.Introduction To Java EE\\Exercise\\fdmc\\src\\main\\resources\\views\\cat-all.html";
     private final HtmlReader htmlReader;
 
     @Inject
@@ -28,11 +26,11 @@ public class CatAllServlet extends HttpServlet {
     @SuppressWarnings("unchecked")
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String htmlFileContent = this.htmlReader.readHtmlFile(ALL_CATS_HTML_FILE_PATH);
+        String htmlFileContent = this.htmlReader.readHtmlFile(Constants.ALL_CATS_HTML_FILE_PATH);
 
         if(req.getSession().getAttribute("cats") == null){
             htmlFileContent = htmlFileContent
-                    .replace("{{allCats}}", "There are no cats. <a href=\"/cats/create\">Create some!</a>");
+                    .replace("{{allCats}}", Constants.THERE_ARE_NO_CATS_MESSAGE);
         }else {
             StringBuilder allCats = new StringBuilder();
 
@@ -40,7 +38,7 @@ public class CatAllServlet extends HttpServlet {
                     .getAttribute("cats"))
                     .values()
                     .forEach(cat -> {
-                        allCats.append(String.format("<a href=\"/cats/profile?catName=%s\">%s</a><br />",
+                        allCats.append(String.format(Constants.CAT_NAME_AND_DETAILS_URL,
                                 cat.getName(), cat.getName()))
                                 .append(System.lineSeparator());
                     });

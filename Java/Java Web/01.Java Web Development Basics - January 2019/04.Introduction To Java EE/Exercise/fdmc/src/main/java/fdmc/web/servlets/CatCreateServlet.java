@@ -1,5 +1,6 @@
 package fdmc.web.servlets;
 
+import fdmc.Constants;
 import fdmc.domain.entities.Cat;
 import fdmc.util.HtmlReader;
 
@@ -10,15 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 @WebServlet("/cats/create")
 public class CatCreateServlet extends HttpServlet {
-    private final static String CAT_CREATE_HTML_FILE_PATH =
-            "D:\\SoftUni\\Java\\Java Web\\01.Java Web Development Basics - January 2019\\04.Introduction To Java EE\\Exercise\\fdmc\\src\\main\\resources\\views\\cat-create.html";
     private final HtmlReader htmlReader;
 
     @Inject
@@ -28,7 +25,7 @@ public class CatCreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String responseString = this.htmlReader.readHtmlFile(CAT_CREATE_HTML_FILE_PATH);
+        String responseString = this.htmlReader.readHtmlFile(Constants.CAT_CREATE_HTML_FILE_PATH);
         resp.getWriter().println(responseString);
     }
 
@@ -47,6 +44,6 @@ public class CatCreateServlet extends HttpServlet {
 
         ((Map<String, Cat>)req.getSession().getAttribute("cats")).putIfAbsent(cat.getName(), cat);
 
-        resp.sendRedirect(String.format("/cats/profile?catName=%s", cat.getName()));
+        resp.sendRedirect(String.format(Constants.CAT_DETAILS_URL, cat.getName()));
     }
 }
