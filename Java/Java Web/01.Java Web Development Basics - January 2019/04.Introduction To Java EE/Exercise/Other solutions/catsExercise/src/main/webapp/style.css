@@ -1,0 +1,113 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    /*-ms-text-size-adjust: 100%;*/
+    /*-webkit-text-size-adjust: 100%*/
+}
+*{
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.5;
+    color: #292b2c;
+}
+form{
+    width: 500px;
+    display: inline-block;
+    background-color: #f1ecf6;
+    border-radius: 15px;
+    box-shadow: 1px 3px 21px 8px rgba(38,44,55,0.65);
+    padding: 20px;
+}
+form div{
+    padding: 15px 10px;
+    overflow: hidden;
+}
+form div input,select{
+    padding: 3px;
+    vertical-align: center;
+    float: right;
+    height: 20px;
+    width: 35%;
+    border: 2px solid #4b5257 ;
+    box-sizing:content-box;
+}
+form div  select{
+    height: 30px;
+}
+form div label{
+    float: left;
+    vertical-align: center;
+    color: #4b5257;
+}
+button{
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: #4b5257;
+    color: #f1ecf6;
+    border: none;
+    padding: 15px;
+    margin: 30px;
+}
+button.catProfile{
+    background-color: #8c96c7;
+    margin: 5px 30px;
+}
+button:hover{
+    background-color: #5d69a2;
+}
+
+section{
+    width: 60%;
+    display: inline-block;
+    text-align: left;
+    background-color: #f1ecf6;
+    border-radius: 15px;
+    box-shadow: 1px 3px 21px 8px rgba(38,44,55,0.65);
+    padding: 20px;
+}
+#indexSection{
+    width: 100%;
+    text-align: center;
+}
+#allOrders{
+    width: 100%;
+    text-align: center;
+}
+section table{
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+section table th{
+    width: 33%;
+    text-align: center;
+}
+section table tbody tr:nth-child(odd){
+    background-color: white;
+}
+section table, tr,td,th{
+    border: 1px solid #4b5257;
+    border-collapse: collapse;
+}
+section h1{
+    font-size: 30px;
+}
+section div{
+    overflow: hidden;
+}
+section div h1,h2{
+    display: inline-block;
+    padding: 25px;
+    margin: 0;
+}
+span{
+    float: right;
+    padding: 25px;
+}
+
