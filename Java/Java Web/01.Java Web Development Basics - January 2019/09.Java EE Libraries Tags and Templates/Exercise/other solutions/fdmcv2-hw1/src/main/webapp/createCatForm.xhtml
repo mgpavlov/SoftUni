@@ -1,0 +1,130 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!--<hr style="height: 2px;" class="bg-dark"/>-->
+    <h:form class="form">
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <h:inputText id="name"
+                                 value="#{createCat.name}"
+                                 styleClass="form-control"
+                                 required="true"
+                                 validatorMessage="name must be between 2 and 10 characters long">
+                        <f:validateLength minimum = "2" maximum = "10" />
+                    </h:inputText>
+                    <h:message for="name" style="color:red" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="breed">Breed</label>
+                    <h:inputText id="breed"
+                                 value="#{createCat.breed}"
+                                 styleClass="form-control"
+                                 required="true"
+                                 validatorMessage="breed must be between 5 and 20 characters long">
+                        <f:validateLength minimum = "5" maximum = "20" />
+                    </h:inputText>
+                    <h:message for="breed" style="color:red" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <h:inputText id="color"
+                                 value="#{createCat.color}"
+                                 styleClass="form-control"
+                                 required="true"
+                                 requiredMessage="color must be not empty">
+                    </h:inputText>
+                    <h:message for="color" style="color:red" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <h:inputText id="age"
+                                 value="#{createCat.age}"
+                                 styleClass="form-control"
+                                 converterMessage="Please enter digits only."
+                                 required="true"
+                                 requiredMessage="age must be not empty"
+                                 validatorMessage="age must be between 1 and 31 years">
+                        <f:convertNumber type="number"/>
+                        <f:passThroughAttribute name="type" value="number" />
+                        <f:validateLongRange minimum="1" maximum="31"/>
+                    </h:inputText>
+                    <h:message for="age" style="color:red" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <h:inputText id="price"
+                                 value="#{createCat.price}"
+                                 styleClass="form-control"
+                                 converterMessage="Please enter digits only."
+                                 required="true"
+                                 requiredMessage="price must be not empty"
+                                 validatorMessage="price must be at least 0.01$">
+                        <f:convertNumber type="number"/>
+                        <f:passThroughAttribute name="type" value="number" />
+                        <f:passThroughAttribute name="step" value=".01" />
+                        <f:validateDoubleRange minimum="0.01" />
+                    </h:inputText>
+                    <h:message for="color" style="color:red" />
+                </div>
+            </div>
+        </div>
+        <hr class="hr-background" />
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <label class="mr-4" for="gender">Gender</label>
+                <h:selectOneRadio id="gender" value = "#{createCat.sex}">
+                    <f:selectItem itemValue = "male" itemLabel = "Male" />
+                    <f:selectItem itemValue = "female" itemLabel = "Femail" />
+                </h:selectOneRadio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-check">
+                    <h:selectBooleanCheckbox value = "#{createCat.hasPassport}" id = "hasPassport" />
+                    <label class="form-check-label mr-4" for="hasPassport">Has passport</label>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-background" />
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="j_id_p:catAddedOnInput">Added On</label>
+                    <span id="j_id_p:catAddedOnInput" class="ui-calendar form-control">
+                        <h:inputText  id = "dateInput" value = "#{createCat.addedOn}">
+                            <f:passThroughAttribute name="type" value="date" />
+                            <f:convertDateTime pattern = "yyyy-MM-dd" />
+                    </h:inputText>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-background" />
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <h:commandButton styleClass="btn btn-success" value = "Create cat" action = "#{createCat.create}"/>
+            </div>
+        </div>
+        <!--<input type="hidden" name="j_id_p_SUBMIT" value="1" />-->
+        <!--<input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:1"-->
+               <!--value="QUZFNzkwODE2RkY4RURCOTAwMDAwMDAx" autocomplete="off" />-->
+    </h:form>
+</ui:composition>

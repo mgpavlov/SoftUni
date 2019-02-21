@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <ui:include src="comon/head.xhtml"/>
+</h:head>
+<h:body>
+<div class="container-fluid">
+    <ui:include src="comon/header.xhtml"/>
+
+    <div class="jumbotron justify-content-center jumbotron-background">
+        <div class="row">
+            <div class="col col-md-12 d-flex justify-content-center">
+                <h1>All Cats!</h1>
+            </div>
+        </div>
+        <hr class="hr-background" />
+        <h:dataTable value = "#{allCats.listOfCats}"
+                     var = "cat"
+                     styleClass = "table table-striped"
+                     headerClass = "employeeTableHeader"
+                     rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=name">Name</h:link>
+                </f:facet>
+                #{cat.name}
+            </h:column>
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=breed">Breed</h:link>
+                </f:facet>
+                #{cat.breed}
+            </h:column>
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=color">Color</h:link>
+                </f:facet>
+                #{cat.color}
+            </h:column>
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=sex">Sex</h:link>
+                </f:facet>
+                #{cat.sex}
+            </h:column>
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=price">Price</h:link>
+                </f:facet>
+                #{cat.price}
+            </h:column>
+            <h:column>
+                <f:facet name = "header">
+                    <h:link outcome="/cats-all.xhtml?sort=addedOn">Added on</h:link>
+                </f:facet>
+                <h:outputText value = "#{cat.addedOn}" >
+                    <f:convertDateTime pattern = "dd-MM-yyyy" />
+                </h:outputText>
+            </h:column>
+        </h:dataTable>
+    </div>
+    <ui:include src="comon/footer.xhtml"/>
+</div>
+</h:body>
+</html>
