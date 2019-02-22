@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+>
+<ui:component>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-casebook">
+            <c:choose>
+                <c:when test="#{session.getAttribute('username') == null}">
+                    <a class="navbar-brand text-muted h4"
+                       href="${pageContext.request.contextPath}/view/index.xhtml">Casebook</a>
+                </c:when>
+                <c:otherwise>
+                    <a class="navbar-brand text-muted h4"
+                       href="${pageContext.request.contextPath}/view/home.xhtml">Casebook</a>
+                </c:otherwise>
+            </c:choose>
+            <h:button styleClass="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" hidden="hidden">
+                    <a href="${pageContext.request.contextPath}/view/index.xhtml"
+                       class="nav-link text-muted active h5">Home</a>
+                    <a href="${pageContext.request.contextPath}/view/login.xhtml"
+                       class="nav-link text-muted active h5">Login</a>
+                    <a href="${pageContext.request.contextPath}/view/register.xhtml"
+                       class="nav-link text-muted active h5">Register</a>
+                </span>
+            </h:button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                <c:choose>
+                    <c:when test="#{session.getAttribute('username') == null}">
+                        <ul class="navbar-nav row">
+                            <li class="nav-item col-md-4">
+                                <a href="${pageContext.request.contextPath}/view/index.xhtml"
+                                   class="nav-link text-muted active h5">Home</a>
+                            </li>
+                            <li class="nav-item col-md-4">
+                                <a href="${pageContext.request.contextPath}/view/login.xhtml"
+                                   class="nav-link text-muted active h5">Login</a>
+                            </li>
+                            <li class="nav-item col-md-4">
+                                <a href="${pageContext.request.contextPath}/view/register.xhtml"
+                                   class="nav-link text-muted active h5">Register</a>
+                            </li>
+                        </ul>
+                    </c:when>
+                    <c:otherwise>
+                        <ul class="navbar-nav row">
+                            <li class="nav-item col-md-4">
+                                <a href="${pageContext.request.contextPath}/view/home.xhtml"
+                                   class="nav-link text-muted active h5">Home</a>
+                            </li>
+                            <li class="nav-item col-md-4">
+                                <a href="${pageContext.request.contextPath}/view/friends.xhtml"
+                                   class="nav-link text-muted active h5">Friends</a>
+                            </li>
+                            <li class="nav-item col-md-4">
+                                <h:form>
+                                    <h:commandLink class="nav-link text-muted active h5" value="Logout"
+                                                   action="#{userLogoutBean.logout}"/>
+                                </h:form>
+                            </li>
+                        </ul>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </nav>
+    </header>
+</ui:component>
+</html>
