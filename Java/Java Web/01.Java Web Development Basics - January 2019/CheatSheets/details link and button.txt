@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-between">
+                <div class="w-25 bg-white">
+                    <h2 class="text-center">Pending</h2>
+                    <div class="border-panda p-3">
+                        <c:forEach items="#{homeBean.pendingPackages}" var="pack">
+                            <div class="p-2 d-flex justify-content-around">
+                                <h4 class="w-75">#{pack.description}</h4>
+                                <h:link value="Details" outcome="/faces/view/packages/details.xhtml?id=#{pack.id}"
+                                        styleClass="btn bg-panda text-white w-25"/>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+                <div class="w-25 bg-white">
+                    <h2 class="text-center">Shipped</h2>
+                    <div class="border-panda p-3">
+                        <c:forEach items="#{homeBean.shippedPackages}" var="pack">
+                            <div class="p-2 d-flex justify-content-around">
+                                <h4 class="w-75">#{pack.description}</h4>
+                                <a href="${pageContext.request.contextPath}/faces/view/packages/details.xhtml?id=#{pack.id}"
+                                   class="btn bg-panda text-white w-25">Details</a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+                <div class="w-25 bg-white">
+                    <h2 class="text-center">Delivered</h2>
+                    <div class="border-panda p-3">
+                        <ui:repeat value="#{homeBean.deliveredPackages}" var="pack">
+                            <div class="p-2 d-flex justify-content-around">
+                                <h4 class="w-75">#{pack.description}</h4>
+                                <h:form>
+                                    <h:commandLink action="#{receiptsBean.createReceipt(pack)}"
+                                                   styleClass="btn bg-panda text-white w-50" value="Acquire"/>
+                                </h:form>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,7 @@
+----------------------xhtml--------------------------------
+
+<input type="hidden" value="#{jobAppDeleteBean.jobAppDetails(request.getParameter('id')).id}" name="jobId"/>
+
+----------------------Bean-------------------------------------
+
+String id = ((HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest()).getParameter("id");

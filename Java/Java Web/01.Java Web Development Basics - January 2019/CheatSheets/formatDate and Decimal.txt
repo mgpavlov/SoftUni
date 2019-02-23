@@ -1,0 +1,59 @@
+<h:outputLabel for="salary" value="Salary"/>
+                    <p:inputNumber value="#{employeeRegisterBean.employeeRegisterBindingModel.salary}"
+                                   minValue="0.01" decimalPlaces="2" symbol="$" symbolPosition="p"
+                                   class="form-control" id="salary" placeholder="Salary..."  required="true" requiredMessage="Salary is required!" />
+                    <p:message for="salary"/>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------					
+					<h:outputLabel for="age" value="Age"/>
+                    <p:inputNumber value="#{employeeRegisterBean.employeeRegisterBindingModel.age}"
+                                   class="form-control" decimalPlaces="0"
+                                   id="age" placeholder="Age..."  required="true" requiredMessage="Age is required!" />
+                    <p:message for="age"/>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+<label for="j_id_p_catAddedOnInput">Added On</label>
+                            <span style="padding: unset;" id="j_id_p_catAddedOnInput" class="ui-calendar form-control">
+                                <p:calendar id="popup" value="#{catCreateBean.catCreateBindingModel.addOn}"
+                                            pattern="dd-MM-yyyy"/>
+                            </span>
+							
+--------------------------------------------------------------------------------------------------------------------------------------------------------------							
+<p:dataTable id="allCatsTable" styleClass="borderless" value="#{allCatsBean.allCats}" var="cat">
+                <p:column headerText="Name" sortBy="#{cat.name}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <h:outputText value="#{cat.name}"/>
+                </p:column>
+                <p:column headerText="Breed" sortBy="#{cat.breed}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <h:outputText value="#{cat.breed}"/>
+                </p:column>
+                <p:column headerText="Color" sortBy="#{cat.color}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <h:outputText value="#{cat.color}"/>
+                </p:column>
+                <p:column headerText="Gender" sortBy="#{cat.gender}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <h:outputText value="#{cat.gender}"/>
+                </p:column>
+                <p:column headerText="Price" sortBy="#{cat.price}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <p:outputLabel value="#{cat.price} €">
+                        <f:convertNumber pattern="#.##" type="currency"/>
+                    </p:outputLabel>
+                </p:column>
+                <p:column headerText="Added On" sortBy="#{cat.addOn}"
+                          style="border-color: #552190; background-color: #ED8B16; color: #552190;">
+                    <h:outputLabel value="#{cat.addOn}">
+                        <f:convertDateTime pattern="yyyy-MM-dd"/>
+                    </h:outputLabel>
+                </p:column>
+                <p:column headerText="Remove" style="border-color: #552190; background-color: #ED8B16; color: #552190; text-align: center">
+                    <h:form >
+                        <p:commandButton id="removeButton" value="Remove"
+                                         action="#{catRemoveBean.remove(cat.id)}"
+                                         style="background-color: #552190; border: #552190;"
+                                         class="btn btn-danger"/>
+                    </h:form>
+                </p:column>
+            </p:dataTable>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------			

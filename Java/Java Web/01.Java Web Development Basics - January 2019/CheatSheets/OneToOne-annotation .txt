@@ -1,0 +1,53 @@
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+1.
+
+При OneToOne където искаме да сочи стрелката правим mappedBy
+
+class BankAccount:
+
+@OneToOne(targetEntity = Client.class)
+    public Client getClient() {
+        return this.client;
+    }
+	
+class Client:
+
+@OneToOne(targetEntity = BankAccount.class, mappedBy = "client")
+    public BankAccount getBankAccount() {
+        return this.bankAccount;
+    }
+	
+== bank_accounts -----> clients
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+2.
+
+Bidirectional relation: слагаме и на двете полета само @OneToOne
+class BankAccount:
+
+@OneToOne(targetEntity = Client.class)
+    public Client getClient() {
+        return this.client;
+    }
+	
+class Client:
+
+@OneToOne(targetEntity = BankAccount.class)
+    public BankAccount getBankAccount() {
+        return this.bankAccount;
+    }
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+3.
+
+Ако сложим и на двете полета mappedBy - ГЪРМИ !!!!
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+4.
+
+Ако искаме да сменим името използваме @JoinColumn(name = "client4e") анотация по дефолт го прави client_id!!!
+	
+	
+	
+	
+	
