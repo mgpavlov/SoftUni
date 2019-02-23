@@ -65,5 +65,4 @@ public class CatRepositoryImpl implements CatRepository {
 
         return BigDecimal.valueOf(count);
     }
-
 }
