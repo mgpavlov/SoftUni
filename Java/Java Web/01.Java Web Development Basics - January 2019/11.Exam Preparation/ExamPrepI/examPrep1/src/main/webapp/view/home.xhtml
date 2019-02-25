@@ -12,15 +12,15 @@
             </div>
             <hr class="my-3"/>
             <div class="container">
-                <c:forEach var="jobApplication"  varStatus="status" items="#{homeBean.jobs}">
+                <c:forEach var="job" varStatus="status"  items="#{homeBean.jobs}">
                     <h:outputText value="&lt;div class='row mb-4 d-flex justify-content-around'&gt;" escape="false"
                                   rendered="#{status.index % 3 == 0}"/>
                     <div class="col-md-3 d-flex flex-column text-center">
-                        <h:graphicImage library="img-lib" name="#{jobApplication.sector.name().toLowerCase()}.jpg"
+                        <h:graphicImage library="img-lib" name="#{job.sector}.jpg"
                                         class="img-thumbnail" width="300" height="300"/>
-                        <h5 class="text-center">#{jobApplication.profession}</h5>
-                        <h:link value="Details" outcome="details?id=#{jobApplication.id}" class="btn btn-info" />
-                        <h:link value="Delete" outcome="delete-job?id=#{jobApplication.id}" class="btn btn-danger" />
+                        <h5 class="text-center">#{job.profession}</h5>
+                        <h:link value="Details" outcome="details-job?id=#{job.id}" class="btn btn-info" />
+                        <h:link value="Delete" outcome="delete-job?id=#{job.id}" class="btn btn-danger" />
                     </div>
                     <h:outputText value="&lt;/div&gt;" escape="false" rendered="#{status.index % 3 == 2}" />
                 </c:forEach>
