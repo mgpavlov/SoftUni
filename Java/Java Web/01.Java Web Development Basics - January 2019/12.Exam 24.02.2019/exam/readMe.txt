@@ -1,0 +1,1 @@
+logout не работи на home page

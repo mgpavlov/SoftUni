@@ -1,0 +1,62 @@
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+1.
+
+При OneToOne където искаме да сочи стрелката правим mappedBy
+
+Ако направим @OneToMany и @ManyToOne без допълнителни атрибути, прави допълнителна мапинг таблица (както при @ManyToMany);
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+2. 
+
+На @OneToMany слагаме mappedBy = (към филда в другият клас който отговаря за настояшия)
+
+
+class BankAccount:
+
+private Set<Card> cards;
+
+@OneToMany(targetEntity = Card.class, mappedBy = "bankAccount")
+    public Set<Card> getCards() {
+        return this.cards;
+    }
+-----------------------------------------------------------------
+class Card:
+
+private BankAccount bankAccount;
+
+@ManyToOne
+@JoinColumn(
+            name = "bank_account_id",
+            referencedColumnName = "id"
+    )
+    public BankAccount getBankAccount() {
+        return this.bankAccount;
+    }
+
+	Не се променя нищо ако махнем : 
+	@JoinColumn(
+            name = "bank_account_id",
+            referencedColumnName = "id"
+    )(единсвтено не може да сложим къстъм име)
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+3.
+
+ако сложим на @OneToMany :
+3.1.ГЪРМИ 
+@JoinColumn(
+            name = "cards",
+            referencedColumnName = "id"
+    )
+
+3.2. Ако сложим @Column само, нищо не става, но не гърми;
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+4.
+
+Ако искаме да сменим името използваме @JoinColumn(name = "client4e") анотация по дефолт го прави client_id!!!
+	
+	
+	
+	
+	
