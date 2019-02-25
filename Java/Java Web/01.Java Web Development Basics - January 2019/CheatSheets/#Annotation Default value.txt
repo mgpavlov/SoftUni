@@ -1,4 +1,0 @@
-@Column(name = "laps", nullable = false, columnDefinition = "INT(11) default 0")
-    public Integer getLaps() {
-        return this.laps;
-    }
