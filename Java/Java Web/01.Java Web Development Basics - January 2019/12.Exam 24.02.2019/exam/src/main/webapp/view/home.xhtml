@@ -11,7 +11,7 @@
                 <c:forEach var="doc" varStatus="status" items="#{homeBean.documents}">
                     <h:outputText value="&lt;div class='row mb-4 d-flex justify-content-between'&gt;" escape="false"
                                   rendered="#{status.index % 5 == 0}"/>
-                    <div class="print-scheduled col-md-2 bg-exodia rounded">
+                    <div class="print-scheduled col-md-2 mt-2 bg-exodia rounded">
                         <h5 class="text-center text-white font-weight-bold py-3 mt-3">#{doc.title}</h5>
                         <hr class="bg-white"/>
                         <div class="buttons-holder w-75 mx-auto d-flex justify-content-between">
