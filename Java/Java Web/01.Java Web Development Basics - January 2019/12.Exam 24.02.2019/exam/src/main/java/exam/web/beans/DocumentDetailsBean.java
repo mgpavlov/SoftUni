@@ -26,14 +26,6 @@ public class DocumentDetailsBean extends BaseBean{
     }
 
     public DocumentDetailViewModel takeDocument(String id) {
-        /*Map<String, String> requestParameterMap = FacesContext.getCurrentInstance()
-                .getExternalContext()
-                .getRequestParameterMap();
-
-        String id = requestParameterMap.get("id");
-
-        DocumentServiceModel documentServiceModel = this.documentService.getUserById(id);*/
-
         DocumentServiceModel documentServiceModel =this.documentService.findDocumentById(id);
         if (documentServiceModel == null) {
             throw new IllegalArgumentException("Something went wrong!");

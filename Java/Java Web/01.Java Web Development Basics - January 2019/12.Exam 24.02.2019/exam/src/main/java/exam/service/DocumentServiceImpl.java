@@ -28,12 +28,6 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public boolean documentUpdate(DocumentServiceModel documentServiceModel) {
-        return false;
-    }
-
-
-    @Override
     public boolean documentDelete(DocumentServiceModel documentServiceModel) {
         return this.documentRepository.deleteEntity(documentServiceModel.getId());
     }

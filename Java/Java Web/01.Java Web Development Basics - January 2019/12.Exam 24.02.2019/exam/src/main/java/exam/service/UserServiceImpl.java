@@ -30,18 +30,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean userUpdate(UserServiceModel userServiceModel) {
-        User user = this.userRepository.updateEntity(this.modelMapper.map(userServiceModel, User.class));
-
-        return this.userRepository.updateEntity(user) != null;
-    }
-
-    @Override
-    public boolean userDelete(UserServiceModel userServiceModel) {
-        return this.userRepository.deleteEntity(userServiceModel.getId());
-    }
-
-    @Override
     public UserServiceModel userLogin(UserServiceModel userServiceModel) {
         User user = this.userRepository.findByUsername(userServiceModel.getUsername());
 
@@ -51,21 +39,4 @@ public class UserServiceImpl implements UserService {
         return this.modelMapper.map(user, UserServiceModel.class);
     }
 
-    @Override
-    public UserServiceModel findUserByUsername(String username) {
-        return this.modelMapper.map(this.userRepository.findByUsername(username), UserServiceModel.class);
-    }
-
-    @Override
-    public List<UserServiceModel> findAllUsers() {
-        return this.userRepository.findAll()
-                .stream()
-                .map(u -> this.modelMapper.map(u, UserServiceModel.class))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public UserServiceModel findUserById(String id) {
-        return modelMapper.map(this.userRepository.findById(id), UserServiceModel.class);
-    }
 }

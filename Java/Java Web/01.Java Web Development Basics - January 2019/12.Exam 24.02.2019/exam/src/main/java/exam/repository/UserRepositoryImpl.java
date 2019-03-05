@@ -115,22 +115,4 @@ public class UserRepositoryImpl implements UserRepository {
             return null;
         }
     }
-
-    @Override
-    public Long countOfUsers() {
-        this.entityManager.getTransaction().begin();
-        try {
-            Long size = this.entityManager
-                    .createQuery("SELECT count(u) FROM User u ", Long.class)
-                    .getSingleResult();
-            this.entityManager.getTransaction().commit();
-
-            return size;
-        } catch (Exception e) {
-            this.entityManager.getTransaction().rollback();
-
-            return null;
-        }
-    }
-
 }

@@ -8,8 +8,6 @@ public interface DocumentService {
 
     boolean documentRegister(DocumentServiceModel documentServiceModel);
 
-    boolean documentUpdate(DocumentServiceModel documentServiceModel);
-
     boolean documentDelete(DocumentServiceModel documentServiceModel);
 
     DocumentServiceModel findDocumentByTitle(String documentTitle);

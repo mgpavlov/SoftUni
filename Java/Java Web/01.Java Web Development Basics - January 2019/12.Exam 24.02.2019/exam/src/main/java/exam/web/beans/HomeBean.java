@@ -35,15 +35,11 @@ public class HomeBean extends BaseBean{
     @PostConstruct
     private void init() {
 
-        /*this.documents = this.documentService.findAllDocuments().stream()
-                .map(d -> modelMapper.map(d, DocumentHomeViewModel.class))
-                .collect(Collectors.toList());*/
-
         this.documents = this.documentService.findAllDocuments().stream()
                 .map(d -> this.modelMapper.map(d, DocumentHomeViewModel.class))
                 .collect(Collectors.toList());
 
-        this.documents.stream().forEach(d->{
+        this.documents.forEach(d->{
             String title =d.getTitle();
             if (title.length()>12){
                 title = d.getTitle().substring(0,12) + "...";
