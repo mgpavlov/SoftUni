@@ -32,7 +32,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean loginUser(UserServiceModel userServiceModel) {
-        UserServiceModel user = this.modelMapper.map(this.userRepository.findByUsername(userServiceModel.getUsername()), UserServiceModel.class);
+        UserServiceModel user = this.modelMapper
+                .map(this.userRepository.findByUsername(userServiceModel.getUsername()), UserServiceModel.class);
         return user != null && user.getPassword().equals(DigestUtils.sha256Hex(userServiceModel.getPassword()));
     }
 }

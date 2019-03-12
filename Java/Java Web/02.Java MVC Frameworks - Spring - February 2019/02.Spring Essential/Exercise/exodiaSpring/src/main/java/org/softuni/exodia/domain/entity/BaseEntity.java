@@ -1,8 +1,8 @@
 package org.softuni.exodia.domain.entity;
 
+import javax.persistence.Column;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -13,6 +13,7 @@ public abstract class BaseEntity {
 
     public BaseEntity() {
     }
+
     @Id
     @GeneratedValue(generator = "uuid-string")
     @GenericGenerator(name = "uuid-string", strategy = "org.hibernate.id.UUIDGenerator")

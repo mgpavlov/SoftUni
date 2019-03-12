@@ -67,7 +67,8 @@ public class DocumentController extends BaseController {
     }
 
     @PostMapping("/print/{id}")
-    public ModelAndView confirmDelete(@PathVariable(name = "id") String id, ModelAndView modelAndView, HttpSession session) {
+    public ModelAndView confirmDelete(@PathVariable(name = "id") String id,
+                                      ModelAndView modelAndView, HttpSession session) {
         if (!this.isLoggedIn(session)) {
             return this.view("redirect:/", modelAndView);
         }
