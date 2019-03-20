@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <div class="jumbotron re-background mt-4">
+            <h1>Project: Resident Evil</h1>
+            <hr color="white"/>
+            <p>Resident Evil is a system that registers virus spreads across the world. It is a significantly big project, and as such it will have several parts. In this exercise you will land the basis of the application. You will also create the majority of the visual design.</p>
+        </div>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <table class="table mt-3 mb-5 center-block w-75 mx-auto">
+            <h2 class="header mt-3 mb-4 center-block w-75 mx-auto">All Viruses</h2>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Magnitude</th>
+                <th scope="col">Released On</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="virus : ${allViruses}" th:object="${virus}">
+                <tr>
+                    <td scope="row" th:text="${virusStat.index+1}"></td>
+                    <td th:text="*{name}"></td>
+                    <td th:text="${#strings.toUpperCase(virus.getMagnitude())}"></td>
+                    <td th:text="${#temporals.format(virus.getReleasedOn(), 'dd-MMM-yyyy')}"></td>
+                    <td>
+                        <a class="btn btn-outline-secondary" th:href="@{/viruses/edit(id=${virus.id})}" th:text="Edit"></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-secondary" th:href="@{/viruses/delete(id=${virus.id})}" th:text="Delete"></a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</div>
+</body>
+</html>

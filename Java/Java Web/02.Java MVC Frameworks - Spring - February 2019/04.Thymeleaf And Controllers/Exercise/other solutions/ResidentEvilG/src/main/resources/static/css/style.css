@@ -1,0 +1,124 @@
+.navbar {
+    background-color: #940A45;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-text a {
+    color: #CD909C;
+}
+
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+    color: #CD909C;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #CD909C;
+    border-radius: .25rem;
+    margin: 0 0.25em;
+}
+
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+    color: #E7D1CC;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+    color: #CD909C;
+    background-color: #940A45;
+}
+
+.navbar .navbar-toggle {
+    border-color: #940A45;
+}
+
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+    background-color: #940A45;
+}
+
+.navbar .navbar-link:hover {
+    color: #CD909C;
+}
+
+@media (max-width: 575px) {
+    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #CD909C;
+        background-color: #940A45;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #CD909C;
+        background-color: #940A45;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #CD909C;
+        background-color: #940A45;
+    }
+}
+
+@media (max-width: 1199px) {
+    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #CD909C;
+        background-color: #940A45;
+    }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #CD909C;
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #CD909C;
+    background-color: #940A45;
+}
+
+.form-control {
+    border-color: #CD909C;
+}
+
+.error-text {
+    color: #940A45;
+    font-size: 0.8rem
+}
+
+.noresize {
+    resize: none;
+}
+
+.purple {
+    color: #940A45;
+}
+
+.bg-purple {
+    background-color: #940A45;
+}
+
+.my-button {
+    color: #CD909C;
+    background-color: #940A45;
+    border-color: #940A45;
+}
+
+.my-button:hover,
+.my-button:focus {
+    color: white;
+    background-color: #940A45;
+    border-color: #940A45;
+}
