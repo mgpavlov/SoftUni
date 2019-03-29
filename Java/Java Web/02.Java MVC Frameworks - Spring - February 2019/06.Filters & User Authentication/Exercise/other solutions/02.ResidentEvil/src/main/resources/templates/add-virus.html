@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:include="~{fragments/navbar}"></th:block>
+    </header>
+    <main>
+        <div class="container mt-4">
+            <h1>Spread a new Virus!</h1>
+            <br/>
+            <form th:action="@{/viruses/add}" method="post" th:object="${bindingModel}" >
+                <th:block th:include="~{fragments/virus-form}"></th:block>
+            </form>
+        </div>
+    </main>
+<br/>
+    <footer class="mt-4">
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+<script>
+    $('#submitButton').addClass('btn re-background').text('Spread!');
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<th:block th:fragment xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <nav class="navbar navbar-expand-lg re-background">
+        <a class="navbar-brand text-white" th:href="@{/}">Resident Evil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active"  sec:authorize="isAnonymous()">
+                    <a class="nav-link text-white" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item active" sec:authorize="isAnonymous()">
+                    <a class="nav-link text-white" th:href="@{/register}">Register</a>
+                </li>
+
+
+                <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
+                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Viruses
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+
+                        <a class="dropdown-item" th:href="@{/viruses/show}">Show</a>
+                        <th:block sec:authorize="hasAnyRole('ROLE_ADMIN, ROLE_MODERATOR')">
+                        <a class="dropdown-item"
+                           th:href="@{/viruses/add}">Add</a>
+                        </th:block>
+                    </div>
+                </li>
+                <li class="nav-item active" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link text-white" th:href="@{/admin}">Admin</a>
+                </li>
+                <li class="nav-item active" sec:authorize="isAuthenticated()">
+                    <a class="nav-link text-white" th:href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</th:block>

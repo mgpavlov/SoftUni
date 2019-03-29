@@ -1,0 +1,95 @@
+   <html xmlns:th="http://www.thymeleaf.org">
+    <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'text-danger'" >
+        <label for="inputVirusName">Name</label>
+        <input type="text" th:field="*{name}" class="form-control" id="inputVirusName">
+        <small id="nameHelper" th:each="error : ${#fields.errors('name')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'text-danger'">
+        <label for="inputVirusDescription">Description</label>
+        <textarea class="form-control" id="inputVirusDescription" rows="3" th:field="*{description}"></textarea>
+        <small id="descriptionHelper" th:each="error : ${#fields.errors('description')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('sideEffects')}? 'text-danger'">
+        <label for="inputVirusSideEffect">Side Effect</label>
+        <input type="text" class="form-control" th:field="*{sideEffects}" id="inputVirusSideEffect">
+        <small id="sideEffectsHelper" th:each="error : ${#fields.errors('sideEffects')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('creator')}? 'text-danger'">
+        <label for="inputVirusCreator">Creator</label>
+        <input type="text" class="form-control" th:field="*{creator}" id="inputVirusCreator">
+        <small id="creatorHelper" th:each="error : ${#fields.errors('creator')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group mt-4">
+        <div class="form-check" th:classappend="${#fields.hasErrors('deadly')}? 'text-danger'">
+            <input type="checkbox" class="form-check-input" th:field="*{deadly}" id="inputVirusDeadly">
+            <label class="form-check-label" for="inputVirusDeadly">Is Deadly?</label>
+            <small id="isDeadlyHelper" th:each="error : ${#fields.errors('deadly')}"
+                   th:text="${error}"></small>
+        </div>
+        <div class="form-check" th:classappend="${#fields.hasErrors('curable')}? 'text-danger'">
+            <input type="checkbox" class="form-check-input" th:field="*{curable}" id="inputVirusCurable">
+            <label class="form-check-label" for="inputVirusCurable">Is Curable?</label>
+            <small id="isCurableHelper" th:each="error : ${#fields.errors('curable')}"
+                   th:text="${error}"></small>
+        </div>
+
+    </div>
+    <div class="form-group mt-3">
+        <div class="form-check" th:classappend="${#fields.hasErrors('mutation')}? 'text-danger'"
+             th:each="mutation : ${T(softuni.residentevil.domain.entities.Mutation).values()}">
+            <input class="form-check-input" type="radio" name="inputVirusMutation1"
+                   id="inputVirusMutation1"
+                   th:value="${mutation}" th:text="${mutation}" th:field="*{mutation}">
+            <small id="mutationHelper" th:each="error : ${#fields.errors('mutation')}"
+                   th:text="${error}"></small>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="inputVirusMutation4" id="inputVirusMutation4"
+                   value="inputVirusMutation4" disabled>
+            <label class="form-check-label" for="inputVirusMutation4">
+                Save Humanity
+            </label>
+        </div>
+    </div>
+    <div class="form-group mt-3" th:classappend="${#fields.hasErrors('turnoverRate')}? 'text-danger'">
+        <label for="inputVirusTurnoverRate">Turnover Rate</label>
+        <input type="number" class="form-control" id="inputVirusTurnoverRate" th:field="*{turnoverRate}">
+        <small id="turnoverRateHelper" th:each="error : ${#fields.errors('turnoverRate')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('hoursUntilTurn')}? 'text-danger'">
+        <label for="inputVirusHoursUntilTurn">Hours Until Turn</label>
+        <input type="number" class="form-control" id="inputVirusHoursUntilTurn" th:field="*{hoursUntilTurn}">
+        <small id="hoursUntilTurnHelper" th:each="error : ${#fields.errors('hoursUntilTurn')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group">
+        <label for="inputVirusMagnitude">Magnitude</label>
+
+        <select class="form-control" id="inputVirusMagnitude" th:field="*{magnitude}">
+            <option th:each="magnitude : ${T(softuni.residentevil.domain.entities.Magnitude).values()}"
+                    th:value="${magnitude}" th:text="${magnitude}"></option>
+        </select>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('releasedOn')}? 'text-danger'">
+        <label for="inputVirusReleaseDate">Release Date</label>
+        <input type="date" class="form-control" id="inputVirusReleaseDate" th:field="*{releasedOn}">
+        <small id="releaseDateHelper" th:each="error : ${#fields.errors('releasedOn')}"
+               th:text="${error}"></small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('capitals')}? 'text-danger'">
+        <label for="inputVirusCapitals">Affected Capitals</label>
+        <select multiple class="form-control" id="inputVirusCapitals" th:field="*{capitals}" >
+            <option id="capitalOption" th:each="capital : ${capitalsList}"
+                    th:value="${capital.id}"
+                    th:text="${capital.name}"></option>
+        </select>
+        <small id="capitalHelper" th:each="error : ${#fields.errors('capitals')}"
+               th:text="${error}"></small>
+    </div>
+    <button id="submitButton"></button>
+   </html>

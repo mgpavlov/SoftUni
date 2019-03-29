@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:include="~{fragments/navbar}"></th:block>
+    </header>
+    <main>
+        <div class="container mt-4">
+            <h1>Login</h1>
+            <br/>
+            <form th:action="@{/login}" th:method="post">
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" class="form-control" id="inputUsername"
+                           name="username" placeholder="Enter username...">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword"
+                           name="password" placeholder="Enter password...">
+                </div>
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <button type="submit" id="submitButton" class="btn re-background">Login</button>
+            </form>
+        </div>
+    </main>
+    <br/>
+    <footer class="mt-4">
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+</body>
+</html>

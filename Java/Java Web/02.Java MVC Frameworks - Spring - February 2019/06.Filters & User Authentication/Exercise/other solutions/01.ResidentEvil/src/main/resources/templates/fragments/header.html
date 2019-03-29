@@ -1,0 +1,10 @@
+<header lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <div sec:authorize="isAuthenticated()">
+        <nav th:replace="fragments/navbar-user"></nav>
+    </div>
+    <div sec:authorize="isAnonymous()">
+        <nav th:replace="fragments/navbar-guest"></nav>
+    </div>
+</header>

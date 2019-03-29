@@ -1,0 +1,33 @@
+<main xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <table class="table mt-3 mb-5 center-block w-75 mx-auto">
+        <thead>
+        <tr>
+            <th scope="col" th:text="|#|"/>
+            <th scope="col" th:text="|Username|"/>
+            <th scope="col" th:text="|Email|"/>
+            <th scope="col" th:text="|Roles|"/>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user,iter : ${allUsers}" th:object="${user}">
+            <tr>
+                <td class="align-middle" scope="row" th:text="${iter.index + 1}"/>
+                <td class="align-middle" th:text="*{username}"/>
+                <td class="align-middle" th:text="*{email}"/>
+                <td class="align-middle">
+                    <p th:each="role : *{authorities}" th:object="${role}" th:text="*{authority}"></p>
+                </td>
+                <td class="align-middle" sec:authorize="hasRole('ADMIN')">
+                    <form  th:method="get" th:action="@{/user/edit/{username}(username=*{username})}">
+                        <button type="submit" class="btn btn-light btn-sm border-dark"
+                                th:text="Edit"/>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</main>

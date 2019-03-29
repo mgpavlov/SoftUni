@@ -1,0 +1,39 @@
+<main xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <table class="table mt-3 mb-5 center-block w-75 mx-auto">
+        <thead>
+        <tr>
+            <th scope="col" th:text="|#|"/>
+            <th scope="col" th:text="|Name|"/>
+            <th scope="col" th:text="|Magnitude|"/>
+            <th scope="col" th:text="|Released On|"/>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="virus,iter : ${allViruses}" th:object="${virus}">
+            <tr>
+                <td scope="row" th:text="${iter.index + 1}"/>
+                <td th:text="*{name}"/>
+                <td th:text="*{magnitude}"/>
+                <td th:text="${#temporals.format(virus.getReleasedOn(), 'dd-MMM-yyyy')}"/>
+                <div sec:authorize="hasRole('MODERATOR')">
+                    <td>
+                        <form th:method="get" th:action="@{/viruses/edit/{id}(id=*{id})}">
+                            <button type="submit" class="btn btn-light btn-sm border-dark"
+                                    th:text="Edit"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:method="get" th:action="@{/viruses/delete/{id}(id=*{id})}">
+                            <button type="submit" class="btn btn-light btn-sm border-dark"
+                                    th:text="Delete"/>
+                        </form>
+                    </td>
+                </div>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</main>

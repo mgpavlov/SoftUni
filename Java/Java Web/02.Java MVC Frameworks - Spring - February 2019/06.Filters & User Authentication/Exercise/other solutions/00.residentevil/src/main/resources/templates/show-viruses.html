@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <th:block th:replace="fragments/head"></th:block>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:replace="fragments/navigation"></th:block>
+    </header>
+
+    <main class="mt-4 mb-4">
+
+        <div class="container">
+            <div id="notifications">
+                <div id="loadingBox" class="notification">
+                    <span>Loading …</span>
+                </div>
+                <div id="infoBox" class="notification">
+                    <span>Info</span>
+                </div>
+                <div id="errorBox" class="notification">
+                    <span>Error</span>
+                </div>
+            </div>
+
+            <h1 class="d-inline-block mc-choice mc-colorize">Your Choice</h1>
+
+            <div class="float-right ml-5 mc-radio pt-3">
+                <div class="custom-control custom-radio mr-5 d-inline-block">
+                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                           value="viruses" required>
+                    <label class="custom-control-label font-weight-bold mc-colorize" for="customControlValidation2">Viruses</label>
+                </div>
+                <div class="custom-control custom-radio ml-5 mr-5 mb-3 d-inline-block">
+                    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked"
+                           value="capitals" required>
+                    <label class="custom-control-label font-weight-bold mc-colorize" for="customControlValidation3">Capitals</label>
+                    <div class="invalid-feedback">More example invalid feedback text</div>
+                </div>
+            </div>
+
+            <hr class="hr-2"/>
+
+            <table class="table table-hover">
+                <h2 class="mc-select-header text-center">Select, what data you want to visualize!</h2>
+            </table>
+
+            <hr class="hr-2"/>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <th:block th:replace="fragments/footer"></th:block>
+    </footer>
+</div>
+
+<script th:src="@{/scripts/tables-views.js}"></script>
+</body>
+</html>

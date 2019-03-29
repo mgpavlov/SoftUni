@@ -1,0 +1,23 @@
+<main xmlns:th="http://www.thymeleaf.org">
+    <div class="col-4 m-auto" th:object="${model}">
+        <h3 th:text="|Username : *{username}|"></h3>
+        <h3 th:text="|Email : *{email}|"></h3>
+        <form th:action="@{/user/edit}" method="post">
+            <input type="hidden" th:field="*{username}" />
+            <input type="hidden" th:field="*{email}" />
+            <fieldset class="form-check m-5" name="authorities">
+                <div  class="checkbox" th:each="role : ${allRoles}">
+                    <input class="m-3"
+                           name="authorities"
+                           type="checkbox"
+                           th:value="${role.id}"
+                           th:text="${role.authority}"
+                           th:checked="${model.authorities.contains(role)}"
+                    />
+                </div>
+
+            </fieldset>
+            <input type="submit" value="Submit now" />
+        </form>
+    </div>
+</main>

@@ -1,0 +1,14 @@
+<main xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <div class="jumbotron mt-3">
+        <div sec:authorize="isAuthenticated()">
+            <h4>Hello <span sec:authentication="name"></span>!</h4>
+            <h4 th:text="${#authentication.getName()}"></h4>
+
+
+        </div>
+        <h1>Project: Resident Evil</h1>
+        <hr/>
+        <h4>Resident Evil is a system that register virus spread across the word.</h4>
+    </div>
+</main>
+

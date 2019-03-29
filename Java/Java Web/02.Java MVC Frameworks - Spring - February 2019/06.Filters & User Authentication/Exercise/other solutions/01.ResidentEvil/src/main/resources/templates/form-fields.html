@@ -1,0 +1,147 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <div class="form-group" th:with="hasError=${#fields.hasErrors('name')}">
+        <label th:for="name" th:text="Name"></label>
+        <input type="text"
+               class="form-control"
+               minlength="3"
+               maxlength="10"
+               th:field="*{name}"
+               th:errorclass="form-error"
+
+        />
+        <p class="help-block error-text" th:if="${hasError}" th:errors="*{name}"></p>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description" th:text="Description"></label>
+        <textarea type="text"
+                  class="form-control noresize"
+                  rows="2" minlength="5"
+                  maxlength="100"
+                  th:field="*{description}"
+                  th:errorclass="form-error"
+        ></textarea>
+        <p class="help-block error-text" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+    </div>
+
+    <div class="form-group">
+        <label th:for="sideEffects" th:text="|Side effects|"></label>
+        <input type="text"
+               class="form-control"
+               maxlength="50"
+               th:field="*{sideEffects}"
+               th:errorclass="form-error"
+        />
+        <p class="help-block error-text" th:if="${#fields.hasErrors('sideEffects')}" th:errors="*{sideEffects}"></p>
+    </div>
+
+    <div class="form-group">
+        <label th:for="creator" th:text="Creator"/>
+        <input type="text"
+               class="form-control"
+               pattern="^Corp$|^corp$"
+               th:field="*{creator}"
+               th:errorclass="form-error"
+        />
+        <p class="help-block error-text" th:if="${#fields.hasErrors('creator')}" th:errors="*{creator}"></p>
+    </div>
+
+    <div class="checkbox">
+        <input type="checkbox"
+               th:field="*{deadly}"
+               th:errorclass="form-error"
+        />
+        <label th:for="deadly" th:text="|Is Deadly?|"/>
+    </div>
+
+    <div class="checkbox">
+        <input type="checkbox"
+               th:field="*{curable}"
+               th:errorclass="form-error"
+        />
+        <label th:for="curable" th:text="|Is Curable?|"/>
+    </div>
+
+    <th:block th:each="type : ${T(org.softuni.resident_evil.domain.enums.Mutation).values()}">        <div class="radio mt-3">
+
+            <input type="radio"
+                   th:field="*{mutation}"
+                   th:value="${type}"
+                   th:errorclass="form-error"
+            />
+        <label class="purple" th:for="mutation" th:text="${type}"/>
+        </div>
+    </th:block>
+    <div class="radio disabled">
+        <input type="radio"
+               disabled th:field="*{mutation}"
+               th:value="save_humanity"
+               th:errorclass="form-error"
+
+        />
+        <label th:for="mutation" th:text="|Save Humanity|"/>
+    </div>
+    <p class="help-block error-text" th:if="${#fields.hasErrors('mutation')}" th:errors="*{mutation}"/>
+
+    <div class="form-group">
+        <label th:for="turnoverRate" th:text="|Turnover rate|"></label>
+        <input type="number"
+               class="form-control"
+               min="0"
+               max="100"
+               th:field="*{turnoverRate}"
+               th:errorclass="form-error"
+
+        />
+        <p class="help-block error-text" th:if="${#fields.hasErrors('turnoverRate')}" th:errors="*{turnoverRate}"/>
+    </div>
+
+    <div class="form-group">
+        <label th:for="hoursUntilMutation" th:text="|Hours Until Turn|"></label>
+        <input type="number"
+               class="form-control"
+               min="1"
+               max="12"
+               th:field="*{hoursUntilMutation}"
+               th:errorclass="form-error"
+        />
+        <p class="help-block error-text" th:if="${#fields.hasErrors('hoursUntilMutation')}"
+           th:errors="*{hoursUntilMutation}"/>
+    </div>
+
+    <div class="form-group">
+        <label th:for="magnitude" th:text="Magnitude"></label>
+        <select class="form-control" th:field="*{magnitude}" th:errorclass="form-error">
+            <option th:each="type : ${T(org.softuni.resident_evil.domain.enums.Magnitude).values()}"
+                    th:value="${type}"
+                    th:text="${type}"></option>
+        </select>
+        <p class="help-block error-text" th:if="${#fields.hasErrors('magnitude')}" th:errors="*{magnitude}"/>
+    </div>
+
+
+    <div th:if="${showDate}">
+        <div class="form-group">
+            <label th:for="releasedOn" th:text="|Release Date|"/>
+            <input type="date" class="form-control" th:field="*{releasedOn}" th:errorclass="form-error">
+            <p class="help-block error-text" th:if="${#fields.hasErrors('releasedOn')}" th:errors="*{releasedOn}"/>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label th:for="capitals" th:text="|Affected Capitals|"></label>
+        <select multiple="multiple" class="form-control" name="capitals" th:errorclass="form-error">
+            <option th:each="capital : ${allCapitals}"
+                    th:value="${capital.id}"
+                    th:text="${capital.name}"
+                    th:selected="${model.capitals.contains(capital.id)}"
+            />
+        </select>
+        <p class="help-block error-text"  th:if="${#fields.hasErrors('capitals')}" th:errors="*{capitals}"/>
+    </div>
+
+    <div class="form-actions mx-auto text-center">
+        <button type="submit" class="btn btn-primary my-button" th:text="Submit"/>
+    </div>
+</th:block>

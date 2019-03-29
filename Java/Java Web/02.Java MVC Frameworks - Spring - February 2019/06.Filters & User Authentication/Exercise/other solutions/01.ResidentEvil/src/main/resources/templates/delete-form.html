@@ -1,0 +1,15 @@
+<main>
+    <form th:object="${model}"
+          th:action="@{/viruses/delete/{id}(id=*{id})}"
+          method="post"
+          class="mt-3 mb-5 center-block w-75 mx-auto">
+
+        <h2 class="header mb-4">Delete virus</h2>
+        <th:block th:replace="form-fields"/>
+    </form>
+</main>
+<script>
+    $('input').prop("disabled", true);
+    $('select').prop("disabled", true);
+</script>
+

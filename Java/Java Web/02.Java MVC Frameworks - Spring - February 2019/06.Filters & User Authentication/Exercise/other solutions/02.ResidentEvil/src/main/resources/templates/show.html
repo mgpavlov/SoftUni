@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:include="~{fragments/navbar}"></th:block>
+    </header>
+
+    <main>
+        <div class="container mt-4 bg-white">
+            <div><h1 th:id="customText">Your Choice</h1></div>
+            <div class="d-flex flex-row-reverse">
+                <form>
+                    <div class="form-check form-check-inline p-2">
+                        <input class="form-check-input" type="radio"
+                               name="option" onclick="showViruses()" id="virusesOption" value="option1"
+                               th:id="virusesOption">
+                        <label class="form-check-label" for="virusesOption">Viruses</label>
+                    </div>
+                    <div class="form-check form-check-inline p-2">
+                        <input class="form-check-input" type="radio"
+                               name="option" onclick="showCapitals()" id="capitalsOption" value="option2"
+                               th:id="captalsOption">
+                        <label class="form-check-label" for="capitalsOption">Capitals</label>
+                    </div>
+                </form>
+            </div>
+            <br/>
+            <div th:id="content-container" class="d-flex justify-content-center">
+                <h2>Select what data you want to visualize!</h2>
+            </div>
+        </div>
+    </main>
+    <br/>
+    <footer class="mt-4">
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/custom.js"></script>
+

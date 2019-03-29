@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <th:block th:include="~{fragments/navbar}"></th:block>
+    </header>
+
+    <main>
+        <div class="jumbotron re-background mt-4" sec:authorize="hasRole('ROLE_ADMIN')">
+            <h1>Users</h1>
+            <form th:action="@{/admin}" method="get" th:object="${viewModel}">
+                <table class="table mt-3 bg-white table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="user :${users}">
+                        <tr>
+                            <th scope="row" th:text="${userStat.index + 1}"></th>
+                            <td th:text="${user.username}"></td>
+                            <td>
+                                <a th:href="'/admin/edit/'+ ${user.id}" class="btn btn-outline-dark text-info">Edit</a>
+                            </td>
+                            <!--<td>-->
+                               <!--<a th:href="@{/admin/edit/{id}(id=${user.id})}" class="btn btn-outline-dark text-info">Edit</a>-->
+                            <!--</td>-->
+                        </tr>
+                    </th:block>
+
+                    <tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+    <br/>
+    <footer class="mt-4">
+        <th:block th:include="~{fragments/footer}"></th:block>
+    </footer>
+</div>
+</body>
+</html>
+<body>
+
+</body>
+</html>
