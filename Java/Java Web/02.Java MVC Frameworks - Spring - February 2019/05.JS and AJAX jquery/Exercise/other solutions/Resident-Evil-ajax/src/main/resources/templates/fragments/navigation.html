@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-re rounded">
+
+        <a class="navbar-brand nav-link-white" th:href="@{/}">Resident Evil</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-white active" th:href="@{/}">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Viruses
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/show}">Show</a>
+                        <a class="dropdown-item" th:href="@{/viruses/add}">Add</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</th:block>
+</html>

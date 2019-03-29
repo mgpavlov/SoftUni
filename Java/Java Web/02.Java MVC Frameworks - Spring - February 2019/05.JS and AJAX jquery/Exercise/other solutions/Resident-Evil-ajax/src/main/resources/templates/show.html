@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments/head"></th:block>
+    <script th:src="@{/js/show-table.js}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header>
+        <title>Show</title>
+        <th:block th:replace="fragments/navigation"></th:block>
+    </header>
+
+    <div class="mt-4 mb-4">
+        <div class="container">
+            <div class="d-flex">
+                <div class="mr-auto p-2">
+                    <h1 id="main-text">Your choice</h1>
+                    <h1 id="table-heading" class="d-none"></h1>
+                </div>
+                <div class="p-2 align-self-end mr-5">
+                    <label for="viruses" class="d-inline float-right mr-5 font-weight-bold"><input type="radio" name="radioAnswer"
+                                                                                  id="viruses" value="Viruses">Viruses
+                    </label>
+                </div>
+                <div class="p-2 align-self-end mr-5">
+                    <label for="viruses" class="d-inline float-right mr-5 font-weight-bold">
+                        <input type="radio" name="radioAnswer" id="capitals" value="Capitals">Capitals</label>
+
+                </div>
+            </div>
+            <div id="ajax-table"></div>
+            <h3 id="select-msg" class="text-center">Select, what data you want to visualize!</h3>
+        </div>
+        </main>
+        <footer>
+            <th:block th:replace="fragments/footer"></th:block>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

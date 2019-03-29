@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+}
+body{
+  position: relative;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding-bottom: 6rem;
+}
+.bg-re {
+  background-color: #900C45;
+  color: white;
+}
+
+.has-danger input, .has-danger textarea {
+  border-color: red;
+}
+
+.has-danger small {
+  color: red;
+}
+
+small.has-danger, label.has-danger{
+  color: red;
+}
+footer{
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding-left:15px;
+  padding-right:15px;
+}
