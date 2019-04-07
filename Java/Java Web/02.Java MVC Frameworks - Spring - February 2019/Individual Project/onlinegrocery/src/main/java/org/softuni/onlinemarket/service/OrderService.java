@@ -16,7 +16,9 @@ public interface OrderService {
 
     OrderServiceModel findOrderById(String id);
 
-    List<OrderServiceModel> findOrderByStatus(Status status);
+    List<OrderServiceModel> findOrdersByStatus(Status status);
 
     void changeOrderStatus(String id);
+
+    List<OrderServiceModel> findOrdersByCustomerAndStatus(String customerName, Status status);
 }

@@ -1,15 +1,10 @@
 package org.softuni.onlinemarket.web.controllers;
 
 import org.modelmapper.ModelMapper;
-import org.softuni.onlinemarket.domain.entities.Item;
-import org.softuni.onlinemarket.domain.entities.Product;
-import org.softuni.onlinemarket.domain.entities.User;
 import org.softuni.onlinemarket.domain.entities.enumeration.Status;
 import org.softuni.onlinemarket.domain.models.service.OrderServiceModel;
-import org.softuni.onlinemarket.domain.models.service.ProductServiceModel;
+import org.softuni.onlinemarket.domain.models.view.MyOrderViewModel;
 import org.softuni.onlinemarket.domain.models.view.OrderViewModel;
-import org.softuni.onlinemarket.domain.models.view.ProductDetailsViewModel;
-import org.softuni.onlinemarket.repository.UserRepository;
 import org.softuni.onlinemarket.service.OrderService;
 import org.softuni.onlinemarket.service.ProductService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,9 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
@@ -64,11 +56,32 @@ public class OrdersController extends BaseController {
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
-        List<OrderViewModel> viewModels = orderService.findOrdersByCustomer(principal.getName())
+        String customerName = principal.getName();
+        List<OrderViewModel> myOrders = orderService.findOrdersByCustomer(customerName)
                 .stream()
                 .map(o -> mapper.map(o, OrderViewModel.class))
                 .collect(Collectors.toList());
-        modelAndView.addObject("orders", viewModels);
+
+        List<MyOrderViewModel> myPendingOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Pending)
+                .stream()
+                .map(o -> mapper.map(o, MyOrderViewModel.class))
+                .collect(Collectors.toList());
+
+        List<MyOrderViewModel> myShippedOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Shipped)
+                .stream()
+                .map(o -> mapper.map(o, MyOrderViewModel.class))
+                .collect(Collectors.toList());
+
+        List<MyOrderViewModel> myDeliveredOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Delivered)
+                .stream()
+                .map(o -> mapper.map(o, MyOrderViewModel.class))
+                .collect(Collectors.toList());
+
+        modelAndView.addObject("orders", myOrders);
+
+        modelAndView.addObject("myPendingOrders", myPendingOrders);
+        modelAndView.addObject("myShippedOrders", myShippedOrders);
+        modelAndView.addObject("myDeliveredOrders", myDeliveredOrders);
 
         return view("order/my-orders", modelAndView);
     }
@@ -115,7 +128,7 @@ public class OrdersController extends BaseController {
         }
 
 
-        List<OrderViewModel> orders = this.orderService.findOrderByStatus(status1)
+        List<OrderViewModel> orders = this.orderService.findOrdersByStatus(status1)
                 .stream()
                 .map(order -> this.mapper.map(order, OrderViewModel.class))
                 .collect(Collectors.toList());

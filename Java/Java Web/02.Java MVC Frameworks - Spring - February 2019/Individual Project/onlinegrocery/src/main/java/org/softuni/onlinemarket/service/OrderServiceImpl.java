@@ -78,7 +78,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<OrderServiceModel> findOrderByStatus(Status status) {
+    public List<OrderServiceModel> findOrdersByStatus(Status status) {
         return this.orderRepository.findAllOrdersByStatus_OrderByFinishedOn(status)
                 .stream()
                 .map(o -> modelMapper.map(o, OrderServiceModel.class))
@@ -91,6 +91,14 @@ public class OrderServiceImpl implements OrderService {
         this.changeStatus(order);
         this.changeDeliveryDate(order);
         this.orderRepository.save(order);
+    }
+
+    @Override
+    public List<OrderServiceModel> findOrdersByCustomerAndStatus(String customerName, Status status) {
+        return this.orderRepository.findAllOrdersByCustomerUsernameAndStatus_OrderByFinishedOn(customerName, status)
+                .stream()
+                .map(o -> modelMapper.map(o, OrderServiceModel.class))
+                .collect(Collectors.toList());
     }
 
 
