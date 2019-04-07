@@ -5,6 +5,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 public abstract class BaseController {
+    
     protected ModelAndView view(String view, ModelAndView modelAndView) {
         modelAndView.setViewName(view);
 

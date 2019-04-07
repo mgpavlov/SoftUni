@@ -12,7 +12,7 @@ public class HomeController extends BaseController {
     @GetMapping("/")
     public ModelAndView renderIndexPage(Principal principal, ModelAndView modelAndView) {
         modelAndView.addObject("principal", principal);
-        return super.view("/index", modelAndView);
+        return view("/index", modelAndView);
     }
 
     @GetMapping("/home")
@@ -20,6 +20,6 @@ public class HomeController extends BaseController {
     public ModelAndView renderHomePage(Principal principal, ModelAndView modelAndView) {
         modelAndView.addObject("principal", principal);
 
-        return super.view("/index", modelAndView);
+        return view("/index", modelAndView);
     }
 }
