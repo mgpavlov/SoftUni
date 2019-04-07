@@ -50,8 +50,13 @@
                     <th:block th:each="order, iter : ${myDeliveredOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
                             <h4 class="w-75" th:text="|Order from *{#temporals.format(finishedOn, 'dd-MM-yyyy')}|"></h4>
-                            <a th:href="@{/order/all/details/{id}(id=*{id})}" class="btn btn-info w-25">Details</a>
-                            <!--styleClass="btn bg-panda text-white w-25"/>-->
+                            <!--<a th:href="@{/receipts/create/{id}(id=*{id})}" class="btn btn-info w-25">Acquire</a>-->
+                            <form th:action="@{/receipts/create}" th:method="post">
+                                <input type="hidden" name="orderId" th:value="*{id}">
+                                <div class="button-holder d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success">Acquire</button>
+                                </div>
+                            </form>
                         </div>
                     </th:block>
                 </div>
