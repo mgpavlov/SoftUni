@@ -1,0 +1,138 @@
+<header xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+        lang="en">
+    <nav class="navbar navbar-expand-lg re-background navbar-light rounded mb-5">
+
+        <th:block sec:authorize="isAnonymous()">
+            <a class="navbar-brand text-white" th:href="@{/}">Online Market</a>
+        </th:block>
+        <th:block sec:authorize="isAuthenticated()">
+            <a class="navbar-brand text-white" th:href="@{/home}">Online Market</a>
+        </th:block>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownCategories"
+                       role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories" id="product-categories">
+                        <a id="allProducts" class="dropdown-item categories-dropdown" href="/home">
+                            <i class="fas fa-angle-right"></i> All Products</a>
+                    </div>
+                </li>
+                <th:block sec:authorize="isAuthenticated()">
+                    <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
+                        <li class="nav-item active">
+                            <th:block sec:authorize="!hasRole('ROLE_MODERATOR')">
+                                <a class="nav-link text-white" th:href="@{/viruses/show}">Products<span
+                                        class="sr-only">(current)</span></a>
+                            </th:block>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProducts"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Manage Products
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+
+                                <a class="dropdown-item" th:href="@{/products/add}"><i
+                                        class="fas fa-cloud-upload-alt"></i> Add Product</a>
+                                <a class="dropdown-item" th:href="@{/categories/add}"><i
+                                        class="fas fa-cloud-upload-alt"></i> Add Category</a>
+                                <hr/>
+                                <a class="dropdown-item" th:href="@{/products/all}"><i
+                                        class="fas fa-cloud-upload-alt"></i> All Products</a>
+                                <a class="dropdown-item" th:href="@{/categories/all}"><i
+                                        class="fas fa-cloud-upload-alt"></i> All Categories</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" th:href="@{/order/all}">Manage Orders<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </th:block>
+                    <th:block sec:authorize="!hasRole('ROLE_MODERATOR')">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" th:href="@{/order/customer}">My Orders<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </th:block>
+                    <li class="nav-item active">
+                        <div class="dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" role="button" id="cartDropdown"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cart
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="cartDropdown">
+                                <th:block th:each="item : ${#session.getAttribute('shopping-cart')}" th:object="${item}">
+                                    <div class="dropdown-item" th:text="|*{product.name} x *{quantity}|"></div>
+                                </th:block>
+                                <div class="dropdown-divider"></div>
+                                <div class="text-center">
+                                    <a th:href="@{/cart/details}" class="btn btn-dark">Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/order/my}">My Orders</a>
+                    </li>
+                </th:block>
+            </ul>
+
+            <ul class="navbar-nav float-right pr-5">
+                <th:block sec:authorize="isAnonymous()">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-white active text-white" th:href="@{/login}"><i
+                                class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-white active text-white" th:href="@{/register}"><i
+                                class="fas fa-user-plus"></i> Register</a>
+                    </li>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-white active text-white" th:href="@{/admin/users}"><i
+                                    class="fas fa-users-cog"></i> Users List</a>
+                        </li>
+                    </th:block>
+                    <th:block sec:authorize="!hasRole('ROLE_MODERATOR')">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-white active text-white" th:href="@{/viruses/show}">
+                                <i class="fas fa-cart-arrow-down"></i> Bag</a>
+                        </li>
+                    </th:block>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProfile" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user" sec:authorize="hasRole('ROLE_USER')"></i>
+                            <span th:text="${#authentication.getName()}"></span>
+                        </a>
+
+                        <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownProfile">
+                            <a class="dropdown-item text-white custom-hover disabled" th:href="@{/user/profile/}"><i
+                                    class="fas fa-address-card"></i> Profile</a>
+                            <form th:action="@{/logout}" th:method="post">
+                                <button class="dropdown-item text-white custom-hover"><i
+                                        class="fas fa-sign-out-alt"></i> Logout
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                </th:block>
+            </ul>
+        </div>
+    </nav>
+    <script th:src="@{/js/header.js}"></script>
+</header>

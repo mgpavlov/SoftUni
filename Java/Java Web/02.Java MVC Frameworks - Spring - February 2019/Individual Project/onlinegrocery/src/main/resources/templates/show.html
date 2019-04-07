@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <div class="container re-background mt-3 rounded pt-2">
+            <h2 id="headline" class="d-inline-block">Your Choice</h2>
+            <div class="float-right ml-5 mc-radio pt-3">
+                <div class="custom-control custom-radio mr-5 d-inline-block">
+                    <input type="radio" class="custom-control-input" id="allViruses" name="inlineRadioOptions" value="allViruses" required>
+                    <label class="custom-control-label font-weight-bold" for="allViruses">Viruses</label>
+                </div>
+                <div class="custom-control custom-radio ml-5 mr-5 mb-3 d-inline-block">
+                    <input type="radio" class="custom-control-input" id="allCapitals" name="inlineRadioOptions" value="allCapitals" required>
+                    <label class="custom-control-label font-weight-bold" for="allCapitals">Capitals</label>
+                </div>
+            </div>
+
+            <hr class="hr" color="white"/>
+            <h2 class="mc-select-header text-center pb-3">Select, what data you want to visualize!</h2>
+        </div>
+        <script>
+            $('input[type=radio][name=inlineRadioOptions]').change(function () {
+                $('.mc-select-header').remove();
+                $('.hr').remove();
+                if (this.value === 'allViruses') {
+                    $('#headline').text("All Viruses");
+                    const table = $('#allVirusesTable').empty();
+                    table
+                        .append(
+                            $('<thead>')
+                                .append($('<tr>')
+                                    .append('<th scope="col">#</th>')
+                                    .append('<th scope="col">Name</th>')
+                                    .append('<th scope="col">Magnitude</th>')
+                                    .append('<th scope="col">Released On</th>')
+                                    .append('<th scope="col">')
+                                    .append('<th scope="col">')
+                                )
+                        )
+                        .append($('<tbody>')
+                        );
+
+                    let index = 1;
+                    fetch('http://localhost:8000/viruses/all')
+                        .then(res => res.json())
+                        .then(res => res.forEach((virus) => {
+                            table.find('tbody')
+                                .append($('<tr>')
+                                    .append($('<th scope="row">').text(index))
+                                    .append($('<td>').text(virus.name))
+                                    .append($('<td>').text(virus.magnitude.toUpperCase()))
+                                    .append($('<td>').text(virus.releasedOn))
+                                    .append($('<td>')
+                                        .append($('<a class="btn btn-outline-secondary re-background">')
+                                            .attr("href", `/viruses/edit?id=${virus.id}`)
+                                            .text("Edit"))
+                                    )
+                                    .append($('<td>')
+                                        .append($('<a class="btn btn-outline-secondary re-background">')
+                                            .attr("href", `/viruses/delete?id=${virus.id}`)
+                                            .text("Delete")))
+                                );
+                            index++;
+                        })).catch(err => console.log(err));
+                } else if (this.value === 'allCapitals') {
+                    $('#headline').text("All Capitals");
+                    const table = $('#allVirusesTable').empty();
+
+                    table
+                        .append($('<thead>')
+                            .append($('<tr>')
+                                .append($('<th scope="col">').text("#"))
+                                .append($('<th scope="col">').text("Name"))
+                                .append($('<th scope="col">').text("Latitude"))
+                                .append($('<th scope="col">').text("Longitude"))
+                            ))
+                        .append($('<tbody>')
+                        );
+
+                    fetch('http://localhost:8000/viruses/capitals')
+                        .then(res => res.json())
+                        .then(res => res.forEach((capital) => {
+                            table.find('tbody')
+                                .append($('<tr>')
+                                    .append($('<th scope="row">').text(capital.id))
+                                    .append($('<td>').text(capital.name))
+                                    .append($('<td>').text(capital.latitude))
+                                    .append($('<td>').text(capital.longitude))
+                                );
+                        })).catch(err => console.log(err));
+                }
+            })
+        </script>
+        <table id="allVirusesTable" class="table mt-3 mb-5 center-block w-75 mx-auto">
+        </table>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</div>
+</body>
+</html>
