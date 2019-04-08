@@ -83,7 +83,7 @@
     <th:block>
         <div th:replace="fragments/footer.html :: footer"></div>
     </th:block>
-    <script>
+    <!--<script>
         $('input[type=radio][name=inlineRadioOptions]').change(function () {
             $('#headline').text(this.value + " Orders");
             const table = $('#ordersTable').empty();
@@ -185,7 +185,8 @@
                     index++;
                 })).catch(err => console.log(err));
         })
-    </script>
+    </script>-->
+    <script th:src="@{/js/all-orders.js}"></script>
 </div>
 </body>
 </html>

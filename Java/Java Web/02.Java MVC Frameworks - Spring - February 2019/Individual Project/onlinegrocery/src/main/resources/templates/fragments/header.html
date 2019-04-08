@@ -2,8 +2,6 @@
         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
         lang="en">
     <nav class="navbar navbar-expand-lg re-background navbar-light rounded mb-5">
-
-        <!--Home button anonymous -> '/index' or authenticated -> '/home'-->
         <th:block sec:authorize="isAnonymous()">
             <a class="navbar-brand text-white" th:href="@{/}">Online Market</a>
         </th:block>
@@ -27,14 +25,13 @@
                         <i class="fas fa-list-ul"></i> Categories
                     </a>
                     <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownCategories" id="product-categories">
-                        <a id="allProducts" class="dropdown-item text-white custom-hover categories-dropdown" href="/home">
-                            <i class="fas fa-angle-right"></i> All Products</a>
+                        <a id="allProducts" class="dropdown-item text-white custom-hover categories-dropdown"
+                           href="/home"> <i class="fas fa-angle-right"></i> All Products</a>
                     </div>
                 </li>
 
                 <!--authenticated-->
                 <th:block sec:authorize="isAuthenticated()">
-
                     <!--moderator-->
                     <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
                         <li class="nav-item dropdown">
@@ -123,8 +120,6 @@
                                 </div>
                             </div>
                         </li>
-
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProfile" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

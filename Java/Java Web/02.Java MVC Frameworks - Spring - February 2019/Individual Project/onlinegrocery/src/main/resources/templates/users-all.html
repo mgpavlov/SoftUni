@@ -7,30 +7,28 @@
 
 <body>
 <div class="container-fluid">
-
     <th:block>
         <div th:replace="fragments/header.html :: header"></div>
     </th:block>
-
     <main>
-
         <div class="jumbotron bg-transparent w-75 m-auto">
-            <h1 class="d-inline-block mc-choice"><span class="mc-colorize">ADMIN Panel:</span> Users List</h1>
+            <h1 class="d-inline-block mc-choice"><span class="mc-colorize">
+                ADMIN Panel:</span> Users List</h1>
             <div class="row search float-right pr-2">
                 <div class="col-8 pl-0">
-                    <input type="text" th:name="username" class="form-control d-inline-block" id="inputUsername" placeholder="Username..."/>
+                    <input type="text" th:name="username"
+                           class="form-control d-inline-block" id="inputUsername"
+                           placeholder="Username..."/>
                 </div>
                 <div class="col-md-4 pl-0">
-                    <button class="btn bg-re" onclick="findUserByUsername()"><i class="fas fa-search"></i> Find</button>
+                    <button class="btn bg-re" onclick="findUserByUsername()">
+                        <i class="fas fa-search"></i> Find</button>
                 </div>
             </div>
             <hr class="hr-2"/>
-
             <table class="table table-hover"></table>
-
             <hr class="hr-2"/>
         </div>
-
     </main>
 
     <th:block>

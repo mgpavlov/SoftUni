@@ -45,7 +45,7 @@
     <div th:replace="fragments/footer.html :: footer"></div>
 </th:block>
 </body>
-<script th:inline="javascript">
+<!--<script th:inline="javascript">
     fetch('/categories/fetch')
         .then((response) => response.json())
         .then((json) => {
@@ -58,5 +58,6 @@
                         : `<option value="${category.id}">${category.name}</option>`));
         })
         .catch((err) => console.log(err));
-</script>
+</script>-->
+<script th:src="@{/js/edit-product.js}"></script>
 </html>
