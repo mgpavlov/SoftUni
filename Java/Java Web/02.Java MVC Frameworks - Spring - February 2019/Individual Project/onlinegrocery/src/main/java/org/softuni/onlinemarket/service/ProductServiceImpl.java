@@ -8,7 +8,9 @@ import org.softuni.onlinemarket.repository.ProductRepository;
 import org.softuni.onlinemarket.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +19,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final CategoryService categoryService;
+    private final CloudinaryService cloudinaryService;
     private final ProductValidationService productValidation;
     private final ModelMapper modelMapper;
 
@@ -24,22 +27,42 @@ public class ProductServiceImpl implements ProductService {
     public ProductServiceImpl(
             ProductRepository productRepository,
             CategoryService categoryService,
-            ProductValidationService productValidation,
+            CloudinaryService cloudinaryService, ProductValidationService productValidation,
             ModelMapper modelMapper) {
         this.productRepository = productRepository;
         this.categoryService = categoryService;
+        this.cloudinaryService = cloudinaryService;
         this.productValidation = productValidation;
         this.modelMapper = modelMapper;
     }
 
     @Override
-    public ProductServiceModel createProduct(ProductServiceModel productServiceModel) {
-        if(!productValidation.isValid(productServiceModel)) {
+    public ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException {
+        /*if(!productValidation.isValid(productServiceModel)) {
             throw new IllegalArgumentException();
-        }
+        }*/
+        productServiceModel.setCategories(
+                this.categoryService.findAllCategories()
+                        .stream()
+                        .filter(c -> productServiceModel.getCategories().contains(c.getId()))
+                        .collect(Collectors.toList())
+        );
 
         Product product = this.modelMapper.map(productServiceModel, Product.class);
-        product = this.productRepository.save(product);
+
+        product.setCategories(
+                productServiceModel.getCategories()
+                        .stream()
+                        .map(c -> this.modelMapper.map(c, Category.class))
+                        .collect(Collectors.toList())
+        );
+        product.setImageUrl(
+                this.cloudinaryService.uploadImage(image)
+        );
+        product = this.productRepository.saveAndFlush(product);
+        if (product == null){
+            return null;
+        }
         return this.modelMapper.map(product, ProductServiceModel.class);
     }
 

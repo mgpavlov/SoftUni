@@ -1,6 +1,7 @@
 package org.softuni.onlinemarket.domain.models.service;
 
 import org.softuni.onlinemarket.domain.entities.enumeration.Status;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -42,7 +43,7 @@ public class ProductServiceModel extends BaseServiceModel {
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return this.imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {

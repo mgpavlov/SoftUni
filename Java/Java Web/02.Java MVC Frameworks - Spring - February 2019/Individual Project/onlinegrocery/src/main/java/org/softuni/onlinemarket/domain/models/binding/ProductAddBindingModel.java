@@ -2,10 +2,14 @@ package org.softuni.onlinemarket.domain.models.binding;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductAddBindingModel {
+    private static final String VIRUS_NAME_LENGTH = "Virus name cannot be empty, should be between 3 and 10 symbols!";
+
 
     private String name;
     private String description;
@@ -15,7 +19,8 @@ public class ProductAddBindingModel {
 
     public ProductAddBindingModel() {
     }
-
+    @NotNull
+    @Size(min = 3, max = 10, message = VIRUS_NAME_LENGTH)
     public String getName() {
         return name;
     }

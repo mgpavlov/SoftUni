@@ -1,12 +1,14 @@
 package org.softuni.onlinemarket.service;
 
 import org.softuni.onlinemarket.domain.models.service.ProductServiceModel;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface ProductService {
 
-    ProductServiceModel createProduct(ProductServiceModel productServiceModel);
+    ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException;
 
     List<ProductServiceModel> findAllProducts();
 

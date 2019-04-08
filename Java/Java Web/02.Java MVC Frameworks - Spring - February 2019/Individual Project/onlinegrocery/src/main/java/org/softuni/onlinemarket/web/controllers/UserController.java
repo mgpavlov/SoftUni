@@ -38,13 +38,12 @@ public class UserController extends BaseController {
     public ModelAndView register(@ModelAttribute UserRegisterBindingModel bindingModel,
                                  ModelAndView modelAndView) {
         if (!bindingModel.getPassword().equals(bindingModel.getConfirmPassword())) {
-            return super.redirect("/register");
+            return redirect("/register");
         }
-
         UserServiceModel serviceModel = this.modelMapper.map(bindingModel, UserServiceModel.class);
         this.userService.register(serviceModel);
 
-        return super.redirect("/login");
+        return redirect("/login");
     }
 
     @GetMapping("/login")
@@ -54,7 +53,7 @@ public class UserController extends BaseController {
             modelAndView.addObject("error", "Error");
         }
 
-        return super.view("/login", modelAndView);
+        return view("/login", modelAndView);
     }
 
     @GetMapping("/user/profile/{id}")
@@ -76,7 +75,6 @@ public class UserController extends BaseController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView updateUserRole(@PathVariable("id") String id, String role, Principal principal) {
         UserServiceModel currentLoggedUser = this.userService.findByUsername(principal.getName());
-
         if (currentLoggedUser.getId().equals(id)) {
             return super.redirect("/user/profile/" + id);
         }
@@ -108,5 +106,4 @@ public class UserController extends BaseController {
         return byUsername == null ? new UsersViewModel()
                 : this.modelMapper.map(byUsername, UsersViewModel.class);
     }
-
 }

@@ -36,7 +36,8 @@ public class CartController extends BaseController {
     private final ModelMapper modelMapper;
 
     @Autowired
-    public CartController(ProductService productService, UserService userService, OrderService orderService, ModelMapper modelMapper) {
+    public CartController(ProductService productService, UserService userService,
+                          OrderService orderService, ModelMapper modelMapper) {
         this.productService = productService;
         this.userService = userService;
         this.orderService = orderService;
@@ -47,47 +48,47 @@ public class CartController extends BaseController {
     @PostMapping("/add-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToCartConfirm(String id, int quantity, HttpSession session) {
-        ProductDetailsViewModel product = this.modelMapper
-                .map(this.productService.findProductById(id), ProductDetailsViewModel.class);
+        ProductDetailsViewModel product = modelMapper
+                .map(productService.findProductById(id), ProductDetailsViewModel.class);
 
         ShoppingCartItem cartItem = new ShoppingCartItem();
         cartItem.setProduct(product);
         cartItem.setQuantity(quantity);
 
-        var cart = this.retrieveCart(session);
-        this.addItemToCart(cartItem, cart);
+        var cart = retrieveCart(session);
+        addItemToCart(cartItem, cart);
 
-        return super.redirect("/home");
+        return redirect("/home");
     }
 
     @GetMapping("/details")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView cartDetails(ModelAndView modelAndView, HttpSession session) {
-        var cart = this.retrieveCart(session);
-        modelAndView.addObject("totalPrice", this.calcTotal(cart));
+        var cart = retrieveCart(session);
+        modelAndView.addObject("totalPrice", calcTotal(cart));
 
-        return super.view("cart/cart-details", modelAndView);
+        return view("cart/cart-details", modelAndView);
     }
 
     @DeleteMapping("/remove-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView removeFromCartConfirm(String id, HttpSession session) {
-        this.removeItemFromCart(id, this.retrieveCart(session));
+        removeItemFromCart(id, retrieveCart(session));
 
-        return super.redirect("/cart/details");
+        return redirect("/cart/details");
     }
 
     @PostMapping("/checkout")
     public ModelAndView checkoutConfirm(HttpSession session, Principal principal) {
-        var cart = this.retrieveCart(session);
+        var cart = retrieveCart(session);
 
-        OrderServiceModel orderServiceModel = this.prepareOrder(cart, principal.getName());
-        this.orderService.createOrder(orderServiceModel);
-        return super.redirect("/home");
+        OrderServiceModel orderServiceModel = prepareOrder(cart, principal.getName());
+        orderService.createOrder(orderServiceModel);
+        return redirect("/home");
     }
 
     private List<ShoppingCartItem> retrieveCart(HttpSession session) {
-        this.initCart(session);
+        initCart(session);
 
         return (List<ShoppingCartItem>) session.getAttribute("shopping-cart");
     }
@@ -124,14 +125,14 @@ public class CartController extends BaseController {
 
     private OrderServiceModel prepareOrder(List<ShoppingCartItem> cart, String customerName) {
         OrderServiceModel orderServiceModel = new OrderServiceModel();
-        UserServiceModel customer = this.userService.findUserByUserName(customerName);
+        UserServiceModel customer = userService.findUserByUserName(customerName);
         orderServiceModel.setCustomer(customer);
         orderServiceModel.setShippingAddress(customer.getAddress());
         orderServiceModel.setStatus(Status.Pending);
 
         List<ProductServiceModel> products = new ArrayList<>();
         for (ShoppingCartItem item : cart) {
-            ProductServiceModel productServiceModel = this.modelMapper.map(item.getProduct(), ProductServiceModel.class);
+            ProductServiceModel productServiceModel = modelMapper.map(item.getProduct(), ProductServiceModel.class);
 
             for (int i = 0; i < item.getQuantity(); i++) {
                 products.add(productServiceModel);
@@ -139,7 +140,7 @@ public class CartController extends BaseController {
         }
 
         orderServiceModel.setProducts(products);
-        orderServiceModel.setTotalPrice(this.calcTotal(cart));
+        orderServiceModel.setTotalPrice(calcTotal(cart));
 
         return orderServiceModel;
     }
