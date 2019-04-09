@@ -9,14 +9,13 @@
         <relativePath/>
     </parent>
     <groupId>org.softuni</groupId>
-    <artifactId>onlinegrocery</artifactId>
+    <artifactId>onlinemarket</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Online Grocery</name>
     <description>Online Grocery offers the largest selection of specialty and
         fresh products available online in Bulgaria.
         We ship your order anywhere in the country!</description>
-
     <properties>
         <java.version>11</java.version>
     </properties>
