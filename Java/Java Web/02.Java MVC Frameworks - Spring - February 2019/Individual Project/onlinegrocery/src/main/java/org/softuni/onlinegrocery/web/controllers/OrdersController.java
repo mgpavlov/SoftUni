@@ -50,7 +50,7 @@ public class OrdersController extends BaseController {
         OrderServiceModel order = this.orderService.findOrderById(id);
         modelAndView.addObject("order", this.mapper.map(order, OrderViewModel.class));
 
-        return super.view("order/order-details", modelAndView);
+        return view("order/order-details", modelAndView);
     }
 
     @GetMapping("/my")
@@ -91,7 +91,7 @@ public class OrdersController extends BaseController {
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
         modelAndView.addObject("order", this.mapper.map(this.orderService.findOrderById(id), OrderViewModel.class));
 
-        return super.view("order/order-details", modelAndView);
+        return view("order/order-details", modelAndView);
     }
 
     @GetMapping("/change/status/{id}")
@@ -126,7 +126,6 @@ public class OrdersController extends BaseController {
                 status1 = Status.Acquired;
                 break;
         }
-
 
         List<OrderViewModel> orders = this.orderService.findOrdersByStatus(status1)
                 .stream()

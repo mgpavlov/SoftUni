@@ -9,11 +9,11 @@ import java.util.List;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, String> {
-    List<Order> findAllOrdersByCustomer_UsernameOrderByFinishedOn(String customerName);
+    List<Order> findAllOrdersByCustomer_UsernameOrderByIssuedOn(String customerName);
 
-    List<Order> findAllOrdersByStatus_OrderByFinishedOn(Status status);
+    List<Order> findAllOrdersByStatus_OrderByIssuedOn(Status status);
 
     /*List<Order> findAllOrdersByStatusAndAndCustomer_OrderByFinishedOn(Status status);*/
 
-    List<Order> findAllOrdersByCustomerUsernameAndStatus_OrderByFinishedOn(String customerName, Status status);
+    List<Order> findAllOrdersByCustomerUsernameAndStatus_OrderByIssuedOn(String customerName, Status status);
 }

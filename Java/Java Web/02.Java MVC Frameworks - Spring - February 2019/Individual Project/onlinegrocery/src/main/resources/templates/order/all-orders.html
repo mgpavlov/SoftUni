@@ -36,10 +36,6 @@
                            value="Delivered" required>
                     <label class="custom-control-label font-weight-bold" for="Delivered">Delivered</label>
                 </div>
-                <!--<div class="custom-control custom-radio ml-5 mr-5 mb-3 d-inline-block">
-                    <input type="radio" class="custom-control-input" id="Receipts" name="inlineRadioOptions" value="receipts" required>
-                    <label class="custom-control-label font-weight-bold" for="Receipts">Receipts</label>
-                </div>-->
             </div>
         </div>
         <h1 class="text-center text-dark mt-3" id="headline">All Orders</h1>
@@ -49,7 +45,7 @@
             <tr class="row mx-auto">
                 <th class="col-md-1 text-center">#</th>
                 <th class="col-md-3 text-center">Customer</th>
-                <th class="col-md-3 text-center">Date</th>
+                <th class="col-md-3 text-center">Issued On</th>
                 <th class="col-md-1 text-center">Total Price</th>
                 <th class="col-md-2 text-center">Order Status</th>
                 <th class="col-md-2 text-center">Actions</th>
@@ -61,7 +57,7 @@
                     <th class="col-md-1 text-center" th:text="${iter.index + 1}"></th>
                     <td class="col-md-3 text-center" th:text="*{customer.username}"></td>
                     <td class="col-md-3 text-center"
-                        th:text="*{#temporals.format(finishedOn, 'dd-MM-yyyy HH:mm') }"></td>
+                        th:text="*{#temporals.format(issuedOn, 'dd-MM-yyyy HH:mm')}"></td>
                     <td class="col-md-1 text-center" th:text="*{totalPrice}"></td>
                     <td class="col-md-2 text-center" th:text="*{status}"></td>
                     <td class="col-md-2 text-center mx-auto">
@@ -83,109 +79,6 @@
     <th:block>
         <div th:replace="fragments/footer.html :: footer"></div>
     </th:block>
-    <!--<script>
-        $('input[type=radio][name=inlineRadioOptions]').change(function () {
-            $('#headline').text(this.value + " Orders");
-            const table = $('#ordersTable').empty();
-            let index = 1;
-            if (this.value === "All" || this.value === "Delivered") {
-                table
-                    .append(
-                        $('<thead>')
-                            .append($('<tr id="headlineRow">')
-                                .append('<th class="text-center" scope="col">#</th>')
-                                .append('<th class="text-center" scope="col">Customer</th>')
-                                .append('<th class="text-center" scope="col">Date</th>')
-                                .append('<th class="text-center" scope="col">Total Price</th>')
-                                .append('<th class="text-center" scope="col">Order Status</th>')
-                                .append('<th class="text-center" scope="col">Products</th>')
-                            )
-                    )
-                    .append($('<tbody>')
-                    );
-            }else {
-                table
-                    .append(
-                        $('<thead>')
-                            .append($('<tr id="headlineRow">')
-                                .append('<th class="text-center" scope="col">#</th>')
-                                .append('<th class="text-center" scope="col">Customer</th>')
-                                .append('<th class="text-center" scope="col">Date</th>')
-                                .append('<th class="text-center" scope="col">Total Price</th>')
-                                .append('<th class="text-center" scope="col">Order Status</th>')
-                                .append('<th class="text-center" scope="col">Products</th>')
-                                .append('<th class="text-center" scope="col">Change Status</th>')
-                            )
-                    )
-                    .append($('<tbody>')
-                    );
-            }
-
-            fetch('/order/fetch/' + this.value)
-                .then(res => res.json())
-                .then(res => res.forEach((order) => {
-                    if (this.value === "All" || this.value === "Delivered") {
-                        table.find('tbody')
-                            .append($('<tr>')
-                                    .append($('<th class="text-center" scope="row">').text(index))
-                                    .append($('<td class="text-center">').text(order.customer.username))
-                                    .append($('<td class="text-center">').text(order.finishedOn))
-                                    .append($('<td class="text-center">').text(order.totalPrice))
-                                    .append($('<td class="text-center">').text(order.status))
-                                    .append($('<td class="text-center">')
-                                        .append($('<a class="btn btn-info mr-2">')
-                                            .attr("href", `/order/all/details/${order.id}`)
-                                            .text("Products")
-                                        )
-                                    )
-                            )
-                    } else if (this.value === "Pending") {
-                        table.find('tbody')
-                            .append($('<tr>')
-                                    .append($('<th class="text-center" scope="row">').text(index))
-                                    .append($('<td class="text-center">').text(order.customer.username))
-                                    .append($('<td class="text-center">').text(order.finishedOn))
-                                    .append($('<td class="text-center">').text(order.totalPrice))
-                                    .append($('<td class="text-center">').text(order.status))
-                                    .append($('<td class="text-center">')
-                                        .append($('<a class="btn btn-info mr-2">')
-                                            .attr("href", `/order/all/details/${order.id}`)
-                                            .text("Products")
-                                        )
-                                    )
-                                .append($('<td class="text-center">')
-                                    .append($('<a class="btn btn-info mr-2 changeStatusButton">')
-                                        .attr("href", `/order/change/status/${order.id}`)
-                                        .text("Ship")
-                                    )
-                                )
-                            )
-                    }else if (this.value === "Shipped") {
-                        table.find('tbody')
-                            .append($('<tr>')
-                                .append($('<th class="text-center" scope="row">').text(index))
-                                .append($('<td class="text-center">').text(order.customer.username))
-                                .append($('<td class="text-center">').text(order.finishedOn))
-                                .append($('<td class="text-center">').text(order.totalPrice))
-                                .append($('<td class="text-center">').text(order.status))
-                                .append($('<td class="text-center">')
-                                    .append($('<a class="btn btn-info mr-2">')
-                                        .attr("href", `/order/all/details/${order.id}`)
-                                        .text("Products")
-                                    )
-                                )
-                                .append($('<td class="text-center">')
-                                    .append($('<a class="btn btn-info mr-2 changeStatusButton">')
-                                        .attr("href", `/order/change/status/${order.id}`)
-                                        .text("Deliver")
-                                    )
-                                )
-                            )
-                    }
-                    index++;
-                })).catch(err => console.log(err));
-        })
-    </script>-->
     <script th:src="@{/js/all-orders.js}"></script>
 </div>
 </body>

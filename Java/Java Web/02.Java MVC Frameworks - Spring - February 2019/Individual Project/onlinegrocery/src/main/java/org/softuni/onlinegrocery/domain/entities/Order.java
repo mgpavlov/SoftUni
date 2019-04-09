@@ -14,7 +14,8 @@ public class Order extends BaseEntity {
     private List<Product> products;
     private User customer;
     private BigDecimal totalPrice;
-    private LocalDateTime finishedOn;
+    private LocalDateTime issuedOn;
+    private LocalDateTime statusDate;
     private Status status;
     private String shippingAddress;
 
@@ -63,13 +64,22 @@ public class Order extends BaseEntity {
         this.totalPrice = totalPrice;
     }
 
-    @Column(name = "finished_on")
-    public LocalDateTime getFinishedOn() {
-        return finishedOn;
+    @Column(name = "issued_on")
+    public LocalDateTime getIssuedOn() {
+        return this.issuedOn;
     }
 
-    public void setFinishedOn(LocalDateTime finishedOn) {
-        this.finishedOn = finishedOn;
+    public void setIssuedOn(LocalDateTime issuedOn) {
+        this.issuedOn = issuedOn;
+    }
+
+    @Column(name = "status_date")
+    public LocalDateTime getStatusDate() {
+        return this.statusDate;
+    }
+
+    public void setStatusDate(LocalDateTime statusDate) {
+        this.statusDate = statusDate;
     }
 
     @Column(name = "shipping_address", nullable = false)

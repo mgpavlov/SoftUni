@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void createOrder(OrderServiceModel orderServiceModel) {
-        orderServiceModel.setFinishedOn(LocalDateTime.now());
+        orderServiceModel.setIssuedOn(LocalDateTime.now());
         Order order = this.modelMapper.map(orderServiceModel, Order.class);
         this.orderRepository.save(order);
     }
@@ -59,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderServiceModel> findOrdersByCustomer(String username) {
-        return this.orderRepository.findAllOrdersByCustomer_UsernameOrderByFinishedOn(username)
+        return this.orderRepository.findAllOrdersByCustomer_UsernameOrderByIssuedOn(username)
                 .stream()
                 .map(o -> modelMapper.map(o, OrderServiceModel.class))
                 .collect(Collectors.toList());
@@ -69,12 +69,12 @@ public class OrderServiceImpl implements OrderService {
     public OrderServiceModel findOrderById(String id) {
         return this.orderRepository.findById(id)
                 .map(o -> this.modelMapper.map(o, OrderServiceModel.class))
-                .orElseThrow(() -> new OrderNotFoundException("Nqma Go"));
+                .orElseThrow(() -> new OrderNotFoundException("Order not found!"));
     }
 
     @Override
     public List<OrderServiceModel> findOrdersByStatus(Status status) {
-        return this.orderRepository.findAllOrdersByStatus_OrderByFinishedOn(status)
+        return this.orderRepository.findAllOrdersByStatus_OrderByIssuedOn(status)
                 .stream()
                 .map(o -> modelMapper.map(o, OrderServiceModel.class))
                 .collect(Collectors.toList());
@@ -83,14 +83,26 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void changeOrderStatus(String id) {
         Order order = this.orderRepository.findById(id).orElse(null);
-        this.changeStatus(order);
-        this.changeDeliveryDate(order);
+        /*switch (order.getStatus().name()){
+            case "Pending":
+                order.setStatusDate(LocalDateTime.now());
+                break;
+            case "Shipped":
+                break;
+            case "Delivered":
+                break;
+            case "Acquire":
+                break;
+        }*/
+        order.setStatusDate(LocalDateTime.now());
+        changeStatus(order);
+
         this.orderRepository.save(order);
     }
 
     @Override
     public List<OrderServiceModel> findOrdersByCustomerAndStatus(String customerName, Status status) {
-        return this.orderRepository.findAllOrdersByCustomerUsernameAndStatus_OrderByFinishedOn(customerName, status)
+        return this.orderRepository.findAllOrdersByCustomerUsernameAndStatus_OrderByIssuedOn(customerName, status)
                 .stream()
                 .map(o -> modelMapper.map(o, OrderServiceModel.class))
                 .collect(Collectors.toList());
@@ -98,12 +110,11 @@ public class OrderServiceImpl implements OrderService {
 
 
     private void changeStatus(Order order) {
-        order
-                .setStatus(Status.values()[Arrays.asList(Status.values()).indexOf(order.getStatus()) + 1]);
+        order.setStatus(Status.values()[Arrays.asList(Status.values()).indexOf(order.getStatus()) + 1]);
     }
 
-    private void changeDeliveryDate(Order order) {
+    /*private void changeDeliveryDate(Order order) {
         long days = (System.currentTimeMillis() % 21) + 20;
         order.setFinishedOn(LocalDateTime.now().plusDays(days));
-    }
+    }*/
 }

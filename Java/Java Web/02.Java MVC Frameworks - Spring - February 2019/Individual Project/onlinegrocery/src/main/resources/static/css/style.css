@@ -132,3 +132,12 @@ img.img-thumbnail {
     border: 3px solid #4fa36f;;
     border-radius: 7px;
 }
+
+.changeStatusButton {
+    background-color: #4fa36f;
+    color: white;
+}
+.btn {
+    background-color: #4fa36f;
+    color: white;
+}

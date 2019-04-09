@@ -10,7 +10,8 @@ public class OrderServiceModel extends BaseServiceModel {
     private List<ProductServiceModel> products;
     private UserServiceModel customer;
     private BigDecimal totalPrice;
-    private LocalDateTime finishedOn;
+    private LocalDateTime issuedOn;
+    private LocalDateTime statusDate;
     private String shippingAddress;
     private Status status;
 
@@ -41,12 +42,20 @@ public class OrderServiceModel extends BaseServiceModel {
         this.totalPrice = totalPrice;
     }
 
-    public LocalDateTime getFinishedOn() {
-        return finishedOn;
+    public LocalDateTime getIssuedOn() {
+        return this.issuedOn;
     }
 
-    public void setFinishedOn(LocalDateTime finishedOn) {
-        this.finishedOn = finishedOn;
+    public void setIssuedOn(LocalDateTime issuedOn) {
+        this.issuedOn = issuedOn;
+    }
+
+    public LocalDateTime getStatusDate() {
+        return this.statusDate;
+    }
+
+    public void setStatusDate(LocalDateTime statusDate) {
+        this.statusDate = statusDate;
     }
 
     public String getShippingAddress() {
