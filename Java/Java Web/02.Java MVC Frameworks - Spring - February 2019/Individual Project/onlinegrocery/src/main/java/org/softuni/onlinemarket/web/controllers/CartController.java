@@ -7,6 +7,7 @@ import org.softuni.onlinemarket.domain.models.service.ProductServiceModel;
 import org.softuni.onlinemarket.domain.models.service.UserServiceModel;
 import org.softuni.onlinemarket.domain.models.view.ProductDetailsViewModel;
 import org.softuni.onlinemarket.domain.models.view.ShoppingCartItem;
+import org.softuni.onlinemarket.service.CartService;
 import org.softuni.onlinemarket.service.OrderService;
 import org.softuni.onlinemarket.service.ProductService;
 import org.softuni.onlinemarket.service.UserService;
@@ -31,14 +32,16 @@ import java.util.List;
 public class CartController extends BaseController {
 
     private final ProductService productService;
+    private final CartService cartService;
     private final UserService userService;
     private final OrderService orderService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public CartController(ProductService productService, UserService userService,
+    public CartController(ProductService productService, CartService cartService, UserService userService,
                           OrderService orderService, ModelMapper modelMapper) {
         this.productService = productService;
+        this.cartService = cartService;
         this.userService = userService;
         this.orderService = orderService;
         this.modelMapper = modelMapper;
@@ -48,13 +51,10 @@ public class CartController extends BaseController {
     @PostMapping("/add-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToCartConfirm(String id, int quantity, HttpSession session) {
+
         ProductDetailsViewModel product = modelMapper
                 .map(productService.findProductById(id), ProductDetailsViewModel.class);
-
-        ShoppingCartItem cartItem = new ShoppingCartItem();
-        cartItem.setProduct(product);
-        cartItem.setQuantity(quantity);
-
+        ShoppingCartItem cartItem = cartService.createShoppingCartItem(product, quantity);
         var cart = retrieveCart(session);
         addItemToCart(cartItem, cart);
 

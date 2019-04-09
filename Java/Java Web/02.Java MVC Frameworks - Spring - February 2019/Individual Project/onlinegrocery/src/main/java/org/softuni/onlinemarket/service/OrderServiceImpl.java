@@ -1,17 +1,12 @@
 package org.softuni.onlinemarket.service;
 
 import org.modelmapper.ModelMapper;
-import org.softuni.onlinemarket.domain.entities.Item;
 import org.softuni.onlinemarket.domain.entities.Order;
-import org.softuni.onlinemarket.domain.entities.Product;
-import org.softuni.onlinemarket.domain.entities.User;
 import org.softuni.onlinemarket.domain.entities.enumeration.Status;
 import org.softuni.onlinemarket.domain.models.service.OrderServiceModel;
-import org.softuni.onlinemarket.domain.models.service.UserServiceModel;
 import org.softuni.onlinemarket.error.OrderNotFoundException;
 import org.softuni.onlinemarket.repository.OrderRepository;
 import org.softuni.onlinemarket.repository.ProductRepository;
-import org.softuni.onlinemarket.repository.UserRepository;
 import org.softuni.onlinemarket.validation.ProductValidationService;
 import org.softuni.onlinemarket.validation.UserValidationService;
 import org.springframework.stereotype.Service;
