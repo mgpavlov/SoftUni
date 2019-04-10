@@ -3,6 +3,7 @@ package org.softuni.onlinegrocery.service;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Category;
 import org.softuni.onlinegrocery.domain.entities.Product;
+import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
@@ -41,12 +42,13 @@ public class ProductServiceImpl implements ProductService {
         /*if(!productValidation.isValid(productServiceModel)) {
             throw new IllegalArgumentException();
         }*/
+        /*List<CategoryServiceModel> allCategories = this.categoryService.findAllCategories();
         productServiceModel.setCategories(
-                this.categoryService.findAllCategories()
+                allCategories
                         .stream()
                         .filter(c -> productServiceModel.getCategories().contains(c.getId()))
                         .collect(Collectors.toList())
-        );
+        );*/
 
         Product product = this.modelMapper.map(productServiceModel, Product.class);
 

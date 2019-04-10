@@ -1,11 +1,13 @@
 package org.softuni.onlinegrocery.domain.models.view;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class ShoppingCartItem implements Serializable {
 
     private ProductDetailsViewModel product;
     private int quantity;
+    private BigDecimal price;
 
     public ShoppingCartItem() {
     }
@@ -24,5 +26,13 @@ public class ShoppingCartItem implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public BigDecimal getPrice() {
+        return this.price.multiply(BigDecimal.valueOf(quantity));
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

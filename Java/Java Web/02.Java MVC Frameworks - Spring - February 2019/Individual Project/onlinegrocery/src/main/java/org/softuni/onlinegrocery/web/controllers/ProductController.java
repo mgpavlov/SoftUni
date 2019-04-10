@@ -54,7 +54,12 @@ public class ProductController extends BaseController {
                                           ModelAndView modelAndView) throws IOException {
 
         ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
-
+        productServiceModel.setCategories(
+                this.categoryService.findAllCategories()
+                        .stream()
+                        .filter(c -> model.getCategories().contains(c.getId()))
+                        .collect(Collectors.toList())
+        );
         if (model.getImage().isEmpty()){
             return loadAndReturnModelAndView(model, modelAndView);
         }

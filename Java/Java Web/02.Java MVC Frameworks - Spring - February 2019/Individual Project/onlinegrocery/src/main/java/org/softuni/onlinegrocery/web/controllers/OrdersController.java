@@ -3,8 +3,8 @@ package org.softuni.onlinegrocery.web.controllers;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
-import org.softuni.onlinegrocery.domain.models.view.MyOrderViewModel;
-import org.softuni.onlinegrocery.domain.models.view.OrderViewModel;
+import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
+import org.softuni.onlinegrocery.domain.models.view.*;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.service.ProductService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
@@ -47,10 +50,10 @@ public class OrdersController extends BaseController {
     @GetMapping("/all/details/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView allOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
-        OrderServiceModel order = this.orderService.findOrderById(id);
-        modelAndView.addObject("order", this.mapper.map(order, OrderViewModel.class));
+        OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
+        modelAndView.addObject("order", order);
 
-        return view("order/order-details", modelAndView);
+        return view("order/order-products", modelAndView);
     }
 
     @GetMapping("/my")
@@ -89,9 +92,39 @@ public class OrdersController extends BaseController {
     @GetMapping("/my/details/{id}")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
-        modelAndView.addObject("order", this.mapper.map(this.orderService.findOrderById(id), OrderViewModel.class));
+        OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
+        modelAndView.addObject("order", order);
 
         return view("order/order-details", modelAndView);
+    }
+
+    private OrderDetailsViewModel loadOrderDetailsViewModel(String id) {
+        OrderServiceModel orderServiceModel = this.orderService.findOrderById(id);
+        List<ProductServiceModel> products = orderServiceModel.getProducts();
+
+        OrderDetailsViewModel order = mapper.map(orderServiceModel, OrderDetailsViewModel.class);
+        List<ShoppingCartItem> items = new ArrayList<>();
+
+        Map<ProductServiceModel, Integer> productItems = new HashMap<>();
+
+        for (ProductServiceModel product: products) {
+            productItems.putIfAbsent(product, 0);
+            int quantity = productItems.get(product) + 1;
+            productItems.put(product, quantity);
+        }
+
+        for (Map.Entry<ProductServiceModel, Integer> productKVP : productItems.entrySet()) {
+            ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
+
+            shoppingCartItem.setQuantity(productKVP.getValue());
+            ProductDetailsViewModel productDetailsViewModel = mapper.map(productKVP.getKey(), ProductDetailsViewModel.class);
+            shoppingCartItem.setProduct(productDetailsViewModel);
+
+            items.add(shoppingCartItem);
+        }
+        order.setItems(items);
+
+        return order;
     }
 
     @GetMapping("/change/status/{id}")

@@ -2,7 +2,7 @@
     $(document).ready(() => {
         const $table = $('.table').empty();
         $table
-            .append($('<thead class="thead-dark font-weight-bold">')
+            .append($('<thead class="font-weight-bold">')
                 .append($('<tr>')
                     .append($('<th scope="col">').text("#"))
                     .append($('<th scope="col">').text("Username"))

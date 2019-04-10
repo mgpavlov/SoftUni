@@ -20,7 +20,7 @@
         <div class="d-flex justify-content-between">
             <div class="w-25 bg-white">
                 <h2 class="text-center">Pending</h2>
-                <div class="border-panda p-1">
+                <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myPendingOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
                             <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
@@ -33,7 +33,7 @@
 
             <div class="w-25 bg-white">
                 <h2 class="text-center">Shipped</h2>
-                <div class="border-panda p-1">
+                <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myShippedOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
                             <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
@@ -44,17 +44,17 @@
                 </div>
             </div>
 
-            <div class="w-25 bg-white">
+            <div class="w-40 bg-white">
                 <h2 class="text-center">Delivered</h2>
-                <div class="border-panda p-1">
+                <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myDeliveredOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
                             <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
-                            <!--<a th:href="@{/receipts/create/{id}(id=*{id})}" class="btn btn-info w-25">Acquire</a>-->
                             <form th:action="@{/receipts/create}" th:method="post">
                                 <input type="hidden" name="orderId" th:value="*{id}">
                                 <div class="button-holder d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success">Acquire</button>
+                                    <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info ml-1 mr-1">Details</a>
+                                    <button type="submit" class="btn btn-info">Acquire</button>
                                 </div>
                             </form>
                         </div>
