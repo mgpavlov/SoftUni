@@ -7,6 +7,7 @@ import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.*;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.service.ProductService;
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,7 @@ public class OrdersController extends BaseController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PageTitle("Orders")
     public ModelAndView getAllOrders(ModelAndView modelAndView) {
         List<OrderViewModel> viewModels = orderService.findAllOrders()
                 .stream()
@@ -58,6 +60,7 @@ public class OrdersController extends BaseController {
 
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
+    @PageTitle("My Orders")
     public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
         String customerName = principal.getName();
         List<OrderViewModel> myOrders = orderService.findOrdersByCustomer(customerName)
@@ -91,6 +94,7 @@ public class OrdersController extends BaseController {
 
     @GetMapping("/my/details/{id}")
     @PreAuthorize("isAuthenticated()")
+    @PageTitle("Order Details")
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
         OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
         modelAndView.addObject("order", order);

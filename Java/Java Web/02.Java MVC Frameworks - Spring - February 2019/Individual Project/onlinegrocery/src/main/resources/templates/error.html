@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+<div class="container-fluid">
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <h1 class="text-center text-dark">Something Went Wrong</h1>
+        <hr class="hr-2 bg-dark ">
+        <div class="text-center">
+            <h3 th:text="${message}" style="color: red;"></h3>
+        </div>
+        <div class="text-center">
+            <img th:src="'https://http.cat/' + ${statusCode}" alt="Cat">
+        </div>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</div>
+</body>
+</html>

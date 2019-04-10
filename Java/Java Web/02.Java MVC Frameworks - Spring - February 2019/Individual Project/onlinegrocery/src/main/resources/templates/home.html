@@ -10,6 +10,7 @@
         <div th:replace="fragments/header.html :: header"></div>
     </th:block>
     <main>
+        <h3 th:text="|${greeting}, ${#authentication.getPrincipal().getUsername()}!|" class="text-center"></h3>
         <div>
             <div class="row d-flex justify-content-between">
                 <div class="data col-md">

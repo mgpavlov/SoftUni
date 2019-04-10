@@ -5,6 +5,7 @@ import org.softuni.onlinegrocery.domain.models.binding.CategoryAddBindingModel;
 import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.service.CategoryService;
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -36,6 +37,7 @@ public class CategoryController extends BaseController {
     }
 
     @GetMapping("/add")
+    @PageTitle("Add Category")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     public ModelAndView addCategory(@ModelAttribute(name = "model") CategoryAddBindingModel categoryAddBindingModel,
                                     ModelAndView modelAndView) {
@@ -59,6 +61,7 @@ public class CategoryController extends BaseController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Categories")
     public ModelAndView allCategories(ModelAndView modelAndView) {
 
         List<CategoryViewModel> categories = categoryService.findAllCategories()
@@ -73,6 +76,7 @@ public class CategoryController extends BaseController {
 
     @GetMapping("/edit/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Edit Category")
     public ModelAndView editCategory(@PathVariable String id, ModelAndView modelAndView) {
 
         CategoryViewModel categoryViewModel = modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
@@ -100,6 +104,7 @@ public class CategoryController extends BaseController {
 
     @GetMapping("/delete/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Delete Category")
     public ModelAndView deleteCategory(@PathVariable String id, ModelAndView modelAndView) {
 
         CategoryViewModel categoryViewModel = modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);

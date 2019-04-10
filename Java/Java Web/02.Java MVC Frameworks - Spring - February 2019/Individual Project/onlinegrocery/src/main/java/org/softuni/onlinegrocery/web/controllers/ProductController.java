@@ -6,7 +6,10 @@ import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductAllViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductDetailsViewModel;
+import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
+import org.softuni.onlinegrocery.error.ProductNotFoundException;
 import org.softuni.onlinegrocery.service.*;
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -42,6 +45,7 @@ public class ProductController extends BaseController {
 
     @GetMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Add Products")
     public ModelAndView addProduct(@ModelAttribute(name = "productBindingModel") ProductAddBindingModel productBindingModel,
                                    ModelAndView modelAndView) {
         return loadAndReturnModelAndView(productBindingModel, modelAndView);
@@ -71,8 +75,10 @@ public class ProductController extends BaseController {
 
         return redirect("/products/all");
     }
+
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Products")
     public ModelAndView allProducts(ModelAndView modelAndView) {
         List<ProductAllViewModel> allProducts = productService.findAllProducts()
                 .stream()
@@ -85,6 +91,7 @@ public class ProductController extends BaseController {
 
     @GetMapping("/details/{id}")
     @PreAuthorize("isAuthenticated()")
+    @PageTitle("Product Details")
     public ModelAndView detailsProduct(@PathVariable String id, ModelAndView modelAndView) {
         ProductDetailsViewModel product = modelMapper.map(productService.findProductById(id), ProductDetailsViewModel.class);
         modelAndView.addObject("product", product);
@@ -94,6 +101,7 @@ public class ProductController extends BaseController {
 
     @GetMapping("/edit/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Edit Product")
     public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView) {
         return loadModelAndViewAndReturnView(id, modelAndView);
     }
@@ -112,6 +120,7 @@ public class ProductController extends BaseController {
 
     @GetMapping("/delete/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Delete Product")
     public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView) {
         return loadAndReturnModelAndView(id, modelAndView, "product/delete-product");
     }
@@ -179,5 +188,23 @@ public class ProductController extends BaseController {
         modelAndView.addObject("productId", id);
 
         return view(view, modelAndView);
+    }
+
+    @ExceptionHandler({ProductNotFoundException.class})
+    public ModelAndView handleProductNotFound(ProductNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
+    }
+
+    @ExceptionHandler({ProductNameAlreadyExistsException.class})
+    public ModelAndView handleProductNameALreadyExist(ProductNameAlreadyExistsException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 }

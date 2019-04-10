@@ -5,6 +5,8 @@ import org.softuni.onlinegrocery.domain.entities.Category;
 import org.softuni.onlinegrocery.domain.entities.Product;
 import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
+import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
+import org.softuni.onlinegrocery.error.ProductNotFoundException;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,18 +41,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException {
-        /*if(!productValidation.isValid(productServiceModel)) {
+        if(!productValidation.isValid(productServiceModel)) {
             throw new IllegalArgumentException();
-        }*/
-        /*List<CategoryServiceModel> allCategories = this.categoryService.findAllCategories();
-        productServiceModel.setCategories(
-                allCategories
-                        .stream()
-                        .filter(c -> productServiceModel.getCategories().contains(c.getId()))
-                        .collect(Collectors.toList())
-        );*/
+        }
+        Product product = this.productRepository
+                .findByName(productServiceModel.getName())
+                .orElse(null);
 
-        Product product = this.modelMapper.map(productServiceModel, Product.class);
+        if (product != null) {
+            throw new ProductNameAlreadyExistsException("Product already exists");
+        }
+
+        product = this.modelMapper.map(productServiceModel, Product.class);
 
         product.setCategories(
                 productServiceModel.getCategories()
@@ -80,13 +82,13 @@ public class ProductServiceImpl implements ProductService {
     public ProductServiceModel findProductById(String id) {
         return this.productRepository.findById(id)
                 .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
-                .orElseThrow(() -> new IllegalArgumentException());
+                .orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
     }
 
     @Override
     public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel) {
         Product product = this.productRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException());
+                .orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
 
         productServiceModel.setCategories(
                 this.categoryService.findAllCategories()

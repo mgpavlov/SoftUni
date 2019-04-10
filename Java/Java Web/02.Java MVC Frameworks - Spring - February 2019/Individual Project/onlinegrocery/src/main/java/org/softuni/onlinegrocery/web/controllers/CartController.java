@@ -11,6 +11,7 @@ import org.softuni.onlinegrocery.service.CartService;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.service.ProductService;
 import org.softuni.onlinegrocery.service.UserService;
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -57,12 +58,12 @@ public class CartController extends BaseController {
         ShoppingCartItem cartItem = cartService.createShoppingCartItem(product, quantity);
         var cart = retrieveCart(session);
         addItemToCart(cartItem, cart);
-
         return redirect("/home");
     }
 
     @GetMapping("/details")
     @PreAuthorize("isAuthenticated()")
+    @PageTitle("Bag Details")
     public ModelAndView cartDetails(ModelAndView modelAndView, HttpSession session) {
         var cart = retrieveCart(session);
         modelAndView.addObject("totalPrice", calcTotal(cart));

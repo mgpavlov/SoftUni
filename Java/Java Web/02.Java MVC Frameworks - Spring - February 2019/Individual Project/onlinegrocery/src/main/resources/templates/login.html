@@ -14,6 +14,11 @@
 
     <main class="mt-5">
         <div class="jumbotron bg-re-form w-25 m-auto">
+            <th:block th:if="${param.logout}">
+                <div class="text-center" style="color: #4fa36f">
+                    Successful logout
+                </div>
+            </th:block>
             <h2 class="text-center mc-colorize">Sing In</h2>
 
             <form th:action="@{/login}" th:method="POST">
@@ -36,6 +41,11 @@
 
                 <button type="submit" class="btn w-100 bg-re"><i class="fas fa-sign-in-alt"></i>Login</button>
             </form>
+            <th:block th:if="${param.error}">
+                <div class="text-center" style="color: red" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}">
+                    <!--Bad Credentials-->
+                </div>
+            </th:block>
 
         </div>
     </main>

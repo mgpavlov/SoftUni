@@ -5,6 +5,7 @@ import org.softuni.onlinegrocery.domain.models.service.UserServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.UsersViewModel;
 import org.softuni.onlinegrocery.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,7 @@ public class UserController extends BaseController {
 
     @GetMapping("/register")
     @PreAuthorize("isAnonymous()")
+    @PageTitle("Register")
     public ModelAndView renderRegister() {
         return super.view("/register");
     }
@@ -53,6 +55,7 @@ public class UserController extends BaseController {
 
     @GetMapping("/login")
     @PreAuthorize("isAnonymous()")
+    @PageTitle("Login")
     public ModelAndView login(@RequestParam(required = false) String error, ModelAndView modelAndView) {
         if (error != null) {
             modelAndView.addObject("error", "Error");
@@ -72,6 +75,7 @@ public class UserController extends BaseController {
 
     @GetMapping("/admin/users")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PageTitle("Users")
     public ModelAndView renderAllUsersPage() {
         return super.view("/users-all");
     }

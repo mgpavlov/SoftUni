@@ -5,6 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.service.CategoryService;
 
+import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping("/")
+    @PageTitle("Index")
     public ModelAndView renderIndexPage(Principal principal, ModelAndView modelAndView) {
         modelAndView.addObject("principal", principal);
         return view("/index", modelAndView);
@@ -35,6 +37,7 @@ public class HomeController extends BaseController {
 
     @GetMapping("/home")
     @PreAuthorize("isAuthenticated()")
+    @PageTitle("Home")
     public ModelAndView renderHomePage(Principal principal, ModelAndView modelAndView) {
         
         List<CategoryViewModel> categories = categoryService.findAllCategories().stream()

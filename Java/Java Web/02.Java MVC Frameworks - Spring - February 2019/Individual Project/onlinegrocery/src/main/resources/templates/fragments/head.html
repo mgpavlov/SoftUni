@@ -1,7 +1,8 @@
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Online Grocery</title>
+    <title th:text="${title}"></title>
+    <link rel="icon" th:href="${favicon}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/reset-css.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
