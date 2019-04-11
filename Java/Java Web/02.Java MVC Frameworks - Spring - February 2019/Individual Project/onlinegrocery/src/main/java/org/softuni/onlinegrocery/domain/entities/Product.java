@@ -13,6 +13,7 @@ public class Product extends BaseEntity {
     private BigDecimal price;
     private String imageUrl;
     private List<Category> categories;
+    private boolean isDeleted;
 
     public Product() {
     }
@@ -71,5 +72,13 @@ public class Product extends BaseEntity {
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public boolean isDeleted() {
+        return this.isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

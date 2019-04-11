@@ -12,7 +12,7 @@ public class ProductServiceModel extends BaseServiceModel {
     private BigDecimal price;
     private String imageUrl;
     private List<CategoryServiceModel> categories;
-    private Status status;
+    private boolean isDeleted;
 
     public ProductServiceModel() {
     }
@@ -57,11 +57,11 @@ public class ProductServiceModel extends BaseServiceModel {
         this.categories = categories;
     }
 
-    public Status getStatus() {
-        return this.status;
+    public boolean isDeleted() {
+        return this.isDeleted;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

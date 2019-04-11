@@ -146,3 +146,8 @@ img.img-thumbnail {
     background-color: cornflowerblue;
     color: white;
 }
+
+.text-center, .brush-script{
+    /*font-family: "Brush Script MT", serif*/
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}

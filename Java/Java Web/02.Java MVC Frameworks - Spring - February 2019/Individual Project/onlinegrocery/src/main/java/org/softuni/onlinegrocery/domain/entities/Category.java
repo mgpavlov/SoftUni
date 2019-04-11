@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public class Category extends BaseEntity {
 
     private String name;
+    private boolean isDeleted;
 
     public Category() {
     }
@@ -20,5 +21,13 @@ public class Category extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isDeleted() {
+        return this.isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

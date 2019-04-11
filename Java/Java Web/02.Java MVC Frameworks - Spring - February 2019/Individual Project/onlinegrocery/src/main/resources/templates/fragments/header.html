@@ -3,10 +3,10 @@
         lang="en">
     <nav class="navbar navbar-expand-lg re-background navbar-light rounded mb-5">
         <th:block sec:authorize="isAnonymous()">
-            <a class="navbar-brand text-white" th:href="@{/}">Online Market</a>
+            <a class="navbar-brand brush-script text-white" th:href="@{/}">Grocery Store</a>
         </th:block>
         <th:block sec:authorize="isAuthenticated()">
-            <a class="navbar-brand text-white" th:href="@{/home}">Online Market</a>
+            <a class="navbar-brand brush-script text-white" th:href="@{/home}">Grocery Store</a>
         </th:block>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,13 +19,13 @@
             <ul class="navbar-nav mr-auto">
                 <!--everyone-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownCategories"
+                    <a class="nav-link dropdown-toggle text-white brush-script" href="#" id="navbarDropdownCategories"
                        role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-list-ul"></i> Categories
                     </a>
                     <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownCategories" id="product-categories">
-                        <a id="allProducts" class="dropdown-item text-white custom-hover categories-dropdown"
+                        <a id="allProducts" class="dropdown-item text-white custom-hover categories-dropdown brush-script"
                            href="/products/category/All"> <i class="fas fa-angle-right"></i> All Products</a>
                     </div>
                 </li>
