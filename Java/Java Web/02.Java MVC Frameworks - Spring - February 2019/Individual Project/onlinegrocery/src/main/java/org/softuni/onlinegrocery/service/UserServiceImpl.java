@@ -53,13 +53,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public void register(UserServiceModel userServiceModel) {
+    public UserServiceModel register(UserServiceModel userServiceModel) {
         User userEntity = this.modelMapper.map(userServiceModel, User.class);
 
         String encodedPassword = bCryptPasswordEncoder.encode(userServiceModel.getPassword());
         userEntity.setPassword(encodedPassword);
         userEntity.setAuthorities(getRolesForRegistration());
-        this.userRepository.save(userEntity);
+
+        return modelMapper.map(this.userRepository.saveAndFlush(userEntity), UserServiceModel.class);
     }
 
     @Override

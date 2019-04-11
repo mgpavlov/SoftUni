@@ -1,7 +1,10 @@
 package org.softuni.onlinegrocery.domain.models.binding;
 
+import org.softuni.onlinegrocery.domain.entities.Category;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -15,7 +18,7 @@ public class ProductAddBindingModel {
     private String description;
     private BigDecimal price;
     private MultipartFile image;
-    private List<String> categories;
+    private List<Category> categories;
 
     public ProductAddBindingModel() {
     }
@@ -29,6 +32,7 @@ public class ProductAddBindingModel {
         this.name = name;
     }
 
+    @NotBlank
     public String getDescription() {
         return description;
     }
@@ -37,6 +41,7 @@ public class ProductAddBindingModel {
         this.description = description;
     }
 
+    @NotNull
     public BigDecimal getPrice() {
         return price;
     }
@@ -45,6 +50,7 @@ public class ProductAddBindingModel {
         this.price = price;
     }
 
+    @NotNull(message = "not empty")
     public MultipartFile getImage() {
         return image;
     }
@@ -53,11 +59,12 @@ public class ProductAddBindingModel {
         this.image = image;
     }
 
-    public List<String> getCategories() {
-        return categories;
+    @NotEmpty
+    public List<Category> getCategories() {
+        return this.categories;
     }
 
-    public void setCategories(List<String> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 }

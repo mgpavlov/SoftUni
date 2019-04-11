@@ -1,3 +1,4 @@
+/*
 package org.softuni.onlinegrocery.error;
 
 import org.springframework.http.HttpStatus;
@@ -21,3 +22,4 @@ public class ProductNameAlreadyExistsException extends RuntimeException {
         return statusCode;
     }
 }
+*/

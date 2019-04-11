@@ -96,7 +96,9 @@ public class CategoryController extends BaseController {
         if (bindingResult.hasErrors() ||
                 categoryService.editCategory(id, categoryServiceModel) == null) {
 
-            return loadAndReturnModelAndView(model, modelAndView);
+            modelAndView.addObject("model", model);
+            return view("category/edit-category", modelAndView);
+
         }
 
         return redirect("/categories/all");

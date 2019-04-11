@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    void register(UserServiceModel userServiceModel);
+    UserServiceModel register(UserServiceModel userServiceModel);
 
     List<UserServiceModel> findAllUsers();
 

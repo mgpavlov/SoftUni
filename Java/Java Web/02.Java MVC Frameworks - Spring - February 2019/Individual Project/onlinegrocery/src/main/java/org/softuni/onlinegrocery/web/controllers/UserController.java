@@ -9,9 +9,11 @@ import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,24 +34,21 @@ public class UserController extends BaseController {
     @GetMapping("/register")
     @PreAuthorize("isAnonymous()")
     @PageTitle("Register")
-    public ModelAndView renderRegister() {
-        return super.view("/register");
+    public ModelAndView renderRegister(@ModelAttribute(name = "model") UserRegisterBindingModel model,
+                                       ModelAndView modelAndView) {
+        modelAndView.addObject("model", model);
+        return view("register", modelAndView);
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@ModelAttribute UserRegisterBindingModel bindingModel,
-                                 ModelAndView modelAndView) {
-        bindingModel.setAddress(htmlEscape(bindingModel.getAddress()));
-        bindingModel.setEmail(htmlEscape(bindingModel.getEmail()));
-        bindingModel.setUsername(htmlEscape(bindingModel.getUsername()));
-        bindingModel.setPassword(htmlEscape(bindingModel.getPassword()));
-        bindingModel.setConfirmPassword(htmlEscape(bindingModel.getConfirmPassword()));
-        if (!bindingModel.getPassword().equals(bindingModel.getConfirmPassword())) {
-            return redirect("/register");
-        }
-        UserServiceModel serviceModel = this.modelMapper.map(bindingModel, UserServiceModel.class);
-        this.userService.register(serviceModel);
+    public ModelAndView register(@Valid @ModelAttribute(name = "model") UserRegisterBindingModel model,
+                                 BindingResult bindingResult, ModelAndView modelAndView) {
 
+        if (!model.getPassword().equals(model.getConfirmPassword()) || bindingResult.hasErrors() ||
+                this.userService.register(modelMapper.map(model, UserServiceModel.class))==null) {
+            modelAndView.addObject("model", model);
+            return view("register", modelAndView);
+        }
         return redirect("/login");
     }
 

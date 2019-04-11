@@ -1,23 +1,29 @@
-package org.softuni.onlinegrocery.domain.entities;
+package org.softuni.onlinegrocery.domain.models.binding;
 
-import javax.persistence.*;
+import org.softuni.onlinegrocery.domain.entities.Category;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
-@Table(name = "products")
-public class Product extends BaseEntity {
+public class ProductEditBindingModel {
+    private static final String VIRUS_NAME_LENGTH = "Virus name cannot be empty, should be between 3 and 10 symbols!";
 
     private String name;
     private String description;
     private BigDecimal price;
+    private MultipartFile image;
     private String imageUrl;
     private List<Category> categories;
 
-    public Product() {
+    public ProductEditBindingModel() {
     }
-
-    @Column(name = "product_name", nullable = false)
+    @NotNull
+    @Size(min = 3, max = 10, message = VIRUS_NAME_LENGTH)
     public String getName() {
         return name;
     }
@@ -26,7 +32,7 @@ public class Product extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "description", nullable = false)
+    @NotBlank
     public String getDescription() {
         return description;
     }
@@ -35,7 +41,7 @@ public class Product extends BaseEntity {
         this.description = description;
     }
 
-    @Column(name = "price", nullable = false, columnDefinition = "DECIMAL(10, 2) DEFAULT '0.00'")
+    @NotNull
     public BigDecimal getPrice() {
         return price;
     }
@@ -44,29 +50,26 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "image_url")
+    @NotNull(message = "not empty")
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
+
     public String getImageUrl() {
-        return imageUrl;
+        return this.imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
-    @ManyToMany(targetEntity = Category.class)
-    @JoinTable(
-            name = "products_categories",
-            joinColumns = @JoinColumn(
-                    name = "product_id",
-                    referencedColumnName = "id"
-            ),
-            inverseJoinColumns = @JoinColumn(
-                    name = "category_id",
-                    referencedColumnName = "id"
-            )
-    )
+    @NotEmpty
     public List<Category> getCategories() {
-        return categories;
+        return this.categories;
     }
 
     public void setCategories(List<Category> categories) {

@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "orders")
 public class Order extends BaseEntity {
 
-    private List<Product> products;
+    private List<OrderProduct> products;
     private User customer;
     private BigDecimal totalPrice;
     private LocalDateTime issuedOn;
@@ -34,11 +34,11 @@ public class Order extends BaseEntity {
                     referencedColumnName = "id"
             )
     )
-    public List<Product> getProducts() {
+    public List<OrderProduct> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(List<OrderProduct> products) {
         this.products = products;
     }
 

@@ -1,12 +1,10 @@
 package org.softuni.onlinegrocery.service;
 
 import org.modelmapper.ModelMapper;
-import org.softuni.onlinegrocery.domain.entities.Category;
 import org.softuni.onlinegrocery.domain.entities.Product;
-import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
-import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
-import org.softuni.onlinegrocery.error.ProductNotFoundException;
+/*import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
+import org.softuni.onlinegrocery.error.ProductNotFoundException;*/
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,25 +39,17 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException {
-        if(!productValidation.isValid(productServiceModel)) {
+        /*if(!productValidation.isValid(productServiceModel)) {
             throw new IllegalArgumentException();
-        }
-        Product product = this.productRepository
-                .findByName(productServiceModel.getName())
-                .orElse(null);
+        }*/
 
-        if (product != null) {
-            throw new ProductNameAlreadyExistsException("Product already exists");
+        if (productRepository.findByName(productServiceModel.getName())
+                .orElse(null) != null) {
+            /*throw new ProductNameAlreadyExistsException("Product already exists");*/
         }
 
-        product = this.modelMapper.map(productServiceModel, Product.class);
+        Product product = this.modelMapper.map(productServiceModel, Product.class);
 
-        product.setCategories(
-                productServiceModel.getCategories()
-                        .stream()
-                        .map(c -> this.modelMapper.map(c, Category.class))
-                        .collect(Collectors.toList())
-        );
         product.setImageUrl(
                 this.cloudinaryService.uploadImage(image)
         );
@@ -81,34 +71,77 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductServiceModel findProductById(String id) {
         return this.productRepository.findById(id)
-                .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
-                .orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
+                .map(p -> this.modelMapper.map(p, ProductServiceModel.class)).orElse(null);
+                /*.orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));*/
     }
 
-    @Override
-    public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel) {
-        Product product = this.productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
 
-        productServiceModel.setCategories(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException {
+        Product product = this.productRepository.findById(id).orElse(null);
+
+        productServiceModel.setId(id);
+        Product update = modelMapper.map(productServiceModel, Product.class);
+
+        if (product == null || update == null){
+            /*throw new ProductNotFoundException("Product with the given id was not found!");*/
+        }
+
+        if (isNewImageUploaded){
+            update.setImageUrl(
+                    this.cloudinaryService.uploadImage(image)
+            );
+        }else {
+            update.setImageUrl(product.getImageUrl());
+        }
+
+        /*productServiceModel.setCategories(
                 this.categoryService.findAllCategories()
                         .stream()
                         .filter(c -> productServiceModel.getCategories().contains(c.getId()))
                         .collect(Collectors.toList())
-        );
-
-        product.setName(productServiceModel.getName());
-        product.setDescription(productServiceModel.getDescription());
-        product.setPrice(productServiceModel.getPrice());
-        product.setCategories(
-                productServiceModel.getCategories()
-                        .stream()
-                        .map(c -> this.modelMapper.map(c, Category.class))
-                        .collect(Collectors.toList())
-        );
-
-        return this.modelMapper.map(this.productRepository.saveAndFlush(product), ProductServiceModel.class);
+        );*/
+        return this.modelMapper.map(this.productRepository.saveAndFlush(update), ProductServiceModel.class);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void deleteProduct(String id) {

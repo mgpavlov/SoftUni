@@ -126,12 +126,15 @@ public class CartController extends BaseController {
 
     private OrderServiceModel prepareOrder(List<ShoppingCartItem> cart, String customerName) {
         OrderServiceModel orderServiceModel = new OrderServiceModel();
+
         UserServiceModel customer = userService.findUserByUserName(customerName);
+
         orderServiceModel.setCustomer(customer);
         orderServiceModel.setShippingAddress(customer.getAddress());
         orderServiceModel.setStatus(Status.Pending);
 
         List<ProductServiceModel> products = new ArrayList<>();
+
         for (ShoppingCartItem item : cart) {
             ProductServiceModel productServiceModel = modelMapper.map(item.getProduct(), ProductServiceModel.class);
 

@@ -15,8 +15,6 @@ public class GreetingInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object handler, ModelAndView modelAndView) throws Exception {
 
-        System.out.println("Called after handler method request completion,"
-                + " before rendering the view");
         if (modelAndView == null) {
             modelAndView = new ModelAndView();
         } else {

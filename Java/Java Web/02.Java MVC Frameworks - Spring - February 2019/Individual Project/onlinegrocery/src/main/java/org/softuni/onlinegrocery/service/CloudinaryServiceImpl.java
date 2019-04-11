@@ -29,4 +29,9 @@ public class CloudinaryServiceImpl implements CloudinaryService {
                 .upload(file, new HashMap())
                 .get("url").toString();
     }
+
+    @Override
+    public MultipartFile findImageByUrl(String imageUrl) {
+        return null;
+    }
 }
