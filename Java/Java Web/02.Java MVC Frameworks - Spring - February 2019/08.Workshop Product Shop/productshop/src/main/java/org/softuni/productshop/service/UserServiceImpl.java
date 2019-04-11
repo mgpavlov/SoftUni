@@ -57,8 +57,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserServiceModel findUserByUserName(String username) {
-        return this.userRepository
-                .findByUsername(username)
+        return this.userRepository.findByUsername(username)
                 .map(u -> this.modelMapper.map(u, UserServiceModel.class))
                 .orElseThrow(() -> new UsernameNotFoundException("Username not found!"));
     }
@@ -72,7 +71,7 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("Incorrect password!");
         }
 
-        user.setPassword(!"".equals(userServiceModel.getPassword()) ?
+        user.setPassword(userServiceModel.getPassword() != null ?
                 this.bCryptPasswordEncoder.encode(userServiceModel.getPassword()) :
                 user.getPassword());
         user.setEmail(userServiceModel.getEmail());
@@ -82,9 +81,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserServiceModel> findAllUsers() {
-        return this.userRepository.findAll().stream()
-                .map(u -> this.modelMapper.map(u, UserServiceModel.class))
-                .collect(Collectors.toList());
+        return this.userRepository.findAll().stream().map(u -> this.modelMapper.map(u, UserServiceModel.class)).collect(Collectors.toList());
     }
 
     @Override

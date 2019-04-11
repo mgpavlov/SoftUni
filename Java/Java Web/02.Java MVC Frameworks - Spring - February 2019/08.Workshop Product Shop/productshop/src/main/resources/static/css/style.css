@@ -25,4 +25,13 @@ img.img-thumbnail {
     max-height: 40px;
 }
 
+.btn-width {
+    width: 120px;
+    margin: 5px;
+}
+
+.error {
+    color: red;
+    font-family: "Harlow Solid Italic";
+}
 

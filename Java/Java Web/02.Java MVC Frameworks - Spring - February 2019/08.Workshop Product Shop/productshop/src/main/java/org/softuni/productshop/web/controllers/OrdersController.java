@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.softuni.productshop.domain.models.view.OrderViewModel;
+import org.softuni.productshop.web.annotations.PageTitle;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,52 +19,68 @@ import org.softuni.productshop.service.OrderService;
 import org.softuni.productshop.service.ProductService;
 
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class OrdersController extends BaseController {
+
     private final ProductService productService;
     private final OrderService orderService;
     private final ModelMapper mapper;
 
     public OrdersController(
-        ProductService productService,
-        OrderService orderService,
-        ModelMapper modelMapper
-    ){
+            ProductService productService,
+            OrderService orderService,
+            ModelMapper modelMapper
+    ) {
         this.productService = productService;
         this.orderService = orderService;
         this.mapper = modelMapper;
     }
 
-    @GetMapping("/product/{id}")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView orderProduct(@PathVariable String id, ModelAndView modelAndView) {
-        ProductServiceModel serviceModel = productService.findProductById(id);
-        ProductDetailsViewModel viewModel = mapper.map(serviceModel, ProductDetailsViewModel.class);
-        modelAndView.addObject("product", viewModel);
-        return view("order/product", modelAndView);
-    }
-
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PageTitle("All Orders")
     public ModelAndView getAllOrders(ModelAndView modelAndView) {
-        List<OrderViewModel> viewModels = orderService.findAllOrders()
+        List<OrderViewModel> orderViewModels = orderService.findAllOrders()
                 .stream()
                 .map(o -> mapper.map(o, OrderViewModel.class))
                 .collect(Collectors.toList());
-        modelAndView.addObject("orders", viewModels);
-        return view("order/list-orders", modelAndView);
+
+        modelAndView.addObject("orders", orderViewModels);
+
+        return view("order/all-orders", modelAndView);
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/all/details/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PageTitle("Orders Details")
+    public ModelAndView allOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
+        OrderViewModel orderViewModel = this.mapper.map(this.orderService.findOrderById(id), OrderViewModel.class);
+        modelAndView.addObject("order", orderViewModel);
+
+        return super.view("order/order-details", modelAndView);
+    }
+
+    @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView getCustomerOrders(ModelAndView modelAndView, Principal principal) {
-        String username = principal.getName();
-        List<OrderViewModel> viewModels = orderService.findOrdersByCustomer(username)
+    @PageTitle("My Orders")
+    public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
+        List<OrderViewModel> orderViewModels = orderService.findOrdersByCustomer(principal.getName())
                 .stream()
                 .map(o -> mapper.map(o, OrderViewModel.class))
                 .collect(Collectors.toList());
-        modelAndView.addObject("orders", viewModels);
 
-        return view("order/list-orders", modelAndView);
+        modelAndView.addObject("orders", orderViewModels);
+
+        return view("order/all-orders", modelAndView);
+    }
+
+    @GetMapping("/my/details/{id}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Orders Details")
+    public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
+        OrderViewModel orderViewModel = this.mapper.map(this.orderService.findOrderById(id), OrderViewModel.class);
+        modelAndView.addObject("order", orderViewModel);
+
+        return super.view("order/order-details", modelAndView);
     }
 }

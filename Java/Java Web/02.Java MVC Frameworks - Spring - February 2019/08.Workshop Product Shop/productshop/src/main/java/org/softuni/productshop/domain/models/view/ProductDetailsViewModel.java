@@ -3,11 +3,13 @@ package org.softuni.productshop.domain.models.view;
 import java.math.BigDecimal;
 
 public class ProductDetailsViewModel {
+
     private String id;
     private String name;
     private String description;
     private BigDecimal price;
     private String imageUrl;
+    private BigDecimal discountedPrice;
 
     public ProductDetailsViewModel() {
     }
@@ -50,5 +52,13 @@ public class ProductDetailsViewModel {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public BigDecimal getDiscountedPrice() {
+        return discountedPrice;
+    }
+
+    public void setDiscountedPrice(BigDecimal discountedPrice) {
+        this.discountedPrice = discountedPrice;
     }
 }
