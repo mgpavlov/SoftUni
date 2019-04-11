@@ -9,7 +9,6 @@ class="product-image-home img-thumbnail px-auto" alt="Image not loaded..."/></a>
             + `<h5 class="text-center font-weight-bold">Price: ${product.price.toFixed(2)}</h5>`
             + '</div>'
     }
-
     fetch('/products/fetch/sale')
         .then((response) => response.json())
         .then((json) => {

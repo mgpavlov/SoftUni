@@ -7,6 +7,7 @@ public class UsersViewModel {
     private String id;
     private String username;
     private String email;
+    private String address;
     private Set<RoleViewModel> authorities;
 
     public UsersViewModel() {
@@ -42,5 +43,13 @@ public class UsersViewModel {
 
     public void setAuthorities(Set<RoleViewModel> authorities) {
         this.authorities = authorities;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

@@ -137,7 +137,12 @@ img.img-thumbnail {
     background-color: #4fa36f;
     color: white;
 }
-.btn {
+/*.btn {
     background-color: #4fa36f;
+    color: white;
+}*/
+
+.btn-cornflowerblue {
+    background-color: cornflowerblue;
     color: white;
 }

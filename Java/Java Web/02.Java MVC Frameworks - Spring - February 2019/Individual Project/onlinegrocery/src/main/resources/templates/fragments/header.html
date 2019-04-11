@@ -26,7 +26,7 @@
                     </a>
                     <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownCategories" id="product-categories">
                         <a id="allProducts" class="dropdown-item text-white custom-hover categories-dropdown"
-                           href="/home"> <i class="fas fa-angle-right"></i> All Products</a>
+                           href="/products/category/All"> <i class="fas fa-angle-right"></i> All Products</a>
                     </div>
                 </li>
 
@@ -65,7 +65,7 @@
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-white" th:href="@{/receipts/all}"><i class="fas fa-tools"></i> Manage Receipts<span
+                            <a class="nav-link text-white" th:href="@{/receipts/all}"><i class="fas fa-file-invoice-dollar"></i> Manage Receipts<span
                                     class="sr-only">(current)</span></a>
                         </li>
                     </th:block>
@@ -101,7 +101,7 @@
                             <a class="nav-link nav-link-white active text-white" th:href="@{/order/my}"><i class="fas fa-truck"></i> My Orders</a>
                         </li>
                     <li class="nav-item active">
-                        <a class="nav-link nav-link-white active text-white" th:href="@{/receipts/my}"><i class="fas fa-truck"></i> My Receipts</a>
+                        <a class="nav-link nav-link-white active text-white" th:href="@{/receipts/my}"><i class="fas fa-file-invoice-dollar"></i> My Receipts</a>
                     </li>
                         <li class="nav-item active">
                             <div class="dropdown">
@@ -128,8 +128,9 @@
                         </a>
 
                         <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownProfile">
-                            <a class="dropdown-item text-white custom-hover" th:href="@{/user/profile}"><i
-                                    class="fas fa-address-card"></i> Profile</a>
+                            <a class="dropdown-item text-white custom-hover"
+                               th:href="@{/user/profile/{username}(username=${#authentication.getPrincipal().getUsername()})}">
+                                <i class="fas fa-address-card"></i> Profile</a>
                             <form th:action="@{/logout}" th:method="post">
                                 <button class="dropdown-item text-white custom-hover"><i
                                         class="fas fa-sign-out-alt"></i> Logout

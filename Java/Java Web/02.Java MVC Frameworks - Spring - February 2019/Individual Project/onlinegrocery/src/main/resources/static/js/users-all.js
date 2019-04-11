@@ -24,7 +24,7 @@
                         .append($('<td>').text(parseRoles(user.authorities)))
                         .append($('<td>')
                             .append($('<a class="btn bg-re"><i class="fas fa-user-edit"></i> Profile</a>')
-                                .attr("href", "/user/profile/" + user.id)
+                                .attr("href", "/user/profile/" + user.username)
                         ))
                     );
             })).catch(err => console.log(err));

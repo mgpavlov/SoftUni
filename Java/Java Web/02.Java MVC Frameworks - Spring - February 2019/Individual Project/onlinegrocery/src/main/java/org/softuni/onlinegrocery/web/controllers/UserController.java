@@ -63,9 +63,22 @@ public class UserController extends BaseController {
         return view("/login", modelAndView);
     }
 
-    @GetMapping("/user/profile/{id}")
+    /*@GetMapping("/user/profile/{id}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("User Profile")
     public ModelAndView renderProfilePage(@PathVariable("id") String id, ModelAndView modelAndView) {
         UserServiceModel userServiceModel = this.userService.findById(id);
+        UsersViewModel usersViewModel = this.modelMapper.map(userServiceModel, UsersViewModel.class);
+        modelAndView.addObject("viewModel", usersViewModel);
+
+        return super.view("/profile", modelAndView);
+    }*/
+
+    @GetMapping("/user/profile/{username}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("User Profile")
+    public ModelAndView renderProfilePageByUsername(@PathVariable("username") String username, ModelAndView modelAndView) {
+        UserServiceModel userServiceModel = this.userService.findByUsername(username);
         UsersViewModel usersViewModel = this.modelMapper.map(userServiceModel, UsersViewModel.class);
         modelAndView.addObject("viewModel", usersViewModel);
 
@@ -83,8 +96,12 @@ public class UserController extends BaseController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView updateUserRole(@PathVariable("id") String id, String role, Principal principal) {
         UserServiceModel currentLoggedUser = this.userService.findByUsername(principal.getName());
+        UserServiceModel targetUser = userService.findById(id);
+        if (role == null){
+            return super.redirect("/user/profile/" + targetUser.getUsername());
+        }
         if (currentLoggedUser.getId().equals(id)) {
-            return super.redirect("/user/profile/" + id);
+            return super.redirect("/user/profile/" + principal.getName());
         }
 
         try {
@@ -92,7 +109,7 @@ public class UserController extends BaseController {
         } catch (IllegalArgumentException iae) {
             iae.printStackTrace();
         }
-        return super.redirect("/user/profile/" + id);
+        return super.redirect("/user/profile/" + targetUser.getUsername());
     }
 
     @GetMapping("/api/users")

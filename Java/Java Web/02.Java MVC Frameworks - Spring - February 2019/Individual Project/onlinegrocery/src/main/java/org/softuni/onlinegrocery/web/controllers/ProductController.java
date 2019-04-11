@@ -22,6 +22,7 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -204,20 +205,27 @@ public class ProductController extends BaseController {
         return redirect("/products/all");
     }
 
-    @GetMapping("/fetch/{category}")
-    @ResponseBody
-    public List<ProductAllViewModel> fetchByCategory(@PathVariable String category) {
-        if(category.equals("all")) {
-            return productService.findAllProducts()
+    @GetMapping("/category/{category}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView fetchByCategory(@PathVariable String category, ModelAndView modelAndView) {
+        List<ProductAllViewModel> products = new ArrayList<>();
+
+        if(category.equals("All")) {
+            products = productService.findAllProducts()
+                    .stream()
+                    .map(product -> modelMapper.map(product, ProductAllViewModel.class))
+                    .collect(Collectors.toList());
+        }else {
+            products = productService.findAllByCategory(category)
                     .stream()
                     .map(product -> modelMapper.map(product, ProductAllViewModel.class))
                     .collect(Collectors.toList());
         }
 
-        return productService.findAllByCategory(category)
-                .stream()
-                .map(product -> modelMapper.map(product, ProductAllViewModel.class))
-                .collect(Collectors.toList());
+        modelAndView.addObject("categoryName", category);
+        modelAndView.addObject("products", products);
+
+        return view("product/show-products", modelAndView);
     }
 
     @GetMapping("/fetch")

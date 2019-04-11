@@ -13,8 +13,8 @@
         .then((response) => response.json())
         .then((json) => {
             json.forEach((category) => $('#product-categories')
-                .append($(`<a class="dropdown-item text-white custom-hover categories-dropdown" href="/home/#">
-<i class="fas fa-angle-right"></i> ${category.name}</a>`).bind("click",()=>{
+                .append($(`<a class="dropdown-item text-white custom-hover categories-dropdown" href="/products/category/${category.name}">
+<i class="fas fa-angle-right"></i> ${category.name}</a>`)/*.onclick(()=>{
                     fetch('/products/fetch/' + category.name)
                         .then((response) => response.json())
                         .then((json) => {
@@ -31,12 +31,12 @@
                                 }
                             }
                         })
-                }))
+                })*/)
             );
         })
         .catch((err) => console.log(err));
 
-    $('#allProducts').bind("click", ()=>{
+    /*$('#allProducts').bind("click", ()=>{
         fetch('/products/fetch')
             .then((response) => response.json())
             .then((json) => {
@@ -53,5 +53,5 @@
                 }
             })
             .catch((err) => console.log(err));
-    })
+    })*/
 })();
