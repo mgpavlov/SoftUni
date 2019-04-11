@@ -14,6 +14,8 @@ public interface ProductService {
 
     ProductServiceModel findProductById(String id);
 
+    List<ProductServiceModel> findProductsByPartOfName(String name);
+
     ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException;
 
     void deleteProduct(String id);

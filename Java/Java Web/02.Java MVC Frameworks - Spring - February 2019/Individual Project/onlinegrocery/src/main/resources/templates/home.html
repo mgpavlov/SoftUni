@@ -15,9 +15,27 @@
             <div class="row d-flex justify-content-between">
                 <div class="data col-md">
                     <h1 class="text-center font-weight-bold" id="categoryTittle" th:text="|All Products|"></h1>
+                    <!--<div id="searchBar" class="form-group col-md-4 d-inline float-left" style="display: inline-block">
+                        <button class="btn bg-re" onclick="findProductByProductName()">
+                            <i class="fas fa-search"></i> Find</button>
+                        <input type="text" th:name="username"
+                               class="form-control d-inline" id="inputProductName"
+                               placeholder="Product name..."/>
+                    </div>-->
+                    <div id="searchBar" class="input-group w-25">
+                        <span class="input-group-btn">
+                        <button class="btn bg-re mr-1" onclick="findProductByProductName()">
+                            <i class="fas fa-search"></i> Find</button>
+                        </span>
+                        <input type="text" th:name="username"
+                               class="form-control w-50" id="inputProductName"
+                               placeholder="Product name..."/>
+                    </div>
                 </div>
                 <div class="print-container container-fluid">
-                    <div class="row mb-4 d-flex justify-content-start products-data"></div>
+                    <div class="row mb-4 d-flex justify-content-start products-data">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,5 +45,6 @@
     </th:block>
 </div>
 <script th:src="@{/js/home.js}"></script>
+<script th:src="@{/js/product-search.js}"></script>
 </body>
 </html>

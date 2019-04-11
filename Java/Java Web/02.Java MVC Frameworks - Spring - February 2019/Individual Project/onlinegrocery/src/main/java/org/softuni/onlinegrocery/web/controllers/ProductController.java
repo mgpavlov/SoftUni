@@ -246,6 +246,16 @@ public class ProductController extends BaseController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/api/find")
+    @ResponseBody
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public List<ProductAllViewModel> searchProducts(@RequestParam("product") String product) {
+        return productService.findProductsByPartOfName(product)
+                .stream()
+                .map(p -> modelMapper.map(p, ProductAllViewModel.class))
+                .collect(Collectors.toList());
+    }
+
     private ModelAndView loadAndReturnModelAndView(ProductAddBindingModel productBindingModel, ModelAndView modelAndView) {
         List<CategoryViewModel> categories = categoryService.findAllCategories()
                 .stream().map(c -> modelMapper.map(c, CategoryViewModel.class))

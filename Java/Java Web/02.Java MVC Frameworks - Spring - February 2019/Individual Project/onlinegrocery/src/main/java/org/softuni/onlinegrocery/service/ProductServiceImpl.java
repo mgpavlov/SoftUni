@@ -9,13 +9,11 @@ import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -77,23 +75,14 @@ public class ProductServiceImpl implements ProductService {
                 /*.orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));*/
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    public List<ProductServiceModel> findProductsByPartOfName(String name) {
+        return this.productRepository.findAll()
+                .stream()
+                .filter(p->p.getName().toLowerCase().contains(name.toLowerCase()))
+                .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
+                .collect(Collectors.toList());
+    }
 
 
     @Override
