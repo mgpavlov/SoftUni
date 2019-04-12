@@ -1,6 +1,7 @@
 package org.softuni.onlinegrocery.service;
 
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
+import org.softuni.onlinegrocery.domain.models.view.ProductAllViewModel;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -21,4 +22,8 @@ public interface ProductService {
     void deleteProduct(String id);
 
     List<ProductServiceModel> findAllByCategory(String category);
+
+    List<ProductServiceModel> findAllFilteredProducts();
+
+    List<ProductServiceModel> findAllByCategoryFilteredProducts(String category);
 }

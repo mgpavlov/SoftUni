@@ -70,4 +70,11 @@ public class CategoryServiceImpl implements CategoryService {
 
         return this.modelMapper.map(category, CategoryServiceModel.class);
     }
+
+    @Override
+    public List<CategoryServiceModel> findAllFilteredCategories() {
+        return findAllCategories().stream()
+                .filter(c->!c.isDeleted())
+                .collect(Collectors.toList());
+    }
 }

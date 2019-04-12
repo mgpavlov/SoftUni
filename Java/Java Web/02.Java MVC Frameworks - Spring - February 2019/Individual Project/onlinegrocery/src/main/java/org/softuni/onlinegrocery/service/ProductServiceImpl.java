@@ -1,5 +1,6 @@
 package org.softuni.onlinegrocery.service;
 
+import org.hibernate.mapping.Collection;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Product;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
@@ -88,16 +89,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductServiceModel> findProductsByPartOfName(String name) {
-        return this.productRepository.findAll()
-                .stream()
-                .filter(p->p.getName().toLowerCase().contains(name.toLowerCase()))
-                .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
-                .collect(Collectors.toList());
-    }
-
-
-    @Override
     public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException {
         Product product = this.productRepository.findById(id).orElse(null);
 
@@ -148,4 +139,47 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 
+
+
+    //products for Home Page display sales products
+    @Override
+    public List<ProductServiceModel> findAllFilteredProducts() {
+        return findAllProducts()
+                .stream()
+                .filter(p -> !p.isDeleted())
+                .filter(p -> p.getCategories().stream().anyMatch(c -> !c.isDeleted()))
+                .map(p -> {
+                    ProductServiceModel productServiceModel = modelMapper.map(p, ProductServiceModel.class);
+                    offerRepository.findByProduct_Id(productServiceModel.getId())
+                            .ifPresent(o -> productServiceModel.setDiscountedPrice(o.getPrice()));
+
+                    return productServiceModel;
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductServiceModel> findAllByCategoryFilteredProducts(String category) {
+        return findAllByCategory(category)
+                .stream()
+                .filter(p -> !p.isDeleted())
+                .filter(p -> p.getCategories().stream().anyMatch(c -> !c.isDeleted()))
+                .map(p -> {
+                    ProductServiceModel productServiceModel = modelMapper.map(p, ProductServiceModel.class);
+                    offerRepository.findByProduct_Id(productServiceModel.getId())
+                            .ifPresent(o -> productServiceModel.setDiscountedPrice(o.getPrice()));
+
+                    return productServiceModel;
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductServiceModel> findProductsByPartOfName(String name) {
+        return findAllFilteredProducts()
+                .stream()
+                .filter(p->p.getName().toLowerCase().contains(name.toLowerCase()))
+                .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
+                .collect(Collectors.toList());
+    }
 }

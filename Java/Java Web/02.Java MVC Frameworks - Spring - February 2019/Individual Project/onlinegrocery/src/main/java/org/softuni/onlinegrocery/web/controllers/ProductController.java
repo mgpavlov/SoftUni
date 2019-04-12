@@ -2,6 +2,7 @@ package org.softuni.onlinegrocery.web.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.models.binding.ProductAddBindingModel;
+import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductAllViewModel;
@@ -57,14 +58,11 @@ public class ProductController extends BaseController {
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = "model")
-                                                  ProductAddBindingModel model, BindingResult bindingResult,
+    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = "model") ProductAddBindingModel model, BindingResult bindingResult,
                                           ModelAndView modelAndView) throws IOException {
         ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
-        if (model.getImage().isEmpty()){
-            return loadAndReturnModelAndView(model, modelAndView);
-        }
-        if (bindingResult.hasErrors() ||
+
+        if (bindingResult.hasErrors() || model.getImage().isEmpty() ||
                 productService.createProduct(productServiceModel, model.getImage()) == null) {
 
             return loadAndReturnModelAndView(model, modelAndView);
@@ -76,13 +74,10 @@ public class ProductController extends BaseController {
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     @PageTitle("Products")
     public ModelAndView allProducts(ModelAndView modelAndView) {
-        List<ProductAllViewModel> allProducts = productService.findAllProducts()
-                .stream()
-                .filter(p->!p.isDeleted())
-                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                .map(p -> modelMapper.map(p, ProductAllViewModel.class))
-                .collect(Collectors.toList());
-        modelAndView.addObject("products", allProducts);
+
+        List<ProductAllViewModel> productAllViewModels = mapProductServiceToViewModel(productService.findAllFilteredProducts());
+
+        modelAndView.addObject("products", productAllViewModels);
 
         return view("product/all-products", modelAndView);
     }
@@ -104,27 +99,45 @@ public class ProductController extends BaseController {
                                     @ModelAttribute("model") ProductAddBindingModel productAddBindingModel) {
 
         productAddBindingModel = this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
+
+        List<CategoryViewModel> categoryViewModelList = mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
+
         modelAndView.addObject("model", productAddBindingModel);
 
-        modelAndView.addObject("categories",
-                categoryService.findAllCategories().stream()
-                        .filter(c->!c.isDeleted())
-                        .map(c -> modelMapper.map(c, CategoryViewModel.class))
-                .collect(Collectors.toList()));
+        modelAndView.addObject("categories", categoryViewModelList);
 
         modelAndView.addObject("productId", id);
+
         return view("product/edit-product", modelAndView);
     }
 
 
     @PostMapping("/edit/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView editProductConfirm(ModelAndView modelAndView, @PathVariable String id,
-                                           @Valid @ModelAttribute("model") ProductAddBindingModel model,
+    public ModelAndView editProductConfirm(ModelAndView modelAndView, @PathVariable String id, @Valid @ModelAttribute("model") ProductAddBindingModel model,
                                            BindingResult bindingResult) throws IOException {
 
         boolean isNewImageUploaded = !model.getImage().isEmpty();
-        if (!isNewImageUploaded){
+
+        initImage(model);
+
+        ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
+
+        productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage());
+
+        if (bindingResult.hasErrors() ||
+                productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage())==null) {
+            modelAndView.addObject("categories", mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
+            modelAndView.addObject("model", model);
+            modelAndView.addObject("productId", id);
+            return this.view("product/edit-product", modelAndView);
+        }
+
+        return redirect("/products/details/" + id);
+    }
+
+    private void initImage(ProductAddBindingModel model) {
+        if (model.getImage().isEmpty()){
             MultipartFile multipartFile = new MultipartFile() {
                 @Override
                 public String getName() {
@@ -168,44 +181,30 @@ public class ProductController extends BaseController {
             };
             model.setImage(multipartFile);
         }
-
-        ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
-        productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage());
-
-
-        if (bindingResult.hasErrors() || productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage())==null) {
-            modelAndView.addObject("categories",
-                    categoryService.findAllCategories().stream()
-                            .filter(c->!c.isDeleted())
-                            .map(c -> modelMapper.map(c, CategoryViewModel.class))
-                    .collect(Collectors.toList()));
-            modelAndView.addObject("model", model);
-            modelAndView.addObject("productId", id);
-            return this.view("product/edit-product", modelAndView);
-        }
-
-        return redirect("/products/details/" + id);
     }
+
 
     @GetMapping("/delete/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     @PageTitle("Delete Product")
     public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView,
                                       @ModelAttribute("model") ProductAddBindingModel productAddBindingModel) {
+
         productAddBindingModel = this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
+
         modelAndView.addObject("model", productAddBindingModel);
 
-        modelAndView.addObject("categories", categoryService.findAllCategories()
-                .stream().map(c -> modelMapper.map(c, CategoryViewModel.class))
-                .collect(Collectors.toList()));
+        modelAndView.addObject("categories", mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
 
         modelAndView.addObject("productId", id);
+
         return view("product/delete-product", modelAndView);
     }
 
     @PostMapping("/delete/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     public ModelAndView deleteProductConfirm(@PathVariable String id) {
+
         productService.deleteProduct(id);
 
         return redirect("/products/all");
@@ -214,25 +213,14 @@ public class ProductController extends BaseController {
     @GetMapping("/category/{category}")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView fetchByCategory(@PathVariable String category, ModelAndView modelAndView) {
+
         List<ProductAllViewModel> products = new ArrayList<>();
 
-        if(category.equals("All")) {
-            products = productService.findAllProducts()
-                    .stream()
-                    .filter(p->!p.isDeleted())
-                    .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                    .map(product -> modelMapper.map(product, ProductAllViewModel.class))
-                    .collect(Collectors.toList());
-        }else {
-            products = productService.findAllByCategory(category)
-                    .stream()
-                    .filter(p->!p.isDeleted())
-                    .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                    .map(product -> modelMapper.map(product, ProductAllViewModel.class))
-                    .collect(Collectors.toList());
-        }
+        products = category.equals("All")? mapProductServiceToViewModel(productService.findAllFilteredProducts())
+                : mapProductServiceToViewModel(productService.findAllByCategoryFilteredProducts(category));
 
         modelAndView.addObject("categoryName", category);
+
         modelAndView.addObject("products", products);
 
         return view("product/show-products", modelAndView);
@@ -241,56 +229,28 @@ public class ProductController extends BaseController {
     @GetMapping("/fetch")
     @ResponseBody
     public List<ProductAllViewModel> fetchAllProducts() {
-        return productService.findAllProducts()
-                .stream()
-                .filter(p->!p.isDeleted())
-                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                .map(product -> modelMapper.map(product, ProductAllViewModel.class))
-                .collect(Collectors.toList());
-    }
 
-    @GetMapping("/fetch/sale")
-    @ResponseBody
-    public List<ProductAllViewModel> fetchSaleProducts() {
-        return productService.findAllProducts()
-                .stream()
-                .filter(p->!p.isDeleted())
-                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                .map(product -> modelMapper.map(product, ProductAllViewModel.class))
-                .collect(Collectors.toList());
+        return mapProductServiceToViewModel(productService.findAllFilteredProducts());
+
     }
 
     @GetMapping("/api/find")
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_USER')")
     public List<ProductAllViewModel> searchProducts(@RequestParam("product") String product) {
-        return productService.findProductsByPartOfName(product)
-                .stream()
-                .filter(p->!p.isDeleted())
-                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
-                .map(p -> modelMapper.map(p, ProductAllViewModel.class))
-                .collect(Collectors.toList());
+
+        return mapProductServiceToViewModel(productService.findProductsByPartOfName(product));
     }
 
     private ModelAndView loadAndReturnModelAndView(ProductAddBindingModel productBindingModel, ModelAndView modelAndView) {
-        List<CategoryViewModel> categories = categoryService.findAllCategories()
-                .stream().map(c -> modelMapper.map(c, CategoryViewModel.class))
-                .collect(Collectors.toList());
+
+        List<CategoryViewModel> categories = mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
         modelAndView.addObject("model", productBindingModel);
 
         modelAndView.addObject("categories", categories);
 
         return view("product/add-product", modelAndView);
-    }
-
-    private ModelAndView loadAndReturnModelAndView(String id, ModelAndView modelAndView, String view) {
-        ProductServiceModel productServiceModel = productService.findProductById(id);
-        ProductAddBindingModel model = modelMapper.map(productServiceModel, ProductAddBindingModel.class);
-        modelAndView.addObject("product", model);
-        modelAndView.addObject("productId", id);
-
-        return view(view, modelAndView);
     }
 
    /* @ExceptionHandler({ProductNotFoundException.class})
@@ -310,4 +270,16 @@ public class ProductController extends BaseController {
 
         return modelAndView;
     }*/
+
+    private List<ProductAllViewModel> mapProductServiceToViewModel(List<ProductServiceModel> productServiceModels){
+        return productServiceModels.stream()
+                .map(product -> modelMapper.map(product, ProductAllViewModel.class))
+                .collect(Collectors.toList());
+    }
+
+    private List<CategoryViewModel> mapCategoryServiceToViewModel(List<CategoryServiceModel> categoryServiceModels){
+        return categoryServiceModels.stream()
+                .map(product -> modelMapper.map(product, CategoryViewModel.class))
+                .collect(Collectors.toList());
+    }
 }
