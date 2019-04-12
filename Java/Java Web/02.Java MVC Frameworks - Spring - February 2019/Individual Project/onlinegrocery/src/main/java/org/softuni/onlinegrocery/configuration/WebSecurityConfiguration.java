@@ -20,7 +20,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .csrfTokenRepository(csrfTokenRepository())
                 .and()
                     .authorizeRequests()
-                    .antMatchers("/css/**", "/js/**", "/products/fetch/sale", "/categories/fetch").permitAll()
+                    .antMatchers("/css/**", "/js/**", "/products/fetch/sale", "/fetch/sales/All").permitAll()
                     .antMatchers("/", "/login", "/register").anonymous()
 //                    .antMatchers("/admin/**").hasAuthority("ADMIN")
                     .anyRequest().authenticated()
