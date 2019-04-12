@@ -69,7 +69,7 @@ public class ProductController extends BaseController {
 
             return loadAndReturnModelAndView(model, modelAndView);
         }
-        return redirect("/products/all");
+        return redirect("/products/add");
     }
 
     @GetMapping("/all")
@@ -78,6 +78,8 @@ public class ProductController extends BaseController {
     public ModelAndView allProducts(ModelAndView modelAndView) {
         List<ProductAllViewModel> allProducts = productService.findAllProducts()
                 .stream()
+                .filter(p->!p.isDeleted())
+                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                 .map(p -> modelMapper.map(p, ProductAllViewModel.class))
                 .collect(Collectors.toList());
         modelAndView.addObject("products", allProducts);
@@ -104,8 +106,10 @@ public class ProductController extends BaseController {
         productAddBindingModel = this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
         modelAndView.addObject("model", productAddBindingModel);
 
-        modelAndView.addObject("categories", categoryService.findAllCategories()
-                .stream().map(c -> modelMapper.map(c, CategoryViewModel.class))
+        modelAndView.addObject("categories",
+                categoryService.findAllCategories().stream()
+                        .filter(c->!c.isDeleted())
+                        .map(c -> modelMapper.map(c, CategoryViewModel.class))
                 .collect(Collectors.toList()));
 
         modelAndView.addObject("productId", id);
@@ -170,8 +174,10 @@ public class ProductController extends BaseController {
 
 
         if (bindingResult.hasErrors() || productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage())==null) {
-            modelAndView.addObject("categories", categoryService.findAllCategories()
-                    .stream().map(c -> modelMapper.map(c, CategoryViewModel.class))
+            modelAndView.addObject("categories",
+                    categoryService.findAllCategories().stream()
+                            .filter(c->!c.isDeleted())
+                            .map(c -> modelMapper.map(c, CategoryViewModel.class))
                     .collect(Collectors.toList()));
             modelAndView.addObject("model", model);
             modelAndView.addObject("productId", id);
@@ -213,11 +219,15 @@ public class ProductController extends BaseController {
         if(category.equals("All")) {
             products = productService.findAllProducts()
                     .stream()
+                    .filter(p->!p.isDeleted())
+                    .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                     .map(product -> modelMapper.map(product, ProductAllViewModel.class))
                     .collect(Collectors.toList());
         }else {
             products = productService.findAllByCategory(category)
                     .stream()
+                    .filter(p->!p.isDeleted())
+                    .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                     .map(product -> modelMapper.map(product, ProductAllViewModel.class))
                     .collect(Collectors.toList());
         }
@@ -233,6 +243,8 @@ public class ProductController extends BaseController {
     public List<ProductAllViewModel> fetchAllProducts() {
         return productService.findAllProducts()
                 .stream()
+                .filter(p->!p.isDeleted())
+                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                 .map(product -> modelMapper.map(product, ProductAllViewModel.class))
                 .collect(Collectors.toList());
     }
@@ -242,6 +254,8 @@ public class ProductController extends BaseController {
     public List<ProductAllViewModel> fetchSaleProducts() {
         return productService.findAllProducts()
                 .stream()
+                .filter(p->!p.isDeleted())
+                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                 .map(product -> modelMapper.map(product, ProductAllViewModel.class))
                 .collect(Collectors.toList());
     }
@@ -252,6 +266,8 @@ public class ProductController extends BaseController {
     public List<ProductAllViewModel> searchProducts(@RequestParam("product") String product) {
         return productService.findProductsByPartOfName(product)
                 .stream()
+                .filter(p->!p.isDeleted())
+                .filter(p->p.getCategories().stream().anyMatch(c->!c.isDeleted()))
                 .map(p -> modelMapper.map(p, ProductAllViewModel.class))
                 .collect(Collectors.toList());
     }

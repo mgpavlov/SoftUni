@@ -23,8 +23,8 @@
                 <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myPendingOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
-                            <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
-                            <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-25">Details</a>
+                            <h5 class="w-75" th:text="|Issued on *{#temporals.format(issuedOn, 'dd-MMM-yy h:mm a')}|"></h5>
+                            <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-0">Details</a>
                                     <!--styleClass="btn bg-panda text-white w-25"/>-->
                         </div>
                     </th:block>
@@ -36,8 +36,8 @@
                 <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myShippedOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
-                            <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
-                            <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-25">Details</a>
+                            <h5 class="w-100" th:text="|Shipped on *{#temporals.format(statusDate, 'dd-MMM-yy h:mm a')}|"></h5>
+                            <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-0">Details</a>
                             <!--styleClass="btn bg-panda text-white w-25"/>-->
                         </div>
                     </th:block>
@@ -49,7 +49,7 @@
                 <div class="border-details p-1">
                     <th:block th:each="order, iter : ${myDeliveredOrders}" th:object="${order}">
                         <div class="p-2 d-flex justify-content-around">
-                            <h4 class="w-75" th:text="|Order from *{#temporals.format(issuedOn, 'dd-MM-yyyy')}|"></h4>
+                            <h5 class="w-75" th:text="|Delivered on *{#temporals.format(statusDate, 'dd-MMM-yy h:mm a')}|"></h5>
                             <form th:action="@{/receipts/create}" th:method="post">
                                 <input type="hidden" name="orderId" th:value="*{id}">
                                 <div class="button-holder d-flex justify-content-center">

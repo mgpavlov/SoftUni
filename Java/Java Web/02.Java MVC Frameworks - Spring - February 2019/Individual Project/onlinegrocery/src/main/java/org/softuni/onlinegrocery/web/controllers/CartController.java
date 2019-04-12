@@ -85,6 +85,7 @@ public class CartController extends BaseController {
 
         OrderServiceModel orderServiceModel = prepareOrder(cart, principal.getName());
         orderService.createOrder(orderServiceModel);
+        session.setAttribute("shopping-cart", new LinkedList<>());
         return redirect("/home");
     }
 

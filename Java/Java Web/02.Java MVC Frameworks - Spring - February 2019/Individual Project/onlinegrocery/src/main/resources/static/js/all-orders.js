@@ -134,7 +134,7 @@
                             .append($('<td class="text-center">').text(order.totalPrice))
                             .append($('<td class="text-center">').text(order.status))
                             .append($('<td class="text-center">')
-                                .append($('<a class="btn bg-re mr-2">')
+                                .append($('<a class="btn btn-info mr-2">')
                                     .attr("href", `/order/all/details/${order.id}`)
                                     .text("Products")
                                 )

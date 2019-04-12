@@ -23,7 +23,7 @@
                         .append($('<td>').text(user.email))
                         .append($('<td>').text(parseRoles(user.authorities)))
                         .append($('<td>')
-                            .append($('<a class="btn bg-re"><i class="fas fa-user-edit"></i> Profile</a>')
+                            .append($('<a class="btn btn-info"><i class="fas fa-user-edit"></i> Profile</a>')
                                 .attr("href", "/user/profile/" + user.username)
                         ))
                     );

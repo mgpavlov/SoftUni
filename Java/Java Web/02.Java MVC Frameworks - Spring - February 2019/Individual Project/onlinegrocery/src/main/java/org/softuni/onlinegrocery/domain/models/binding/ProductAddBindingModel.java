@@ -23,7 +23,7 @@ public class ProductAddBindingModel {
     public ProductAddBindingModel() {
     }
     @NotNull
-    @Size(min = 3, max = 10, message = VIRUS_NAME_LENGTH)
+    @Size(min = 3, max = 100, message = VIRUS_NAME_LENGTH)
     public String getName() {
         return name;
     }

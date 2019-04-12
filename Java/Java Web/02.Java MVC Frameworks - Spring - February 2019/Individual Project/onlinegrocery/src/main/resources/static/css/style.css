@@ -115,8 +115,8 @@ small.has-danger, label.has-danger{
 }
 
 img.img-thumbnail {
-     /* border: 1px solid #ddd; Gray border */
-    border: 5px solid #4fa36f; /* Gray border */
+      border: 2px solid #ddd; /*Gray border */
+   /* border: 5px solid #4fa36f;*/ /* греен border */
     border-radius: 4px; /* Rounded border */
     padding: 5px; /* Some padding */
     max-width: 100px;

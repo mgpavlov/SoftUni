@@ -33,6 +33,7 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryServiceModel> findAllCategories() {
         return this.categoryRepository.findAll()
                 .stream()
+                .filter(c->!c.isDeleted())
                 .map(c -> this.modelMapper.map(c, CategoryServiceModel.class))
                 .collect(Collectors.toList());
     }
@@ -41,6 +42,10 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryServiceModel findCategoryById(String id) {
         Category category = this.categoryRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException());
+        //todo is deleted
+        if (category.isDeleted()){
+            throw new IllegalArgumentException();
+        }
 
         return this.modelMapper.map(category, CategoryServiceModel.class);
     }
@@ -60,7 +65,8 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = this.categoryRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException());
 
-        this.categoryRepository.delete(category);
+        category.setDeleted(true);
+        this.categoryRepository.save(category);
 
         return this.modelMapper.map(category, CategoryServiceModel.class);
     }
