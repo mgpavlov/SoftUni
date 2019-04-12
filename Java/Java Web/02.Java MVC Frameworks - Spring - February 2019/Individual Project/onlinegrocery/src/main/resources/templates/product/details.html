@@ -25,7 +25,12 @@
         </div>
         <div class="row">
             <div class="col col-md-12">
-                <h4 th:text="'Price: ' + ${product.price}"></h4>
+                <th:block th:if="${product.discountedPrice == null}">
+                    <h4 th:text="'Price: ' + ${product.price}"></h4>
+                </th:block>
+                <th:block th:if="${product.discountedPrice != null}">
+                    <h4 th:text="'Price: ' + ${product.discountedPrice}"></h4>
+                </th:block>
             </div>
         </div>
         <div class="row">

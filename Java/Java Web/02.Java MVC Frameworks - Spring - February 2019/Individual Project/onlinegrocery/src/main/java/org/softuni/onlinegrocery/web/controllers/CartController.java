@@ -2,9 +2,11 @@ package org.softuni.onlinegrocery.web.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
+import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.UserServiceModel;
+import org.softuni.onlinegrocery.domain.models.view.OrderProductViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductDetailsViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ShoppingCartItem;
 import org.softuni.onlinegrocery.service.CartService;
@@ -33,16 +35,13 @@ import java.util.List;
 public class CartController extends BaseController {
 
     private final ProductService productService;
-    private final CartService cartService;
     private final UserService userService;
     private final OrderService orderService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public CartController(ProductService productService, CartService cartService, UserService userService,
-                          OrderService orderService, ModelMapper modelMapper) {
+    public CartController(ProductService productService, UserService userService, OrderService orderService, ModelMapper modelMapper) {
         this.productService = productService;
-        this.cartService = cartService;
         this.userService = userService;
         this.orderService = orderService;
         this.modelMapper = modelMapper;
@@ -52,45 +51,54 @@ public class CartController extends BaseController {
     @PostMapping("/add-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToCartConfirm(String id, int quantity, HttpSession session) {
+        ProductDetailsViewModel product = this.modelMapper
+                .map(this.productService.findProductById(id), ProductDetailsViewModel.class);
 
-        ProductDetailsViewModel product = modelMapper
-                .map(productService.findProductById(id), ProductDetailsViewModel.class);
-        ShoppingCartItem cartItem = cartService.createShoppingCartItem(product, quantity);
-        var cart = retrieveCart(session);
-        addItemToCart(cartItem, cart);
-        return redirect("/home");
+        OrderProductViewModel orderProductViewModel = new OrderProductViewModel();
+        orderProductViewModel.setProduct(product);
+        orderProductViewModel.setPrice(product.getPrice());
+
+        ShoppingCartItem cartItem = new ShoppingCartItem();
+        cartItem.setProduct(orderProductViewModel);
+        cartItem.setQuantity(quantity);
+
+        var cart = this.retrieveCart(session);
+        this.addItemToCart(cartItem, cart);
+
+        return super.redirect("/home");
     }
 
     @GetMapping("/details")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("Bag Details")
+    @PageTitle("Cart Details")
     public ModelAndView cartDetails(ModelAndView modelAndView, HttpSession session) {
-        var cart = retrieveCart(session);
-        modelAndView.addObject("totalPrice", calcTotal(cart));
+        var cart = this.retrieveCart(session);
+        modelAndView.addObject("totalPrice", this.calcTotal(cart));
 
-        return view("cart/cart-details", modelAndView);
+        return super.view("cart/cart-details", modelAndView);
     }
 
     @DeleteMapping("/remove-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView removeFromCartConfirm(String id, HttpSession session) {
-        removeItemFromCart(id, retrieveCart(session));
+        this.removeItemFromCart(id, this.retrieveCart(session));
 
-        return redirect("/cart/details");
+        return super.redirect("/cart/details");
     }
 
     @PostMapping("/checkout")
+    @PreAuthorize("isAuthenticated()")
     public ModelAndView checkoutConfirm(HttpSession session, Principal principal) {
-        var cart = retrieveCart(session);
+        var cart = this.retrieveCart(session);
 
-        OrderServiceModel orderServiceModel = prepareOrder(cart, principal.getName());
-        orderService.createOrder(orderServiceModel);
+        OrderServiceModel orderServiceModel = this.prepareOrder(cart, principal.getName());
+        this.orderService.createOrder(orderServiceModel);
         session.setAttribute("shopping-cart", new LinkedList<>());
-        return redirect("/home");
+        return super.redirect("/home");
     }
 
     private List<ShoppingCartItem> retrieveCart(HttpSession session) {
-        initCart(session);
+        this.initCart(session);
 
         return (List<ShoppingCartItem>) session.getAttribute("shopping-cart");
     }
@@ -103,17 +111,21 @@ public class CartController extends BaseController {
 
     private void addItemToCart(ShoppingCartItem item, List<ShoppingCartItem> cart) {
         for (ShoppingCartItem shoppingCartItem : cart) {
-            if (shoppingCartItem.getProduct().getId().equals(item.getProduct().getId())) {
+            if (shoppingCartItem.getProduct().getProduct().getId().equals(item.getProduct().getProduct().getId())) {
                 shoppingCartItem.setQuantity(shoppingCartItem.getQuantity() + item.getQuantity());
                 return;
             }
+        }
+
+        if (item.getProduct().getProduct().getDiscountedPrice()!= null){
+            item.getProduct().setPrice(item.getProduct().getProduct().getDiscountedPrice());
         }
 
         cart.add(item);
     }
 
     private void removeItemFromCart(String id, List<ShoppingCartItem> cart) {
-        cart.removeIf(ci -> ci.getProduct().getId().equals(id));
+        cart.removeIf(ci -> ci.getProduct().getProduct().getId().equals(id));
     }
 
     private BigDecimal calcTotal(List<ShoppingCartItem> cart) {
@@ -125,19 +137,12 @@ public class CartController extends BaseController {
         return result;
     }
 
-    private OrderServiceModel prepareOrder(List<ShoppingCartItem> cart, String customerName) {
+    private OrderServiceModel prepareOrder(List<ShoppingCartItem> cart, String customer) {
         OrderServiceModel orderServiceModel = new OrderServiceModel();
-
-        UserServiceModel customer = userService.findUserByUserName(customerName);
-
-        orderServiceModel.setCustomer(customer);
-        orderServiceModel.setShippingAddress(customer.getAddress());
-        orderServiceModel.setStatus(Status.Pending);
-
-        List<ProductServiceModel> products = new ArrayList<>();
-
+        orderServiceModel.setCustomer(this.userService.findUserByUserName(customer));
+        List<OrderProductServiceModel> products = new ArrayList<>();
         for (ShoppingCartItem item : cart) {
-            ProductServiceModel productServiceModel = modelMapper.map(item.getProduct(), ProductServiceModel.class);
+            OrderProductServiceModel productServiceModel = this.modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
 
             for (int i = 0; i < item.getQuantity(); i++) {
                 products.add(productServiceModel);
@@ -145,8 +150,9 @@ public class CartController extends BaseController {
         }
 
         orderServiceModel.setProducts(products);
-        orderServiceModel.setTotalPrice(calcTotal(cart));
+        orderServiceModel.setTotalPrice(this.calcTotal(cart));
 
         return orderServiceModel;
     }
 }
+

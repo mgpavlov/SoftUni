@@ -22,7 +22,7 @@ public class Order extends BaseEntity {
     public Order() {
     }
 
-    @ManyToMany(targetEntity = Product.class)
+    @ManyToMany(targetEntity = OrderProduct.class, cascade = CascadeType.ALL)
     @JoinTable(
             name = "orders_products",
             joinColumns = @JoinColumn(

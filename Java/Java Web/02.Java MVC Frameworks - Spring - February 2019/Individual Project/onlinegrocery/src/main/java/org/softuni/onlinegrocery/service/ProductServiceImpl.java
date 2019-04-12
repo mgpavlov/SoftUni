@@ -5,6 +5,7 @@ import org.softuni.onlinegrocery.domain.entities.Product;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 /*import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
 import org.softuni.onlinegrocery.error.ProductNotFoundException;*/
+import org.softuni.onlinegrocery.repository.OfferRepository;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
+    private final OfferRepository offerRepository;
     private final CategoryService categoryService;
     private final CloudinaryService cloudinaryService;
     private final ProductValidationService productValidation;
@@ -27,10 +30,11 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     public ProductServiceImpl(
             ProductRepository productRepository,
-            CategoryService categoryService,
+            OfferRepository offerRepository, CategoryService categoryService,
             CloudinaryService cloudinaryService, ProductValidationService productValidation,
             ModelMapper modelMapper) {
         this.productRepository = productRepository;
+        this.offerRepository = offerRepository;
         this.categoryService = categoryService;
         this.cloudinaryService = cloudinaryService;
         this.productValidation = productValidation;
@@ -62,7 +66,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductServiceModel> findAllProducts() {
-        return this.productRepository.findAll()
+        List<Product> products = this.productRepository.findAll();
+
+        return products
                 .stream()
                 .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
                 .collect(Collectors.toList());
@@ -71,7 +77,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductServiceModel findProductById(String id) {
         return this.productRepository.findById(id)
-                .map(p -> this.modelMapper.map(p, ProductServiceModel.class)).orElse(null);
+                .map(p -> {
+                    ProductServiceModel productServiceModel = this.modelMapper.map(p, ProductServiceModel.class);
+                    this.offerRepository.findByProduct_Id(productServiceModel.getId())
+                            .ifPresent(o -> productServiceModel.setDiscountedPrice(o.getPrice()));
+
+                    return productServiceModel;
+                }).orElse(null);
                 /*.orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));*/
     }
 
@@ -104,12 +116,13 @@ public class ProductServiceImpl implements ProductService {
             update.setImageUrl(product.getImageUrl());
         }
 
-        /*productServiceModel.setCategories(
-                this.categoryService.findAllCategories()
-                        .stream()
-                        .filter(c -> productServiceModel.getCategories().contains(c.getId()))
-                        .collect(Collectors.toList())
-        );*/
+        this.offerRepository.findByProduct_Id(product.getId())
+                .ifPresent((o) -> {
+                    o.setPrice(product.getPrice().multiply(new BigDecimal(0.8)));
+
+                    this.offerRepository.save(o);
+                });
+
         return this.modelMapper.map(this.productRepository.saveAndFlush(update), ProductServiceModel.class);
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class OrderViewModel {
 
     private String id;
-    private List<ProductDetailsViewModel> products;
+    private List<OrderProductViewModel> products;
     private UserProfileViewModel customer;
     private BigDecimal totalPrice;
     private LocalDateTime issuedOn;
@@ -27,11 +27,11 @@ public class OrderViewModel {
         this.id = id;
     }
 
-    public List<ProductDetailsViewModel> getProducts() {
-        return products;
+    public List<OrderProductViewModel> getProducts() {
+        return this.products;
     }
 
-    public void setProducts(List<ProductDetailsViewModel> products) {
+    public void setProducts(List<OrderProductViewModel> products) {
         this.products = products;
     }
 

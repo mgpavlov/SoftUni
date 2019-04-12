@@ -46,6 +46,8 @@ public class OrderServiceImpl implements OrderService {
     public void createOrder(OrderServiceModel orderServiceModel) {
         orderServiceModel.setIssuedOn(LocalDateTime.now());
         Order order = this.modelMapper.map(orderServiceModel, Order.class);
+        order.setShippingAddress(orderServiceModel.getCustomer().getAddress());
+        order.setStatus(Status.Pending);
         this.orderRepository.save(order);
     }
 
@@ -83,17 +85,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void changeOrderStatus(String id) {
         Order order = this.orderRepository.findById(id).orElse(null);
-        /*switch (order.getStatus().name()){
-            case "Pending":
-                order.setStatusDate(LocalDateTime.now());
-                break;
-            case "Shipped":
-                break;
-            case "Delivered":
-                break;
-            case "Acquire":
-                break;
-        }*/
+
         order.setStatusDate(LocalDateTime.now());
         changeStatus(order);
 
@@ -112,9 +104,4 @@ public class OrderServiceImpl implements OrderService {
     private void changeStatus(Order order) {
         order.setStatus(Status.values()[Arrays.asList(Status.values()).indexOf(order.getStatus()) + 1]);
     }
-
-    /*private void changeDeliveryDate(Order order) {
-        long days = (System.currentTimeMillis() % 21) + 20;
-        order.setFinishedOn(LocalDateTime.now().plusDays(days));
-    }*/
 }

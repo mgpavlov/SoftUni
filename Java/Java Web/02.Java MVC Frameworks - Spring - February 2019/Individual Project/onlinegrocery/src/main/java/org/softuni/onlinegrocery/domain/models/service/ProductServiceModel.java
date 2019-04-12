@@ -12,6 +12,7 @@ public class ProductServiceModel extends BaseServiceModel {
     private BigDecimal price;
     private String imageUrl;
     private List<CategoryServiceModel> categories;
+    private BigDecimal discountedPrice;
     private boolean isDeleted;
 
     public ProductServiceModel() {
@@ -55,6 +56,14 @@ public class ProductServiceModel extends BaseServiceModel {
 
     public void setCategories(List<CategoryServiceModel> categories) {
         this.categories = categories;
+    }
+
+    public BigDecimal getDiscountedPrice() {
+        return this.discountedPrice;
+    }
+
+    public void setDiscountedPrice(BigDecimal discountedPrice) {
+        this.discountedPrice = discountedPrice;
     }
 
     public boolean isDeleted() {

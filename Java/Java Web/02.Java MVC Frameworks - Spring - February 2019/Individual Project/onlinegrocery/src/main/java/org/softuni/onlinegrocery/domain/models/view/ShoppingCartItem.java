@@ -5,18 +5,17 @@ import java.math.BigDecimal;
 
 public class ShoppingCartItem implements Serializable {
 
-    private ProductDetailsViewModel product;
+    private OrderProductViewModel product;
     private int quantity;
-    private BigDecimal price;
 
     public ShoppingCartItem() {
     }
 
-    public ProductDetailsViewModel getProduct() {
-        return product;
+    public OrderProductViewModel getProduct() {
+        return this.product;
     }
 
-    public void setProduct(ProductDetailsViewModel product) {
+    public void setProduct(OrderProductViewModel product) {
         this.product = product;
     }
 
@@ -28,11 +27,4 @@ public class ShoppingCartItem implements Serializable {
         this.quantity = quantity;
     }
 
-    public BigDecimal getPrice() {
-        return this.price.multiply(BigDecimal.valueOf(quantity));
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
 }

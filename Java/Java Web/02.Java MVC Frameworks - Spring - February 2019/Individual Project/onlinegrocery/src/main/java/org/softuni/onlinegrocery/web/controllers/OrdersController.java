@@ -2,6 +2,7 @@ package org.softuni.onlinegrocery.web.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
+import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.*;
@@ -104,25 +105,25 @@ public class OrdersController extends BaseController {
 
     private OrderDetailsViewModel loadOrderDetailsViewModel(String id) {
         OrderServiceModel orderServiceModel = this.orderService.findOrderById(id);
-        List<ProductServiceModel> products = orderServiceModel.getProducts();
+        List<OrderProductServiceModel> products = orderServiceModel.getProducts();
 
         OrderDetailsViewModel order = mapper.map(orderServiceModel, OrderDetailsViewModel.class);
         List<ShoppingCartItem> items = new ArrayList<>();
 
-        Map<ProductServiceModel, Integer> productItems = new HashMap<>();
+        Map<OrderProductServiceModel, Integer> productItems = new HashMap<>();
 
-        for (ProductServiceModel product: products) {
+        for (OrderProductServiceModel product: products) {
             productItems.putIfAbsent(product, 0);
             int quantity = productItems.get(product) + 1;
             productItems.put(product, quantity);
         }
 
-        for (Map.Entry<ProductServiceModel, Integer> productKVP : productItems.entrySet()) {
+        for (Map.Entry<OrderProductServiceModel, Integer> productKVP : productItems.entrySet()) {
             ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
 
             shoppingCartItem.setQuantity(productKVP.getValue());
-            ProductDetailsViewModel productDetailsViewModel = mapper.map(productKVP.getKey(), ProductDetailsViewModel.class);
-            shoppingCartItem.setProduct(productDetailsViewModel);
+            OrderProductViewModel orderProductViewModel = mapper.map(productKVP.getKey(), OrderProductViewModel.class);
+            shoppingCartItem.setProduct(orderProductViewModel);
 
             items.add(shoppingCartItem);
         }
