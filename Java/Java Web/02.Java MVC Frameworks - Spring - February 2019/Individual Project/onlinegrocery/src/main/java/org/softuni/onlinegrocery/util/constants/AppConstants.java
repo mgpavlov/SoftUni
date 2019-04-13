@@ -4,46 +4,67 @@ public final class AppConstants {
 
     private AppConstants() {
     }
-    /**
-     * Regex for validating e-mails. It's totally compliant with RFC822
-     * and accepts IP address and server names (for intranet purposes)
-     *
-     * john@somewhere.com // valid
-     * john.foo@somewhere.com // valid
-     * john.foo+label@somewhere.com // valid (with +label - Gmail accepts it!)
-     * john@192.168.1.10 // valid (with IP addresses)
-     * john+label@192.168.1.10 // valid (with +label and IP address)
-     * john.foo@someserver // valid (with no first domain level)
-     * JOHN.FOO@somewhere.com // valid (case insensitive)
-     * @someserver // invalid
-     * @someserver.com // invalid
-     * john@. // invalid
-     * .@somewhere.com // invalid
-     */
-    public static final String VALID_EMAIL_ADDRESS_REGEX = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+    public static final String FAVICON_URL= "https://res.cloudinary.com/mgpavlov/image/upload/v1554912174/icons8-shopping-cart-96.png";
+    public static final String FAVICON= "favicon";
 
-    /** PASSWORD_VALIDATION_REGEX =>
-     * ^                 # start-of-string
-     * (?=.*[0-9])       # a digit must occur at least once
-     * (?=.*[a-z])       # a lower case letter must occur at least once
-     * (?=.*[A-Z])       # an upper case letter must occur at least once
-     * (?=.*[@#$%^&+=])  # a special character must occur at least once
-     * (?=\S+$)          # no whitespace allowed in the entire string
-     * .{8,}             # anything, at least eight places though
-     * $                 # end-of-string
-     */
-    public static final String PASSWORD_VALIDATION_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+    public static final String GREETING= "greeting";
+    public static final String GREETING_GOOD_MORNING = "Good morning ";
+    public static final String GREETING_GOOD_AFTERNOON = "Good afternoon ";
+    public static final String GREETING_GOOD_EVENING = "Good evening ";
 
-    public static final String DATE_PATTERN = "yyyy-MM-dd";
+    public static final String TITLE_GROCERY_STORE = "Grocery Store";
+    public static final String TITLE = "title";
+    public static final String DASH = " - ";
 
-    /** USERS ROLES **/
-    public static final String ROLE_ROOT_ADMIN = "ROOT_ADMIN";
-    public static final String ROOT_ADMIN = "ROOT ADMIN";
-    public static final String ROLE_ADMIN = "ROLE_ADMIN";
-    public static final String ADMIN = "ADMIN";
-    public static final String ROLE_MODERATOR = "ROLE_MODERATOR";
-    public static final String MODERATOR = "MODERATOR";
-    public static final String ROLE_USER = "ROLE_USER";
-    public static final String USER = "USER";
+    public static final String MODEL = "model";
+    public static final String USERNAME = "username";
+    public static final String MESSAGE = "message";
+    public static final String STATUS_CODE = "statusCode";
+    public static final String REGISTER = "Register";
+
+    public static final String ERROR = "error";
+    public static final String LOGIN = "Login";
+    public static final String USER_PROFILE = "User Profile";
+    public static final String VIEW_MODEL= "viewModel";
+    public static final String USERS= "Users";
+
+    public static final String RECEIPTS = "Receipts";
+    public static final String RECEIPTS_TO_LOWER_CASE = "receipts";
+    public static final String RECEIPT_TO_LOWER_CASE = "receipt";
+    public static final String RECEIPTS_DETAILS = "Receipts Details";
+
+    public static final String ORDERS = "Orders";
+    public static final String ORDER_DETAILS = "Order Details";
+    public static final String MY_ORDERS = "My Orders";
+    public static final String MY_PENDING_ORDERS = "myPendingOrders";
+    public static final String MY_SHIPPED_ORDERS = "myShippedOrders";
+    public static final String MY_DELIVERED_ORDERS = "myDeliveredOrders";
+
+    public static final String STATUS_ALL = "All";
+    public static final String STATUS_SHIPPED = "Shipped";
+    public static final String STATUS_DELIVERED = "Delivered";
+    public static final String STATUS_ACQUIRED = "Acquired";
+
+    public static final String ORDERS_TO_LOWER_CASE = "orders";
+    public static final String ORDER_TO_LOWER_CASE = "order";
+
+    public static final String SALES = "Sales";
+    public static final String INDEX = "Index";
+    public static final String HOME = "Home";
+
+    public static final String PRINCIPAL_TO_LOWER_CASE = "principal";
+    public static final String CATEGORIES_TO_LOWER_CASE = "categories";
+    public static final String CATEGORIES = "Categories";
+
+    public static final String TOTAL_PRICE = "totalPrice";
+    public static final String SHOPPING_CART = "shopping-cart";
+
+    public static final String REDIRECT_BASE_CONTROLLER = "redirect:";
+
+
+
+
+
+
 
 }

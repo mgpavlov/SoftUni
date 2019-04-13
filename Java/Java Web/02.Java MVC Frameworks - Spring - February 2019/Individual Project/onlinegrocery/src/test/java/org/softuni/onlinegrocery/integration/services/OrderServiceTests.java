@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.softuni.onlinegrocery.domain.entities.Order;
+import org.softuni.onlinegrocery.domain.entities.OrderProduct;
 import org.softuni.onlinegrocery.domain.entities.Product;
 import org.softuni.onlinegrocery.domain.entities.User;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
@@ -71,13 +72,19 @@ public class OrderServiceTests {
         order.setCustomer(new User() {{
             setUsername(customer);
         }});
-        order.setProducts(new ArrayList<>() {{
-            new Product(){{
-                setImageUrl(productImageUrl);
-                setName(productName);
-                setPrice(productPrice);
-            }};
-        }});
+        List<OrderProduct> orderProducts = new ArrayList<>();
+        OrderProduct orderProduct = new OrderProduct();
+        orderProduct.setPrice(productPrice);
+
+        Product product = new Product();
+        product.setPrice(productPrice);
+        product.setImageUrl(productImageUrl);
+        product.setName(productName);
+
+        orderProduct.setProduct(product);
+        orderProducts.add(orderProduct);
+
+        order.setProducts(orderProducts);
 
         orders.add(order);
 
@@ -85,7 +92,7 @@ public class OrderServiceTests {
         OrderServiceModel orderResult = result.get(0);
 
         assertEquals(1, result.size());
-        assertEquals(customer, orderResult.getCustomer());
+        assertEquals(customer, orderResult.getCustomer().getUsername());
         assertEquals(productName, orderResult.getProducts().get(0).getProduct().getName());
         assertEquals(productImageUrl, orderResult.getProducts().get(0).getProduct().getImageUrl());
         assertEquals(productPrice, orderResult.getProducts().get(0).getProduct().getPrice());
@@ -98,7 +105,7 @@ public class OrderServiceTests {
         assertTrue(result.isEmpty());
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void createOrder_whenUserAndProductAreValid_orderCreated() throws Exception {
         when(mockUserValidation.isValid(any()))
                 .thenReturn(true);
@@ -111,7 +118,8 @@ public class OrderServiceTests {
         when(mockProductRepository.findById(any()))
                 .thenReturn(java.util.Optional.of(new Product()));
 
-        service.createOrder(null);
+        OrderServiceModel orderServiceModel = new OrderServiceModel();
+        service.createOrder(orderServiceModel);
 
         verify(mockOrderRepository)
             .save(any());

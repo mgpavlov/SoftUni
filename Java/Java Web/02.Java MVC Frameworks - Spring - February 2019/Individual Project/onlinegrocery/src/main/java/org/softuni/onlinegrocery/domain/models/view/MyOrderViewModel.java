@@ -3,6 +3,7 @@ package org.softuni.onlinegrocery.domain.models.view;
 import java.time.LocalDateTime;
 
 public class MyOrderViewModel {
+
     private String id;
     private LocalDateTime issuedOn;
     private LocalDateTime statusDate;

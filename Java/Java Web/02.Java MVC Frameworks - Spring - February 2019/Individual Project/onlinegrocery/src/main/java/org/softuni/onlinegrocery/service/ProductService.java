@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface ProductService {
 
-    ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException;
+    ProductServiceModel createProduct(ProductServiceModel productServiceModel,
+                                      MultipartFile image) throws IOException;
 
     List<ProductServiceModel> findAllProducts();
 
@@ -17,7 +18,8 @@ public interface ProductService {
 
     List<ProductServiceModel> findProductsByPartOfName(String name);
 
-    ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException;
+    ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel,
+                                    boolean isNewImageUploaded, MultipartFile image) throws IOException;
 
     void deleteProduct(String id);
 

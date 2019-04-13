@@ -9,13 +9,14 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Component
 public class TitleInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object handler, ModelAndView modelAndView) throws Exception {
-        String title = "Grocery Store";
 
         if (modelAndView == null) {
             modelAndView = new ModelAndView();
@@ -25,7 +26,7 @@ public class TitleInterceptor extends HandlerInterceptorAdapter {
 
                 if (methodAnnotation != null) {
                     modelAndView
-                            .addObject("title", title + " - " + methodAnnotation.value());
+                            .addObject(TITLE, TITLE_GROCERY_STORE + DASH + methodAnnotation.value());
                 }
             }
         }

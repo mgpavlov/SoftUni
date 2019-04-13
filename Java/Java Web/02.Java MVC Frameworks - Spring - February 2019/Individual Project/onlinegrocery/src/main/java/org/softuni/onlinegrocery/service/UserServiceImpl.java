@@ -17,15 +17,10 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
+
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
-
-    private static final String ROLE_USER = "ROLE_USER";
-    private static final String ROLE_MODERATOR = "ROLE_MODERATOR";
-    private static final String ROOT_ADMIN = "ROOT_ADMIN";
-    private static final String ROLE_ADMIN = "ROLE_ADMIN";
-    private static final String DEFAULT_USER_NOT_FOUND_EX_MSG = "Username not found.";
-    private static final String DEFAULT_NOT_AUTHORIZE_EX_MSG = "You are not authorize to update ROOT_ADMIN role.";
 
     private final UserRepository userRepository;
     private final UserRoleRepository userRoleRepository;
@@ -109,7 +104,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public UserServiceModel findUserByUserName(String username) {
         return this.userRepository.findByUsername(username)
                 .map(u -> this.modelMapper.map(u, UserServiceModel.class))
-                .orElseThrow(() -> new UsernameNotFoundException("Username not found!"));
+                .orElseThrow(() -> new UsernameNotFoundException(DEFAULT_USER_NOT_FOUND_EX_MSG));
     }
 
 

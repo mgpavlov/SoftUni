@@ -1,15 +1,11 @@
 package org.softuni.onlinegrocery.web.controllers;
 
 import org.modelmapper.ModelMapper;
-import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
-import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
-import org.softuni.onlinegrocery.domain.models.service.UserServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.OrderProductViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductDetailsViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ShoppingCartItem;
-import org.softuni.onlinegrocery.service.CartService;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.service.ProductService;
 import org.softuni.onlinegrocery.service.UserService;
@@ -30,6 +26,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 @RequestMapping("/cart")
 public class CartController extends BaseController {
@@ -40,7 +38,8 @@ public class CartController extends BaseController {
     private final ModelMapper modelMapper;
 
     @Autowired
-    public CartController(ProductService productService, UserService userService, OrderService orderService, ModelMapper modelMapper) {
+    public CartController(ProductService productService, UserService userService,
+                          OrderService orderService, ModelMapper modelMapper) {
         this.productService = productService;
         this.userService = userService;
         this.orderService = orderService;
@@ -68,7 +67,7 @@ public class CartController extends BaseController {
 
         List<ShoppingCartItem> cart = retrieveCart(session);
 
-        modelAndView.addObject("totalPrice", calcTotal(cart));
+        modelAndView.addObject(TOTAL_PRICE, calcTotal(cart));
 
         return view("cart/cart-details", modelAndView);
     }
@@ -101,12 +100,12 @@ public class CartController extends BaseController {
     private List<ShoppingCartItem> retrieveCart(HttpSession session) {
         initCart(session);
 
-        return (List<ShoppingCartItem>) session.getAttribute("shopping-cart");
+        return (List<ShoppingCartItem>) session.getAttribute(SHOPPING_CART);
     }
 
     private void initCart(HttpSession session) {
-        if (session.getAttribute("shopping-cart") == null) {
-            session.setAttribute("shopping-cart", new LinkedList<>());
+        if (session.getAttribute(SHOPPING_CART) == null) {
+            session.setAttribute(SHOPPING_CART, new LinkedList<>());
         }
     }
 
@@ -159,7 +158,8 @@ public class CartController extends BaseController {
         orderServiceModel.setCustomer(userService.findUserByUserName(customer));
         List<OrderProductServiceModel> products = new ArrayList<>();
         for (ShoppingCartItem item : cart) {
-            OrderProductServiceModel productServiceModel = modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
+            OrderProductServiceModel productServiceModel =
+                    modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
 
             for (int i = 0; i < item.getQuantity(); i++) {
                 products.add(productServiceModel);

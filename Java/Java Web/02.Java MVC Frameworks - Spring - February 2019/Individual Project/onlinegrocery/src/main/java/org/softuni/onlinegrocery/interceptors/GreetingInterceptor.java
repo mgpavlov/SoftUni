@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalTime;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Component
 public class GreetingInterceptor implements HandlerInterceptor {
 
@@ -21,11 +23,11 @@ public class GreetingInterceptor implements HandlerInterceptor {
             LocalTime time = LocalTime.now();
             int hrs = time.getHour();
             if (hrs >= 0 && hrs <= 12) {
-                modelAndView.addObject("greeting", "Good morning ");
+                modelAndView.addObject(GREETING, GREETING_GOOD_MORNING);
             } else if (hrs > 12 && hrs <= 17) {
-                modelAndView.addObject("greeting", "Good afternoon ");
+                modelAndView.addObject(GREETING, GREETING_GOOD_AFTERNOON);
             } else {
-                modelAndView.addObject("greeting", "Good evening ");
+                modelAndView.addObject(GREETING, GREETING_GOOD_EVENING);
             }
         }
     }

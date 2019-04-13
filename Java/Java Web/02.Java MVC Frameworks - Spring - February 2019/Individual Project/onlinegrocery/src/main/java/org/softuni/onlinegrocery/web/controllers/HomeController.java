@@ -17,6 +17,8 @@ import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 public class HomeController extends BaseController {
 
@@ -31,25 +33,25 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping("/")
-    @PageTitle("Index")
+    @PageTitle(INDEX)
     public ModelAndView renderIndexPage(Principal principal, ModelAndView modelAndView) {
 
-        modelAndView.addObject("principal", principal);
+        modelAndView.addObject(PRINCIPAL_TO_LOWER_CASE, principal);
 
         return view("/index", modelAndView);
     }
 
     @GetMapping("/home")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("Home")
+    @PageTitle(HOME)
     public ModelAndView renderHomePage(Principal principal, ModelAndView modelAndView) {
         
         List<CategoryViewModel> categories =
                 mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
         
-        modelAndView.addObject("principal", principal);
+        modelAndView.addObject(PRINCIPAL_TO_LOWER_CASE, principal);
 
-        modelAndView.addObject("categories", categories);
+        modelAndView.addObject(CATEGORIES_TO_LOWER_CASE, categories);
 
         return view("/home", modelAndView);
     }

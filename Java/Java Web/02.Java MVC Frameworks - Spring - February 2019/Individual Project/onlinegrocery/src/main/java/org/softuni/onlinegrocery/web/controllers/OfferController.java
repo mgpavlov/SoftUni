@@ -19,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 public class OfferController extends BaseController {
 
@@ -33,7 +35,7 @@ public class OfferController extends BaseController {
 
     @GetMapping("/sales")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("Sales")
+    @PageTitle(SALES)
     public ModelAndView topOffers(ModelAndView modelAndView) {
 
         return view("offer/sales", modelAndView);

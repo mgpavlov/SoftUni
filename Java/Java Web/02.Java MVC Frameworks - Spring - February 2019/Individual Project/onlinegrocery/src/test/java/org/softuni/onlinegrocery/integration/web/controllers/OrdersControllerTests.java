@@ -42,9 +42,9 @@ public class OrdersControllerTests {
     @Before
     public void setupTest(){
         orders = new ArrayList<>();
-//
-//        when(mockOrderRepository.findAllByUser_Username(any()))
-//                .thenReturn(orders);
+
+        when(mockOrderRepository.findAllOrdersByCustomer_UsernameOrderByIssuedOn(any()))
+                .thenReturn(orders);
     }
 
     @Test

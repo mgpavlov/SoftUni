@@ -20,7 +20,8 @@ public class CategoryServiceImpl implements CategoryService {
     private final Validator validator;
 
     @Autowired
-    public CategoryServiceImpl(CategoryRepository categoryRepository, ModelMapper modelMapper, Validator validator) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository,
+                               ModelMapper modelMapper, Validator validator) {
         this.categoryRepository = categoryRepository;
         this.modelMapper = modelMapper;
         this.validator = validator;
@@ -34,7 +35,8 @@ public class CategoryServiceImpl implements CategoryService {
         }
         Category category = this.modelMapper.map(categoryServiceModel, Category.class);
 
-        return this.modelMapper.map(this.categoryRepository.saveAndFlush(category), CategoryServiceModel.class);
+        return this.modelMapper.map(this.categoryRepository.saveAndFlush(category),
+                CategoryServiceModel.class);
     }
 
     @Override
@@ -65,7 +67,8 @@ public class CategoryServiceImpl implements CategoryService {
 
         category.setName(categoryServiceModel.getName());
 
-        return this.modelMapper.map(this.categoryRepository.saveAndFlush(category), CategoryServiceModel.class);
+        return this.modelMapper.map(this.categoryRepository.saveAndFlush(category),
+                CategoryServiceModel.class);
     }
 
     @Override

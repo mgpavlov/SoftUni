@@ -16,6 +16,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -71,7 +73,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderServiceModel findOrderById(String id) {
         return this.orderRepository.findById(id)
                 .map(o -> this.modelMapper.map(o, OrderServiceModel.class))
-                .orElseThrow(() -> new OrderNotFoundException("Order not found!"));
+                .orElseThrow(() -> new OrderNotFoundException(ORDER_NOT_FOUND_EX_MSG));
     }
 
     @Override
@@ -84,7 +86,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void changeOrderStatus(String id) {
-        Order order = this.orderRepository.findById(id).orElseThrow(() -> new OrderNotFoundException("Order not found!"));
+        Order order = this.orderRepository.findById(id)
+                .orElseThrow(() -> new OrderNotFoundException(ORDER_NOT_FOUND_EX_MSG));
 
         order.setStatusDate(LocalDateTime.now());
         changeStatus(order);
@@ -94,7 +97,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderServiceModel> findOrdersByCustomerAndStatus(String customerName, Status status) {
-        return this.orderRepository.findAllOrdersByCustomerUsernameAndStatus_OrderByIssuedOn(customerName, status)
+        return this.orderRepository
+                .findAllOrdersByCustomerUsernameAndStatus_OrderByIssuedOn(customerName, status)
                 .stream()
                 .map(o -> modelMapper.map(o, OrderServiceModel.class))
                 .collect(Collectors.toList());

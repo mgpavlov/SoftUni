@@ -17,6 +17,8 @@ import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 @RequestMapping("/receipts")
 public class ReceiptsController extends BaseController {
@@ -32,24 +34,26 @@ public class ReceiptsController extends BaseController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PageTitle("Receipts")
+    @PageTitle(RECEIPTS)
     public ModelAndView getAllReceipts(ModelAndView modelAndView) {
 
-        List<ReceiptViewModel> allReceipts = mapReceiptServiceToViewModel(receiptService.findAllReceipts());
+        List<ReceiptViewModel> allReceipts =
+                mapReceiptServiceToViewModel(receiptService.findAllReceipts());
 
-        modelAndView.addObject("receipts", allReceipts);
+        modelAndView.addObject(RECEIPTS_TO_LOWER_CASE, allReceipts);
 
         return view("receipt/receipts", modelAndView);
     }
 
     @GetMapping("/all/details/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PageTitle("Receipts Details")
+    @PageTitle(RECEIPTS_DETAILS)
     public ModelAndView allReceiptDetails(@PathVariable String id, ModelAndView modelAndView) {
 
-        ReceiptViewModel receiptViewModel = modelMapper.map(receiptService.findReceiptById(id), ReceiptViewModel.class);
+        ReceiptViewModel receiptViewModel =
+                modelMapper.map(receiptService.findReceiptById(id), ReceiptViewModel.class);
 
-        modelAndView.addObject("receipt", receiptViewModel);
+        modelAndView.addObject(RECEIPT_TO_LOWER_CASE, receiptViewModel);
 
         return super.view("receipt/receipt-details", modelAndView);
     }
@@ -61,19 +65,19 @@ public class ReceiptsController extends BaseController {
         List<ReceiptViewModel> myReceipts =
                 mapReceiptServiceToViewModel(receiptService.findAllReceiptsByUsername(principal.getName()));
 
-        modelAndView.addObject("receipts", myReceipts);
+        modelAndView.addObject(RECEIPTS_TO_LOWER_CASE, myReceipts);
 
         return view("receipt/receipts", modelAndView);
     }
 
     @GetMapping("/my/details/{id}")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("Receipts Details")
+    @PageTitle(RECEIPTS_DETAILS)
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
 
         ReceiptServiceModel receipt = receiptService.findReceiptById(id);
 
-        modelAndView.addObject("receipt", modelMapper.map(receipt, ReceiptViewModel.class));
+        modelAndView.addObject(RECEIPT_TO_LOWER_CASE, modelMapper.map(receipt, ReceiptViewModel.class));
 
         return super.view("receipt/receipt-details", modelAndView);
     }
@@ -87,16 +91,8 @@ public class ReceiptsController extends BaseController {
         return super.redirect("/receipts/my");
     }
 
-    @PostMapping("/print")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView printReceipt(String receiptId, Principal principal) throws Exception {
-
-        receiptService.printReceipt(receiptId, principal.getName());
-
-        return redirect("/receipts/my");
-    }
-
-    private List<ReceiptViewModel> mapReceiptServiceToViewModel(List<ReceiptServiceModel> receiptServiceModels){
+    private List<ReceiptViewModel> mapReceiptServiceToViewModel
+            (List<ReceiptServiceModel> receiptServiceModels){
         return receiptServiceModels.stream()
                 .map(product -> modelMapper.map(product, ReceiptViewModel.class))
                 .collect(Collectors.toList());
@@ -104,9 +100,9 @@ public class ReceiptsController extends BaseController {
 
     @ExceptionHandler({ReceiptNotFoundException.class})
     public ModelAndView handleProductNotFound(ReceiptNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+        ModelAndView modelAndView = new ModelAndView(ERROR);
+        modelAndView.addObject(MESSAGE, e.getMessage());
+        modelAndView.addObject(STATUS_CODE, e.getStatusCode());
 
         return modelAndView;
     }

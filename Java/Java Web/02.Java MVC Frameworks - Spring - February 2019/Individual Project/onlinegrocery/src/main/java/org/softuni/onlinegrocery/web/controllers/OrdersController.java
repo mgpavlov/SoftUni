@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 @RequestMapping("/order")
 public class OrdersController extends BaseController {
@@ -34,12 +36,12 @@ public class OrdersController extends BaseController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PageTitle("Orders")
+    @PageTitle(ORDERS)
     public ModelAndView getAllOrders(ModelAndView modelAndView) {
 
         List<OrderViewModel> viewModels = mapListOrderServiceToViewModel(orderService.findAllOrders());
 
-        modelAndView.addObject("orders", viewModels);
+        modelAndView.addObject(ORDERS_TO_LOWER_CASE, viewModels);
 
         return view("order/all-orders", modelAndView);
     }
@@ -50,14 +52,14 @@ public class OrdersController extends BaseController {
 
         OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
 
-        modelAndView.addObject("order", order);
+        modelAndView.addObject(ORDER_TO_LOWER_CASE, order);
 
         return view("order/order-products", modelAndView);
     }
 
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("My Orders")
+    @PageTitle(MY_ORDERS)
     public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
         String customerName = principal.getName();
 
@@ -73,22 +75,22 @@ public class OrdersController extends BaseController {
         List<MyOrderViewModel> myDeliveredOrders =
                 mapListOrderServiceToMyViewModel(orderService.findOrdersByCustomerAndStatus(customerName, Status.Delivered));
 
-        modelAndView.addObject("orders", myOrders);
-        modelAndView.addObject("myPendingOrders", myPendingOrders);
-        modelAndView.addObject("myShippedOrders", myShippedOrders);
-        modelAndView.addObject("myDeliveredOrders", myDeliveredOrders);
+        modelAndView.addObject(ORDERS_TO_LOWER_CASE, myOrders);
+        modelAndView.addObject(MY_PENDING_ORDERS, myPendingOrders);
+        modelAndView.addObject(MY_SHIPPED_ORDERS, myShippedOrders);
+        modelAndView.addObject(MY_DELIVERED_ORDERS, myDeliveredOrders);
 
         return view("order/my-orders", modelAndView);
     }
 
     @GetMapping("/my/details/{id}")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("Order Details")
+    @PageTitle(ORDER_DETAILS)
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
 
         OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
 
-        modelAndView.addObject("order", order);
+        modelAndView.addObject(ORDER_TO_LOWER_CASE, order);
 
         return view("order/order-details", modelAndView);
     }
@@ -116,15 +118,15 @@ public class OrdersController extends BaseController {
         Status statusStatus = Status.Pending;
 
         switch (status){
-            case "All":
+            case STATUS_ALL:
                 return mapListOrderServiceToViewModel(orderService.findAllOrders());
-            case "Shipped":
+            case STATUS_SHIPPED:
                 statusStatus = Status.Shipped;
                 break;
-            case "Delivered":
+            case STATUS_DELIVERED:
                 statusStatus = Status.Delivered;
                 break;
-            case "Acquired":
+            case STATUS_ACQUIRED:
                 statusStatus = Status.Acquired;
                 break;
         }
@@ -151,7 +153,8 @@ public class OrdersController extends BaseController {
             ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
 
             shoppingCartItem.setQuantity(productKVP.getValue());
-            OrderProductViewModel orderProductViewModel = modelMapper.map(productKVP.getKey(), OrderProductViewModel.class);
+            OrderProductViewModel orderProductViewModel =
+                    modelMapper.map(productKVP.getKey(), OrderProductViewModel.class);
             shoppingCartItem.setProduct(orderProductViewModel);
 
             items.add(shoppingCartItem);
@@ -175,9 +178,9 @@ public class OrdersController extends BaseController {
 
     @ExceptionHandler({OrderNotFoundException.class})
     public ModelAndView handleProductNotFound(OrderNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+        ModelAndView modelAndView = new ModelAndView(ERROR);
+        modelAndView.addObject(MESSAGE, e.getMessage());
+        modelAndView.addObject(STATUS_CODE, e.getStatusCode());
 
         return modelAndView;
     }

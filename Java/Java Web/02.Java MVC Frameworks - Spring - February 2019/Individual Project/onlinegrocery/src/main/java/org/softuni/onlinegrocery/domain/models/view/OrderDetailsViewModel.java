@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class OrderDetailsViewModel {
+
     private String id;
     private LocalDateTime issuedOn;
     private LocalDateTime statusDate;

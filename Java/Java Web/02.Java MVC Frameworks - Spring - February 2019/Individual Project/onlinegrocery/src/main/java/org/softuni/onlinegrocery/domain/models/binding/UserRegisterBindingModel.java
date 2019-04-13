@@ -8,8 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
+import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
 
 
 public class UserRegisterBindingModel {

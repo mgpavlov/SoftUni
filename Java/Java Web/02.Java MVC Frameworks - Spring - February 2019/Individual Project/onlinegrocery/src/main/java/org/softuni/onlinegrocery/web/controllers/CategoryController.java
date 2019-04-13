@@ -18,6 +18,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 @RequestMapping("/categories")
 public class CategoryController extends BaseController {
@@ -34,7 +36,7 @@ public class CategoryController extends BaseController {
     @GetMapping("/add")
     @PageTitle("Add Category")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView addCategory(@ModelAttribute(name = "model") CategoryAddBindingModel categoryAddBindingModel,
+    public ModelAndView addCategory(@ModelAttribute(name = MODEL) CategoryAddBindingModel categoryAddBindingModel,
                                     ModelAndView modelAndView) {
 
         return loadAndReturnModelAndView(categoryAddBindingModel, modelAndView);
@@ -42,7 +44,7 @@ public class CategoryController extends BaseController {
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView addCategoryConfirm(@Valid @ModelAttribute(name = "model") CategoryAddBindingModel model,
+    public ModelAndView addCategoryConfirm(@Valid @ModelAttribute(name = MODEL) CategoryAddBindingModel model,
                                            BindingResult bindingResult, ModelAndView modelAndView) {
 
         CategoryServiceModel categoryServiceModel =
@@ -58,13 +60,13 @@ public class CategoryController extends BaseController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    @PageTitle("Categories")
+    @PageTitle(CATEGORIES)
     public ModelAndView allCategories(ModelAndView modelAndView) {
 
         List<CategoryViewModel> categories =
                 mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
-        modelAndView.addObject("categories", categories);
+        modelAndView.addObject(CATEGORIES_TO_LOWER_CASE, categories);
 
         return view("category/all-categories", modelAndView);
     }
@@ -77,7 +79,7 @@ public class CategoryController extends BaseController {
         CategoryViewModel categoryViewModel =
                 modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
 
-        modelAndView.addObject("model", categoryViewModel);
+        modelAndView.addObject(MODEL, categoryViewModel);
 
         return view("category/edit-category", modelAndView);
     }
@@ -93,7 +95,7 @@ public class CategoryController extends BaseController {
         if (bindingResult.hasErrors() ||
                 categoryService.editCategory(id, categoryServiceModel) == null) {
 
-            modelAndView.addObject("model", model);
+            modelAndView.addObject(MODEL, model);
 
             return view("category/edit-category", modelAndView);
         }
@@ -109,7 +111,7 @@ public class CategoryController extends BaseController {
         CategoryViewModel categoryViewModel =
                 modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
 
-        modelAndView.addObject("model", categoryViewModel);
+        modelAndView.addObject(MODEL, categoryViewModel);
 
         return view("category/delete-category", modelAndView);
     }
@@ -143,16 +145,16 @@ public class CategoryController extends BaseController {
     private ModelAndView loadAndReturnModelAndView
             (CategoryAddBindingModel categoryAddBindingModel, ModelAndView modelAndView) {
 
-        modelAndView.addObject("model", categoryAddBindingModel);
+        modelAndView.addObject(MODEL, categoryAddBindingModel);
 
         return view("category/add-category", modelAndView);
     }
 
     @ExceptionHandler({CategoryNotFoundException.class})
     public ModelAndView handleProductNotFound(CategoryNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+        ModelAndView modelAndView = new ModelAndView(ERROR);
+        modelAndView.addObject(MESSAGE, e.getMessage());
+        modelAndView.addObject(STATUS_CODE, e.getStatusCode());
 
         return modelAndView;
     }

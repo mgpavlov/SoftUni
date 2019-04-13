@@ -1,8 +1,8 @@
 package org.softuni.onlinegrocery.service;
 
-import org.hibernate.mapping.Collection;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Product;
+import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
 import org.softuni.onlinegrocery.error.ProductNotFoundException;
@@ -10,18 +10,15 @@ import org.softuni.onlinegrocery.repository.OfferRepository;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpClientErrorException.Unauthorized;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
-import org.thymeleaf.extras.springsecurity5.auth.Authorization;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -48,13 +45,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException {
+    public ProductServiceModel createProduct(ProductServiceModel productServiceModel,
+                                             MultipartFile image) throws IOException {
         if(!productValidation.isValid(productServiceModel) || image.isEmpty()) {
-            throw new IllegalArgumentException("Invalid product");
+            throw new IllegalArgumentException(INVALID_PRODUCT_EX_MSG);
         }
         if (productRepository.findByName(productServiceModel.getName())
                 .orElse(null) != null) {
-            throw new ProductNameAlreadyExistsException("Product already exists");
+            throw new ProductNameAlreadyExistsException(PRODUCT_NAME_EXIST_EX_MSG);
         }
         Product product = this.modelMapper.map(productServiceModel, Product.class);
 
@@ -63,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
         );
         product = this.productRepository.saveAndFlush(product);
         if (product == null){
-            throw new IllegalArgumentException("Invalid product");
+            throw new IllegalArgumentException(INVALID_PRODUCT_EX_MSG);
         }
         return this.modelMapper.map(product, ProductServiceModel.class);
     }
@@ -86,20 +84,22 @@ public class ProductServiceImpl implements ProductService {
                             .ifPresent(o -> productServiceModel.setDiscountedPrice(o.getPrice()));
 
                     return productServiceModel;
-                }).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
+                }).orElseThrow(() -> new ProductNotFoundException(PRODUCT_ID_DOESNT_EXIST_EX_MSG));
     }
 
     @Override
-    public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException {
-        Product product = this.productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
+    public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel,
+                                           boolean isNewImageUploaded, MultipartFile image) throws IOException {
+        Product product = this.productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(PRODUCT_ID_DOESNT_EXIST_EX_MSG));
         if(!productValidation.isValid(productServiceModel)) {
-            throw new IllegalArgumentException("Invalid product");
+            throw new IllegalArgumentException(INVALID_PRODUCT_EX_MSG);
         }
         productServiceModel.setId(id);
         Product update = modelMapper.map(productServiceModel, Product.class);
 
         if (product == null || update == null){
-            throw new ProductNotFoundException("Product with the given id was not found!");
+            throw new ProductNotFoundException(PRODUCT_ID_DOESNT_EXIST_EX_MSG);
         }
 
         if (isNewImageUploaded){
@@ -122,7 +122,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(String id) {
-        Product product = this.productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
+        Product product = this.productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(PRODUCT_ID_DOESNT_EXIST_EX_MSG));
         product.setDeleted(true);
 
         this.productRepository.save(product);
@@ -130,15 +131,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductServiceModel> findAllByCategory(String category) {
-        List<String> categories = this.categoryService.findAllCategories().stream().map(c -> c.getName()).collect(Collectors.toList());
+        List<String> categories = this.categoryService.findAllCategories()
+                .stream().map(CategoryServiceModel::getName).collect(Collectors.toList());
         if (!categories.contains(category)){
-            throw new SecurityException("Page Not Found: ERROR 404!\n" +
-                    "This page doesn't exist...");
+            throw new SecurityException(PAGE_NOT_FOUND_EX_MSG);
         }
 
         return this.productRepository.findAll()
                 .stream()
-                .filter(product -> product.getCategories().stream().anyMatch(categoryStream -> categoryStream.getName().equals(category)))
+                .filter(product -> product.getCategories()
+                        .stream().anyMatch(categoryStream -> categoryStream.getName().equals(category)))
                 .map(product -> this.modelMapper.map(product, ProductServiceModel.class))
                 .collect(Collectors.toList());
     }

@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 @RequestMapping("/products")
 public class ProductController extends BaseController {
@@ -51,14 +53,15 @@ public class ProductController extends BaseController {
     @GetMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     @PageTitle("Add Products")
-    public ModelAndView addProduct(@ModelAttribute(name = "model") ProductAddBindingModel model,
+    public ModelAndView addProduct(@ModelAttribute(name = MODEL) ProductAddBindingModel model,
                                    ModelAndView modelAndView) {
         return loadAndReturnModelAndView(model, modelAndView);
     }
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = "model") ProductAddBindingModel model, BindingResult bindingResult,
+    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = "model") ProductAddBindingModel model,
+                                          BindingResult bindingResult,
                                           ModelAndView modelAndView) throws IOException {
         ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
 
@@ -75,7 +78,8 @@ public class ProductController extends BaseController {
     @PageTitle("Products")
     public ModelAndView allProducts(ModelAndView modelAndView) {
 
-        List<ProductAllViewModel> productAllViewModels = mapProductServiceToViewModel(productService.findAllFilteredProducts());
+        List<ProductAllViewModel> productAllViewModels =
+                mapProductServiceToViewModel(productService.findAllFilteredProducts());
 
         modelAndView.addObject("products", productAllViewModels);
 
@@ -86,7 +90,8 @@ public class ProductController extends BaseController {
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Product Details")
     public ModelAndView detailsProduct(@PathVariable String id, ModelAndView modelAndView) {
-        ProductDetailsViewModel product = modelMapper.map(productService.findProductById(id), ProductDetailsViewModel.class);
+        ProductDetailsViewModel product =
+                modelMapper.map(productService.findProductById(id), ProductDetailsViewModel.class);
         modelAndView.addObject("product", product);
 
         return view("product/details", modelAndView);
@@ -98,9 +103,11 @@ public class ProductController extends BaseController {
     public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView,
                                     @ModelAttribute("model") ProductAddBindingModel productAddBindingModel) {
 
-        productAddBindingModel = this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
+        productAddBindingModel =
+                this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
 
-        List<CategoryViewModel> categoryViewModelList = mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
+        List<CategoryViewModel> categoryViewModelList =
+                mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
         modelAndView.addObject("model", productAddBindingModel);
 
@@ -114,7 +121,8 @@ public class ProductController extends BaseController {
 
     @PostMapping("/edit/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView editProductConfirm(ModelAndView modelAndView, @PathVariable String id, @Valid @ModelAttribute("model") ProductAddBindingModel model,
+    public ModelAndView editProductConfirm(ModelAndView modelAndView, @PathVariable String id,
+                                           @Valid @ModelAttribute("model") ProductAddBindingModel model,
                                            BindingResult bindingResult) throws IOException {
 
         boolean isNewImageUploaded = !model.getImage().isEmpty();
@@ -127,7 +135,8 @@ public class ProductController extends BaseController {
 
         if (bindingResult.hasErrors() ||
                 productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage())==null) {
-            modelAndView.addObject("categories", mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
+            modelAndView.addObject("categories",
+                    mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
             modelAndView.addObject("model", model);
             modelAndView.addObject("productId", id);
             return this.view("product/edit-product", modelAndView);
@@ -194,7 +203,8 @@ public class ProductController extends BaseController {
 
         modelAndView.addObject("model", productAddBindingModel);
 
-        modelAndView.addObject("categories", mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
+        modelAndView.addObject("categories",
+                mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
 
         modelAndView.addObject("productId", id);
 
@@ -242,7 +252,8 @@ public class ProductController extends BaseController {
         return mapProductServiceToViewModel(productService.findProductsByPartOfName(product));
     }
 
-    private ModelAndView loadAndReturnModelAndView(ProductAddBindingModel productBindingModel, ModelAndView modelAndView) {
+    private ModelAndView loadAndReturnModelAndView(ProductAddBindingModel productBindingModel,
+                                                   ModelAndView modelAndView) {
 
         List<CategoryViewModel> categories = mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 

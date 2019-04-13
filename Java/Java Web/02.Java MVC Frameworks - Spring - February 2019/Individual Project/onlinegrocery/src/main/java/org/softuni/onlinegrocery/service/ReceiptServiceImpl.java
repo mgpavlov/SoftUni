@@ -10,7 +10,6 @@ import org.softuni.onlinegrocery.error.ReceiptNotFoundException;
 import org.softuni.onlinegrocery.repository.OrderRepository;
 import org.softuni.onlinegrocery.repository.ReceiptRepository;
 import org.softuni.onlinegrocery.repository.UserRepository;
-import org.softuni.onlinegrocery.util.PdfGenaratorUtil;
 import org.softuni.onlinegrocery.validation.ReceiptValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,9 +21,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
+
 @Service
 public class ReceiptServiceImpl implements ReceiptService {
-    private static final String DEFAULT_USER_NOT_FOUND_EX_MSG = "Username not found.";
+
     private final ReceiptRepository receiptRepository;
     private final OrderRepository orderRepository;
     private final OrderService orderService;
@@ -32,12 +33,10 @@ public class ReceiptServiceImpl implements ReceiptService {
     private final ReceiptValidationService receiptValidationService;
     private final ModelMapper modelMapper;
 
-
     @Autowired
-    PdfGenaratorUtil pdfGenaratorUtil;
-
-    @Autowired
-    public ReceiptServiceImpl(ReceiptRepository receiptRepository, OrderRepository orderRepository, OrderService orderService, UserRepository userRepository, ReceiptValidationService receiptValidationService, ModelMapper modelMapper) {
+    public ReceiptServiceImpl(ReceiptRepository receiptRepository, OrderRepository orderRepository,
+                              OrderService orderService, UserRepository userRepository,
+                              ReceiptValidationService receiptValidationService, ModelMapper modelMapper) {
         this.receiptRepository = receiptRepository;
         this.orderRepository = orderRepository;
         this.orderService = orderService;
@@ -75,7 +74,8 @@ public class ReceiptServiceImpl implements ReceiptService {
 
     @Override
     public ReceiptServiceModel getReceiptById(String id) {
-        Receipt receipt = this.receiptRepository.findById(id).orElseThrow(ReceiptNotFoundException::new);
+        Receipt receipt = this.receiptRepository.findById(id)
+                .orElseThrow(ReceiptNotFoundException::new);
         return modelMapper.map(receipt, ReceiptServiceModel.class);
     }
 
@@ -84,7 +84,7 @@ public class ReceiptServiceImpl implements ReceiptService {
         Order order = this.orderRepository.findById(orderId)
                 .orElseThrow(OrderNotFoundException::new);
         User recipient = this.userRepository.findByUsername(name)
-                .orElseThrow(() -> new UsernameNotFoundException(DEFAULT_USER_NOT_FOUND_EX_MSG));
+                .orElseThrow(() -> new UsernameNotFoundException(USER_NOT_FOUND_EX_MSG));
 
         Receipt receipt = new Receipt();
 
@@ -101,15 +101,9 @@ public class ReceiptServiceImpl implements ReceiptService {
     @Override
     public ReceiptServiceModel findReceiptById(String receiptId) {
 
-        Receipt receipt = this.receiptRepository.findById(receiptId).orElseThrow(ReceiptNotFoundException::new);
+        Receipt receipt = this.receiptRepository.findById(receiptId)
+                .orElseThrow(ReceiptNotFoundException::new);
 
         return modelMapper.map(receipt, ReceiptServiceModel.class);
-    }
-
-    @Override
-    public void printReceipt(String receiptId, String username) throws Exception {
-        Map<String,String> data = new HashMap<String,String>();
-        data.put("name", username+"-"+receiptId);
-        pdfGenaratorUtil.createPdf("test", data);
     }
 }

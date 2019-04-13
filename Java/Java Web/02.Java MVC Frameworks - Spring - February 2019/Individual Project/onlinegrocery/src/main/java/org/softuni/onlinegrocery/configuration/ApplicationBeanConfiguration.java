@@ -9,16 +9,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 public class ApplicationBeanConfiguration {
 
-    static ModelMapper mapper;
+    static ModelMapper modelMapper;
 
     static {
-        mapper = new ModelMapper();
-        MappingsInitializer.initMappings(mapper);
+        modelMapper = new ModelMapper();
+        MappingsInitializer.initMappings(modelMapper);
     }
 
     @Bean
     public ModelMapper modelMapper() {
-        return mapper;
+        return modelMapper;
     }
 
     @Bean

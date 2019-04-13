@@ -18,6 +18,8 @@ import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Controller
 public class UserController extends BaseController {
 
@@ -32,23 +34,23 @@ public class UserController extends BaseController {
 
     @GetMapping("/register")
     @PreAuthorize("isAnonymous()")
-    @PageTitle("Register")
-    public ModelAndView renderRegister(@ModelAttribute(name = "model") UserRegisterBindingModel model,
+    @PageTitle(REGISTER)
+    public ModelAndView renderRegister(@ModelAttribute(name = MODEL) UserRegisterBindingModel model,
                                        ModelAndView modelAndView) {
 
-        modelAndView.addObject("model", model);
+        modelAndView.addObject(MODEL, model);
 
         return view("register", modelAndView);
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@Valid @ModelAttribute(name = "model") UserRegisterBindingModel model,
+    public ModelAndView register(@Valid @ModelAttribute(name = MODEL) UserRegisterBindingModel model,
                                  BindingResult bindingResult, ModelAndView modelAndView) {
 
         if (!model.getPassword().equals(model.getConfirmPassword()) || bindingResult.hasErrors() ||
                 this.userService.register(modelMapper.map(model, UserServiceModel.class))==null) {
 
-            modelAndView.addObject("model", model);
+            modelAndView.addObject(MODEL, model);
 
             return view("register", modelAndView);
         }
@@ -57,10 +59,10 @@ public class UserController extends BaseController {
 
     @GetMapping("/login")
     @PreAuthorize("isAnonymous()")
-    @PageTitle("Login")
+    @PageTitle(LOGIN)
     public ModelAndView login(@RequestParam(required = false) String error, ModelAndView modelAndView) {
         if (error != null) {
-            modelAndView.addObject("error", "Error");
+            modelAndView.addObject(ERROR, "Error");
         }
 
         return view("/login", modelAndView);
@@ -68,21 +70,22 @@ public class UserController extends BaseController {
 
     @GetMapping("/user/profile/{username}")
     @PreAuthorize("isAuthenticated()")
-    @PageTitle("User Profile")
-    public ModelAndView renderProfilePageByUsername(@PathVariable("username") String username, ModelAndView modelAndView) {
+    @PageTitle(USER_PROFILE)
+    public ModelAndView renderProfilePageByUsername(@PathVariable("username")
+                                                                String username, ModelAndView modelAndView) {
 
         UserServiceModel userServiceModel = this.userService.findByUsername(username);
 
         UsersViewModel usersViewModel = this.modelMapper.map(userServiceModel, UsersViewModel.class);
 
-        modelAndView.addObject("viewModel", usersViewModel);
+        modelAndView.addObject(VIEW_MODEL, usersViewModel);
 
         return view("/profile", modelAndView);
     }
 
     @GetMapping("/admin/users")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PageTitle("Users")
+    @PageTitle(USERS)
     public ModelAndView renderAllUsersPage() {
 
         return view("/users-all");
@@ -125,7 +128,7 @@ public class UserController extends BaseController {
     @GetMapping("/api/users/find")
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public UsersViewModel allUsers(@RequestParam("username") String username) {
+    public UsersViewModel allUsers(@RequestParam(USERNAME) String username) {
 
         UserServiceModel byUsername = this.userService.findByUsername(username);
 

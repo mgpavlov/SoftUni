@@ -17,6 +17,4 @@ public interface ReceiptService {
     void createReceipt(String orderId, String name);
 
     ReceiptServiceModel findReceiptById(String receiptId);
-
-    void printReceipt(String receiptId, String username) throws Exception;
 }
