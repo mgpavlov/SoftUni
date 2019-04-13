@@ -21,22 +21,20 @@ import java.util.stream.Collectors;
 public class ReceiptsController extends BaseController {
 
     private final ReceiptService receiptService;
-    private final ModelMapper mapper;
+    private final ModelMapper modelMapper;
 
     public ReceiptsController (ReceiptService receiptService,
             ModelMapper modelMapper){
         this.receiptService = receiptService;
-        this.mapper = modelMapper;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PageTitle("Receipts")
     public ModelAndView getAllReceipts(ModelAndView modelAndView) {
-        List<ReceiptViewModel> allReceipts = receiptService.findAllReceipts()
-                .stream()
-                .map(r -> mapper.map(r, ReceiptViewModel.class))
-                .collect(Collectors.toList());
+
+        List<ReceiptViewModel> allReceipts = mapReceiptServiceToViewModel(receiptService.findAllReceipts());
 
         modelAndView.addObject("receipts", allReceipts);
 
@@ -47,8 +45,10 @@ public class ReceiptsController extends BaseController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PageTitle("Receipts Details")
     public ModelAndView allReceiptDetails(@PathVariable String id, ModelAndView modelAndView) {
-        ReceiptServiceModel receipt = this.receiptService.findReceiptById(id);
-        modelAndView.addObject("receipt", this.mapper.map(receipt, ReceiptViewModel.class));
+
+        ReceiptViewModel receiptViewModel = modelMapper.map(receiptService.findReceiptById(id), ReceiptViewModel.class);
+
+        modelAndView.addObject("receipt", receiptViewModel);
 
         return super.view("receipt/receipt-details", modelAndView);
     }
@@ -56,14 +56,11 @@ public class ReceiptsController extends BaseController {
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
-        String customerName = principal.getName();
-        List<ReceiptViewModel> myReceipts = receiptService.findAllReceiptsByUsername(customerName)
-                .stream()
-                .map(r -> mapper.map(r, ReceiptViewModel.class))
-                .collect(Collectors.toList());
+
+        List<ReceiptViewModel> myReceipts =
+                mapReceiptServiceToViewModel(receiptService.findAllReceiptsByUsername(principal.getName()));
 
         modelAndView.addObject("receipts", myReceipts);
-
 
         return view("receipt/receipts", modelAndView);
     }
@@ -72,8 +69,10 @@ public class ReceiptsController extends BaseController {
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Receipts Details")
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
-        ReceiptServiceModel receipt = this.receiptService.findReceiptById(id);
-        modelAndView.addObject("receipt", this.mapper.map(receipt, ReceiptViewModel.class));
+
+        ReceiptServiceModel receipt = receiptService.findReceiptById(id);
+
+        modelAndView.addObject("receipt", modelMapper.map(receipt, ReceiptViewModel.class));
 
         return super.view("receipt/receipt-details", modelAndView);
     }
@@ -81,7 +80,8 @@ public class ReceiptsController extends BaseController {
     @PostMapping("/create")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView createReceipt(String orderId, Principal principal) {
-        this.receiptService.createReceipt(orderId, principal.getName());
+
+        receiptService.createReceipt(orderId, principal.getName());
 
         return super.redirect("/receipts/my");
     }
@@ -89,9 +89,16 @@ public class ReceiptsController extends BaseController {
     @PostMapping("/print")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView printReceipt(String receiptId, Principal principal) throws Exception {
-        this.receiptService.printReceipt(receiptId, principal.getName());
+
+        receiptService.printReceipt(receiptId, principal.getName());
 
         return redirect("/receipts/my");
+    }
+
+    private List<ReceiptViewModel> mapReceiptServiceToViewModel(List<ReceiptServiceModel> receiptServiceModels){
+        return receiptServiceModels.stream()
+                .map(product -> modelMapper.map(product, ReceiptViewModel.class))
+                .collect(Collectors.toList());
     }
 
 }

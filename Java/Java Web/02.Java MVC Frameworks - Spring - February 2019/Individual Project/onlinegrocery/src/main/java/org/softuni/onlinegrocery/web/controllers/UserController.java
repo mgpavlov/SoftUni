@@ -25,8 +25,7 @@ public class UserController extends BaseController {
     private final ModelMapper modelMapper;
 
     @Autowired
-    public UserController(UserService userService,
-                          ModelMapper modelMapper) {
+    public UserController(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
         this.modelMapper = modelMapper;
     }
@@ -36,7 +35,9 @@ public class UserController extends BaseController {
     @PageTitle("Register")
     public ModelAndView renderRegister(@ModelAttribute(name = "model") UserRegisterBindingModel model,
                                        ModelAndView modelAndView) {
+
         modelAndView.addObject("model", model);
+
         return view("register", modelAndView);
     }
 
@@ -46,7 +47,9 @@ public class UserController extends BaseController {
 
         if (!model.getPassword().equals(model.getConfirmPassword()) || bindingResult.hasErrors() ||
                 this.userService.register(modelMapper.map(model, UserServiceModel.class))==null) {
+
             modelAndView.addObject("model", model);
+
             return view("register", modelAndView);
         }
         return redirect("/login");
@@ -63,45 +66,40 @@ public class UserController extends BaseController {
         return view("/login", modelAndView);
     }
 
-    /*@GetMapping("/user/profile/{id}")
-    @PreAuthorize("isAuthenticated()")
-    @PageTitle("User Profile")
-    public ModelAndView renderProfilePage(@PathVariable("id") String id, ModelAndView modelAndView) {
-        UserServiceModel userServiceModel = this.userService.findById(id);
-        UsersViewModel usersViewModel = this.modelMapper.map(userServiceModel, UsersViewModel.class);
-        modelAndView.addObject("viewModel", usersViewModel);
-
-        return super.view("/profile", modelAndView);
-    }*/
-
     @GetMapping("/user/profile/{username}")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("User Profile")
     public ModelAndView renderProfilePageByUsername(@PathVariable("username") String username, ModelAndView modelAndView) {
+
         UserServiceModel userServiceModel = this.userService.findByUsername(username);
+
         UsersViewModel usersViewModel = this.modelMapper.map(userServiceModel, UsersViewModel.class);
+
         modelAndView.addObject("viewModel", usersViewModel);
 
-        return super.view("/profile", modelAndView);
+        return view("/profile", modelAndView);
     }
 
     @GetMapping("/admin/users")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PageTitle("Users")
     public ModelAndView renderAllUsersPage() {
-        return super.view("/users-all");
+
+        return view("/users-all");
     }
 
     @PostMapping("/users/edit/role/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView updateUserRole(@PathVariable("id") String id, String role, Principal principal) {
+
         UserServiceModel currentLoggedUser = this.userService.findByUsername(principal.getName());
+
         UserServiceModel targetUser = userService.findById(id);
         if (role == null){
-            return super.redirect("/user/profile/" + targetUser.getUsername());
+            return redirect("/user/profile/" + targetUser.getUsername());
         }
         if (currentLoggedUser.getId().equals(id)) {
-            return super.redirect("/user/profile/" + principal.getName());
+            return redirect("/user/profile/" + principal.getName());
         }
 
         try {
@@ -109,13 +107,15 @@ public class UserController extends BaseController {
         } catch (IllegalArgumentException iae) {
             iae.printStackTrace();
         }
-        return super.redirect("/user/profile/" + targetUser.getUsername());
+
+        return redirect("/user/profile/" + targetUser.getUsername());
     }
 
     @GetMapping("/api/users")
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<UsersViewModel> allUsers() {
+
         return this.userService.findAllUsers()
                 .stream()
                 .map(serviceModel -> this.modelMapper.map(serviceModel, UsersViewModel.class))
@@ -126,6 +126,7 @@ public class UserController extends BaseController {
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public UsersViewModel allUsers(@RequestParam("username") String username) {
+
         UserServiceModel byUsername = this.userService.findByUsername(username);
 
         return byUsername == null ? new UsersViewModel()

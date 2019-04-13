@@ -30,17 +30,12 @@ public class CategoryController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    private ModelAndView loadAndReturnModelAndView(CategoryAddBindingModel categoryAddBindingModel, ModelAndView modelAndView) {
-
-        modelAndView.addObject("model", categoryAddBindingModel);
-        return view("category/add-category", modelAndView);
-    }
-
     @GetMapping("/add")
     @PageTitle("Add Category")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     public ModelAndView addCategory(@ModelAttribute(name = "model") CategoryAddBindingModel categoryAddBindingModel,
                                     ModelAndView modelAndView) {
+
         return loadAndReturnModelAndView(categoryAddBindingModel, modelAndView);
     }
 
@@ -49,7 +44,8 @@ public class CategoryController extends BaseController {
     public ModelAndView addCategoryConfirm(@Valid @ModelAttribute(name = "model") CategoryAddBindingModel model,
                                            BindingResult bindingResult, ModelAndView modelAndView) {
 
-        CategoryServiceModel categoryServiceModel = modelMapper.map(model, CategoryServiceModel.class);
+        CategoryServiceModel categoryServiceModel =
+                modelMapper.map(model, CategoryServiceModel.class);
 
         if (bindingResult.hasErrors() ||
                 categoryService.addCategory(categoryServiceModel) == null) {
@@ -64,10 +60,8 @@ public class CategoryController extends BaseController {
     @PageTitle("Categories")
     public ModelAndView allCategories(ModelAndView modelAndView) {
 
-        List<CategoryViewModel> categories = categoryService.findAllCategories()
-                .stream()
-                .map(c -> modelMapper.map(c, CategoryViewModel.class))
-                .collect(Collectors.toList());
+        List<CategoryViewModel> categories =
+                mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
         modelAndView.addObject("categories", categories);
 
@@ -79,7 +73,8 @@ public class CategoryController extends BaseController {
     @PageTitle("Edit Category")
     public ModelAndView editCategory(@PathVariable String id, ModelAndView modelAndView) {
 
-        CategoryViewModel categoryViewModel = modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
+        CategoryViewModel categoryViewModel =
+                modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
 
         modelAndView.addObject("model", categoryViewModel);
 
@@ -91,14 +86,15 @@ public class CategoryController extends BaseController {
     public ModelAndView editCategoryConfirm(@PathVariable String id, @Valid @ModelAttribute(name = "model") CategoryAddBindingModel model,
                                             BindingResult bindingResult, ModelAndView modelAndView) {
 
-        CategoryServiceModel categoryServiceModel = modelMapper.map(model, CategoryServiceModel.class);
+        CategoryServiceModel categoryServiceModel =
+                modelMapper.map(model, CategoryServiceModel.class);
 
         if (bindingResult.hasErrors() ||
                 categoryService.editCategory(id, categoryServiceModel) == null) {
 
             modelAndView.addObject("model", model);
-            return view("category/edit-category", modelAndView);
 
+            return view("category/edit-category", modelAndView);
         }
 
         return redirect("/categories/all");
@@ -109,7 +105,8 @@ public class CategoryController extends BaseController {
     @PageTitle("Delete Category")
     public ModelAndView deleteCategory(@PathVariable String id, ModelAndView modelAndView) {
 
-        CategoryViewModel categoryViewModel = modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
+        CategoryViewModel categoryViewModel =
+                modelMapper.map(categoryService.findCategoryById(id), CategoryViewModel.class);
 
         modelAndView.addObject("model", categoryViewModel);
 
@@ -129,12 +126,26 @@ public class CategoryController extends BaseController {
     /*@PreAuthorize("hasRole('ROLE_MODERATOR')")*/
     @ResponseBody
     public List<CategoryViewModel> fetchCategories() {
-        return categoryService.findAllCategories()
-                .stream()
-                .map(c -> modelMapper.map(c, CategoryViewModel.class))
+        List<CategoryViewModel> categories =
+                mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
+
+        return categories;
+    }
+
+    private List<CategoryViewModel> mapCategoryServiceToViewModel
+            (List<CategoryServiceModel> categoryServiceModels){
+        return categoryServiceModels.stream()
+                .map(product -> modelMapper.map(product, CategoryViewModel.class))
                 .collect(Collectors.toList());
     }
 
+    private ModelAndView loadAndReturnModelAndView
+            (CategoryAddBindingModel categoryAddBindingModel, ModelAndView modelAndView) {
+
+        modelAndView.addObject("model", categoryAddBindingModel);
+
+        return view("category/add-category", modelAndView);
+    }
 }
 
 

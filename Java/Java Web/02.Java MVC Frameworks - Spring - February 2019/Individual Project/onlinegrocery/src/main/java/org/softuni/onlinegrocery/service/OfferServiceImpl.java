@@ -55,7 +55,7 @@ public class OfferServiceImpl implements OfferService {
         for (int i = 0; i < 10; i++) {
             Offer offer = new Offer();
             offer.setProduct(this.modelMapper.map(products.get(rnd.nextInt(products.size())), Product.class));
-            offer.setPrice(offer.getProduct().getPrice().multiply(new BigDecimal(0.8)));
+            offer.setPrice(offer.getProduct().getPrice().multiply(new BigDecimal(0.75)));
 
             if (offers.stream().filter(o -> o.getProduct().getId().equals(offer.getProduct().getId())).count() == 0) {
                 offers.add(offer);

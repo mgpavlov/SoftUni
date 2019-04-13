@@ -51,8 +51,68 @@ public class CartController extends BaseController {
     @PostMapping("/add-product")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToCartConfirm(String id, int quantity, HttpSession session) {
-        ProductDetailsViewModel product = this.modelMapper
-                .map(this.productService.findProductById(id), ProductDetailsViewModel.class);
+
+        ShoppingCartItem cartItem = initCartItem(id, quantity);
+
+        List<ShoppingCartItem> cart = retrieveCart(session);
+
+        addItemToCart(cartItem, cart);
+
+        return redirect("/home");
+    }
+
+    @GetMapping("/details")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Cart Details")
+    public ModelAndView cartDetails(ModelAndView modelAndView, HttpSession session) {
+
+        List<ShoppingCartItem> cart = retrieveCart(session);
+
+        modelAndView.addObject("totalPrice", calcTotal(cart));
+
+        return view("cart/cart-details", modelAndView);
+    }
+
+    @DeleteMapping("/remove-product")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView removeFromCartConfirm(String id, HttpSession session) {
+
+        removeItemFromCart(id, retrieveCart(session));
+
+        return redirect("/cart/details");
+    }
+
+    @PostMapping("/checkout")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView checkoutConfirm(HttpSession session, Principal principal) {
+        List<ShoppingCartItem> cart = retrieveCart(session);
+
+        OrderServiceModel orderServiceModel = prepareOrder(cart, principal.getName());
+        if (orderServiceModel.getProducts().isEmpty()){
+            return redirect("/cart/details");
+        }
+        orderService.createOrder(orderServiceModel);
+
+        session.setAttribute("shopping-cart", new LinkedList<>());
+
+        return redirect("/home");
+    }
+
+    private List<ShoppingCartItem> retrieveCart(HttpSession session) {
+        initCart(session);
+
+        return (List<ShoppingCartItem>) session.getAttribute("shopping-cart");
+    }
+
+    private void initCart(HttpSession session) {
+        if (session.getAttribute("shopping-cart") == null) {
+            session.setAttribute("shopping-cart", new LinkedList<>());
+        }
+    }
+
+    private ShoppingCartItem initCartItem(String id, int quantity) {
+        ProductDetailsViewModel product = modelMapper
+                .map(productService.findProductById(id), ProductDetailsViewModel.class);
 
         OrderProductViewModel orderProductViewModel = new OrderProductViewModel();
         orderProductViewModel.setProduct(product);
@@ -62,51 +122,7 @@ public class CartController extends BaseController {
         cartItem.setProduct(orderProductViewModel);
         cartItem.setQuantity(quantity);
 
-        var cart = this.retrieveCart(session);
-        this.addItemToCart(cartItem, cart);
-
-        return super.redirect("/home");
-    }
-
-    @GetMapping("/details")
-    @PreAuthorize("isAuthenticated()")
-    @PageTitle("Cart Details")
-    public ModelAndView cartDetails(ModelAndView modelAndView, HttpSession session) {
-        var cart = this.retrieveCart(session);
-        modelAndView.addObject("totalPrice", this.calcTotal(cart));
-
-        return super.view("cart/cart-details", modelAndView);
-    }
-
-    @DeleteMapping("/remove-product")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView removeFromCartConfirm(String id, HttpSession session) {
-        this.removeItemFromCart(id, this.retrieveCart(session));
-
-        return super.redirect("/cart/details");
-    }
-
-    @PostMapping("/checkout")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView checkoutConfirm(HttpSession session, Principal principal) {
-        var cart = this.retrieveCart(session);
-
-        OrderServiceModel orderServiceModel = this.prepareOrder(cart, principal.getName());
-        this.orderService.createOrder(orderServiceModel);
-        session.setAttribute("shopping-cart", new LinkedList<>());
-        return super.redirect("/home");
-    }
-
-    private List<ShoppingCartItem> retrieveCart(HttpSession session) {
-        this.initCart(session);
-
-        return (List<ShoppingCartItem>) session.getAttribute("shopping-cart");
-    }
-
-    private void initCart(HttpSession session) {
-        if (session.getAttribute("shopping-cart") == null) {
-            session.setAttribute("shopping-cart", new LinkedList<>());
-        }
+        return cartItem;
     }
 
     private void addItemToCart(ShoppingCartItem item, List<ShoppingCartItem> cart) {
@@ -138,11 +154,12 @@ public class CartController extends BaseController {
     }
 
     private OrderServiceModel prepareOrder(List<ShoppingCartItem> cart, String customer) {
+
         OrderServiceModel orderServiceModel = new OrderServiceModel();
-        orderServiceModel.setCustomer(this.userService.findUserByUserName(customer));
+        orderServiceModel.setCustomer(userService.findUserByUserName(customer));
         List<OrderProductServiceModel> products = new ArrayList<>();
         for (ShoppingCartItem item : cart) {
-            OrderProductServiceModel productServiceModel = this.modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
+            OrderProductServiceModel productServiceModel = modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
 
             for (int i = 0; i < item.getQuantity(); i++) {
                 products.add(productServiceModel);
@@ -150,7 +167,7 @@ public class CartController extends BaseController {
         }
 
         orderServiceModel.setProducts(products);
-        orderServiceModel.setTotalPrice(this.calcTotal(cart));
+        orderServiceModel.setTotalPrice(calcTotal(cart));
 
         return orderServiceModel;
     }

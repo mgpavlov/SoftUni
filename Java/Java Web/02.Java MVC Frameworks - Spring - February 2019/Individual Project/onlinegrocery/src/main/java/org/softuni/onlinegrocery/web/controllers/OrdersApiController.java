@@ -1,3 +1,4 @@
+/*
 package org.softuni.onlinegrocery.web.controllers;
 
 import org.softuni.onlinegrocery.domain.models.rest.ProductOrderRequestModel;
@@ -21,6 +22,9 @@ public class OrdersApiController {
     @PostMapping("/submit")
     public void submitOrder(@RequestBody ProductOrderRequestModel model, Principal principal) throws Exception {
         String name = principal.getName();
-        /*orderService.createOrder(model.getId(), name);*/
+        */
+/*orderService.createOrder(model.getId(), name);*//*
+
     }
 }
+*/

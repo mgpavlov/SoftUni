@@ -4,10 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
-import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.*;
 import org.softuni.onlinegrocery.service.OrderService;
-import org.softuni.onlinegrocery.service.ProductService;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -24,27 +22,22 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/order")
 public class OrdersController extends BaseController {
-    private final ProductService productService;
-    private final OrderService orderService;
-    private final ModelMapper mapper;
 
-    public OrdersController(
-            ProductService productService,
-            OrderService orderService,
-            ModelMapper modelMapper){
-        this.productService = productService;
+    private final OrderService orderService;
+    private final ModelMapper modelMapper;
+
+    public OrdersController(OrderService orderService, ModelMapper modelMapper){
         this.orderService = orderService;
-        this.mapper = modelMapper;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PageTitle("Orders")
     public ModelAndView getAllOrders(ModelAndView modelAndView) {
-        List<OrderViewModel> viewModels = orderService.findAllOrders()
-                .stream()
-                .map(o -> mapper.map(o, OrderViewModel.class))
-                .collect(Collectors.toList());
+
+        List<OrderViewModel> viewModels = mapListOrderServiceToViewModel(orderService.findAllOrders());
+
         modelAndView.addObject("orders", viewModels);
 
         return view("order/all-orders", modelAndView);
@@ -53,7 +46,9 @@ public class OrdersController extends BaseController {
     @GetMapping("/all/details/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ModelAndView allOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
+
         OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
+
         modelAndView.addObject("order", order);
 
         return view("order/order-products", modelAndView);
@@ -64,28 +59,20 @@ public class OrdersController extends BaseController {
     @PageTitle("My Orders")
     public ModelAndView getMyOrders(ModelAndView modelAndView, Principal principal) {
         String customerName = principal.getName();
-        List<OrderViewModel> myOrders = orderService.findOrdersByCustomer(customerName)
-                .stream()
-                .map(o -> mapper.map(o, OrderViewModel.class))
-                .collect(Collectors.toList());
 
-        List<MyOrderViewModel> myPendingOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Pending)
-                .stream()
-                .map(o -> mapper.map(o, MyOrderViewModel.class))
-                .collect(Collectors.toList());
+        List<OrderViewModel> myOrders =
+                mapListOrderServiceToViewModel(orderService.findOrdersByCustomer(customerName));
 
-        List<MyOrderViewModel> myShippedOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Shipped)
-                .stream()
-                .map(o -> mapper.map(o, MyOrderViewModel.class))
-                .collect(Collectors.toList());
+        List<MyOrderViewModel> myPendingOrders =
+                mapListOrderServiceToMyViewModel(orderService.findOrdersByCustomerAndStatus(customerName, Status.Pending));
 
-        List<MyOrderViewModel> myDeliveredOrders = orderService.findOrdersByCustomerAndStatus(customerName, Status.Delivered)
-                .stream()
-                .map(o -> mapper.map(o, MyOrderViewModel.class))
-                .collect(Collectors.toList());
+        List<MyOrderViewModel> myShippedOrders =
+                mapListOrderServiceToMyViewModel(orderService.findOrdersByCustomerAndStatus(customerName, Status.Shipped));
+
+        List<MyOrderViewModel> myDeliveredOrders =
+                mapListOrderServiceToMyViewModel(orderService.findOrdersByCustomerAndStatus(customerName, Status.Delivered));
 
         modelAndView.addObject("orders", myOrders);
-
         modelAndView.addObject("myPendingOrders", myPendingOrders);
         modelAndView.addObject("myShippedOrders", myShippedOrders);
         modelAndView.addObject("myDeliveredOrders", myDeliveredOrders);
@@ -97,17 +84,58 @@ public class OrdersController extends BaseController {
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Order Details")
     public ModelAndView myOrderDetails(@PathVariable String id, ModelAndView modelAndView) {
+
         OrderDetailsViewModel order = loadOrderDetailsViewModel(id);
+
         modelAndView.addObject("order", order);
 
         return view("order/order-details", modelAndView);
     }
 
+    @GetMapping("/change/status/{id}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView orderChangeStatus(@PathVariable String id) {
+
+        orderService.changeOrderStatus(id);
+
+        return redirect("/order/all");
+    }
+
+
+    @GetMapping("/fetch/{status}")
+    @ResponseBody
+    public List<OrderViewModel> fetchByCategory(@PathVariable String status) {
+
+        return loadOrdersByStatus(status);
+
+    }
+
+    private List<OrderViewModel> loadOrdersByStatus(String status) {
+
+        Status statusStatus = Status.Pending;
+
+        switch (status){
+            case "All":
+                return mapListOrderServiceToViewModel(orderService.findAllOrders());
+            case "Shipped":
+                statusStatus = Status.Shipped;
+                break;
+            case "Delivered":
+                statusStatus = Status.Delivered;
+                break;
+            case "Acquired":
+                statusStatus = Status.Acquired;
+                break;
+        }
+
+        return mapListOrderServiceToViewModel(orderService.findOrdersByStatus(statusStatus));
+    }
+
     private OrderDetailsViewModel loadOrderDetailsViewModel(String id) {
-        OrderServiceModel orderServiceModel = this.orderService.findOrderById(id);
+        OrderServiceModel orderServiceModel = orderService.findOrderById(id);
         List<OrderProductServiceModel> products = orderServiceModel.getProducts();
 
-        OrderDetailsViewModel order = mapper.map(orderServiceModel, OrderDetailsViewModel.class);
+        OrderDetailsViewModel order = modelMapper.map(orderServiceModel, OrderDetailsViewModel.class);
         List<ShoppingCartItem> items = new ArrayList<>();
 
         Map<OrderProductServiceModel, Integer> productItems = new HashMap<>();
@@ -122,7 +150,7 @@ public class OrdersController extends BaseController {
             ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
 
             shoppingCartItem.setQuantity(productKVP.getValue());
-            OrderProductViewModel orderProductViewModel = mapper.map(productKVP.getKey(), OrderProductViewModel.class);
+            OrderProductViewModel orderProductViewModel = modelMapper.map(productKVP.getKey(), OrderProductViewModel.class);
             shoppingCartItem.setProduct(orderProductViewModel);
 
             items.add(shoppingCartItem);
@@ -132,52 +160,16 @@ public class OrdersController extends BaseController {
         return order;
     }
 
-    @GetMapping("/change/status/{id}")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView orderChangeStatus(@PathVariable String id) {
-        this.orderService.changeOrderStatus(id);
-        return redirect("/order/all");
+    private List<OrderViewModel> mapListOrderServiceToViewModel(List<OrderServiceModel> orderServiceModel){
+        return orderServiceModel.stream()
+                .map(order -> modelMapper.map(order, OrderViewModel.class))
+                .collect(Collectors.toList());
     }
 
-
-    @GetMapping("/fetch/{status}")
-    @ResponseBody
-    public List<OrderViewModel> fetchByCategory(@PathVariable String status) {
-        if(status.equals("All")) {
-            List<OrderViewModel> orders = this.orderService.findAllOrders()
-                    .stream()
-                    .map(order -> this.mapper.map(order, OrderViewModel.class))
-                    .collect(Collectors.toList());
-            return orders;
-        }
-
-
-        Status status1 = Status.Pending;
-        switch (status){
-            case "Shipped":
-                status1 = Status.Shipped;
-                break;
-            case "Delivered":
-                status1 = Status.Delivered;
-                break;
-            case "Acquired":
-                status1 = Status.Acquired;
-                break;
-        }
-
-        List<OrderViewModel> orders = this.orderService.findOrdersByStatus(status1)
-                .stream()
-                .map(order -> this.mapper.map(order, OrderViewModel.class))
+    private List<MyOrderViewModel> mapListOrderServiceToMyViewModel(List<OrderServiceModel> orderServiceModel){
+        return orderServiceModel.stream()
+                .map(order -> modelMapper.map(order, MyOrderViewModel.class))
                 .collect(Collectors.toList());
-        return orders;
     }
 
-    /*@GetMapping("/fetch")
-    @ResponseBody
-    public List<ProductAllViewModel> fetchAllProducts() {
-        return this.productService.findAllProducts()
-                .stream()
-                .map(product -> this.modelMapper.map(product, ProductAllViewModel.class))
-                .collect(Collectors.toList());
-    }*/
 }

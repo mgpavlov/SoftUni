@@ -2,6 +2,7 @@ package org.softuni.onlinegrocery.web.controllers;
 
 import org.modelmapper.ModelMapper;
 
+import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.service.CategoryService;
 
@@ -24,6 +25,7 @@ public class HomeController extends BaseController {
 
     @Autowired
     public HomeController(CategoryService categoryService, ModelMapper modelMapper) {
+
         this.categoryService = categoryService;
         this.modelMapper = modelMapper;
     }
@@ -31,7 +33,9 @@ public class HomeController extends BaseController {
     @GetMapping("/")
     @PageTitle("Index")
     public ModelAndView renderIndexPage(Principal principal, ModelAndView modelAndView) {
+
         modelAndView.addObject("principal", principal);
+
         return view("/index", modelAndView);
     }
 
@@ -40,12 +44,19 @@ public class HomeController extends BaseController {
     @PageTitle("Home")
     public ModelAndView renderHomePage(Principal principal, ModelAndView modelAndView) {
         
-        List<CategoryViewModel> categories = categoryService.findAllCategories().stream()
-                .map(category -> modelMapper.map(category, CategoryViewModel.class))
-                .collect(Collectors.toList());
+        List<CategoryViewModel> categories =
+                mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
         
         modelAndView.addObject("principal", principal);
+
         modelAndView.addObject("categories", categories);
+
         return view("/home", modelAndView);
+    }
+
+    private List<CategoryViewModel> mapCategoryServiceToViewModel(List<CategoryServiceModel> categoryServiceModels){
+        return categoryServiceModels.stream()
+                .map(product -> modelMapper.map(product, CategoryViewModel.class))
+                .collect(Collectors.toList());
     }
 }
