@@ -5,6 +5,7 @@ import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.*;
+import org.softuni.onlinegrocery.error.OrderNotFoundException;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -170,6 +171,15 @@ public class OrdersController extends BaseController {
         return orderServiceModel.stream()
                 .map(order -> modelMapper.map(order, MyOrderViewModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @ExceptionHandler({OrderNotFoundException.class})
+    public ModelAndView handleProductNotFound(OrderNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 
 }

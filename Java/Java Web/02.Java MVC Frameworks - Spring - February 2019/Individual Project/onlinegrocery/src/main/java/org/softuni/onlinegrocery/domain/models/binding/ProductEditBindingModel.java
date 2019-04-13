@@ -1,6 +1,8 @@
 package org.softuni.onlinegrocery.domain.models.binding;
 
+import org.hibernate.validator.constraints.Length;
 import org.softuni.onlinegrocery.domain.entities.Category;
+import org.softuni.onlinegrocery.util.constants.ValidationErrorMessages;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotBlank;
@@ -10,8 +12,9 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
+import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
+
 public class ProductEditBindingModel {
-    private static final String VIRUS_NAME_LENGTH = "Virus name cannot be empty, should be between 3 and 10 symbols!";
 
     private String name;
     private String description;
@@ -22,8 +25,10 @@ public class ProductEditBindingModel {
 
     public ProductEditBindingModel() {
     }
-    @NotNull
-    @Size(min = 3, max = 10, message = VIRUS_NAME_LENGTH)
+
+
+    @NotNull(message = PRODUCT_NAME_EMPTY_FIELD_ERROR_MSG)
+    @Size(min = 3, max = 20, message = PRODUCT_NAME_LENGTH)
     public String getName() {
         return name;
     }
@@ -32,7 +37,9 @@ public class ProductEditBindingModel {
         this.name = name;
     }
 
-    @NotBlank
+    @NotNull(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
+    @NotEmpty(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
+    @Length(max = 50, message = PRODUCT_DESCRIPTION_MAX_LENGTH_ERROR_MSG)
     public String getDescription() {
         return description;
     }
@@ -41,7 +48,7 @@ public class ProductEditBindingModel {
         this.description = description;
     }
 
-    @NotNull
+    @NotNull(message = PRODUCT_PRICE_EMPTY_FIELD_ERROR_MSG)
     public BigDecimal getPrice() {
         return price;
     }
@@ -50,7 +57,6 @@ public class ProductEditBindingModel {
         this.price = price;
     }
 
-    @NotNull(message = "not empty")
     public MultipartFile getImage() {
         return image;
     }
@@ -67,7 +73,7 @@ public class ProductEditBindingModel {
         this.imageUrl = imageUrl;
     }
 
-    @NotEmpty
+    @NotEmpty(message = PRODUCT_CATEGORIES_EMPTY_FIELD_ERROR_MSG)
     public List<Category> getCategories() {
         return this.categories;
     }

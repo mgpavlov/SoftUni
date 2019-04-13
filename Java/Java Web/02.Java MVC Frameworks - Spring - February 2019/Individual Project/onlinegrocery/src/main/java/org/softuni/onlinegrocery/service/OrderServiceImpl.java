@@ -84,7 +84,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void changeOrderStatus(String id) {
-        Order order = this.orderRepository.findById(id).orElse(null);
+        Order order = this.orderRepository.findById(id).orElseThrow(() -> new OrderNotFoundException("Order not found!"));
 
         order.setStatusDate(LocalDateTime.now());
         changeStatus(order);

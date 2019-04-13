@@ -2,6 +2,7 @@ package org.softuni.onlinegrocery.domain.models.service;
 
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,6 +19,7 @@ public class OrderServiceModel extends BaseServiceModel {
     public OrderServiceModel() {
     }
 
+    @NotNull
     public List<OrderProductServiceModel> getProducts() {
         return this.products;
     }
@@ -26,6 +28,7 @@ public class OrderServiceModel extends BaseServiceModel {
         this.products = products;
     }
 
+    @NotNull
     public UserServiceModel getCustomer() {
         return customer;
     }
@@ -34,6 +37,7 @@ public class OrderServiceModel extends BaseServiceModel {
         this.customer = customer;
     }
 
+    @NotNull
     public BigDecimal getTotalPrice() {
         return totalPrice;
     }
@@ -42,6 +46,7 @@ public class OrderServiceModel extends BaseServiceModel {
         this.totalPrice = totalPrice;
     }
 
+    @NotNull
     public LocalDateTime getIssuedOn() {
         return this.issuedOn;
     }
@@ -58,6 +63,7 @@ public class OrderServiceModel extends BaseServiceModel {
         this.statusDate = statusDate;
     }
 
+    @NotNull
     public String getShippingAddress() {
         return this.shippingAddress;
     }
@@ -66,6 +72,7 @@ public class OrderServiceModel extends BaseServiceModel {
         this.shippingAddress = shippingAddress;
     }
 
+    @NotNull
     public Status getStatus() {
         return this.status;
     }

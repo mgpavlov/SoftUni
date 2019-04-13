@@ -1,9 +1,8 @@
-/*
 package org.softuni.onlinegrocery.web.controllers;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.ModelAndView;
+        import org.springframework.web.bind.annotation.ControllerAdvice;
+        import org.springframework.web.bind.annotation.ExceptionHandler;
+        import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class GlobalExceptionHandler extends BaseController {
@@ -23,4 +22,3 @@ public class GlobalExceptionHandler extends BaseController {
         return modelAndView;
     }
 }
-*/

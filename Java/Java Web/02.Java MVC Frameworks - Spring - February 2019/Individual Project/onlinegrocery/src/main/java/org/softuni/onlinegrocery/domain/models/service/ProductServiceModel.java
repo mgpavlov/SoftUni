@@ -1,9 +1,15 @@
 package org.softuni.onlinegrocery.domain.models.service;
 
+import org.hibernate.validator.constraints.Length;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
+
+import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
 
 public class ProductServiceModel extends BaseServiceModel {
 
@@ -18,6 +24,8 @@ public class ProductServiceModel extends BaseServiceModel {
     public ProductServiceModel() {
     }
 
+    @NotNull(message = PRODUCT_NAME_EMPTY_FIELD_ERROR_MSG)
+    @Size(min = 3, max = 20, message = PRODUCT_NAME_LENGTH)
     public String getName() {
         return name;
     }
@@ -26,6 +34,9 @@ public class ProductServiceModel extends BaseServiceModel {
         this.name = name;
     }
 
+    @NotNull(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
+    @NotEmpty(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
+    @Length(max = 50, message = PRODUCT_DESCRIPTION_MAX_LENGTH_ERROR_MSG)
     public String getDescription() {
         return description;
     }
@@ -34,6 +45,7 @@ public class ProductServiceModel extends BaseServiceModel {
         this.description = description;
     }
 
+    @NotNull(message = PRODUCT_PRICE_EMPTY_FIELD_ERROR_MSG)
     public BigDecimal getPrice() {
         return price;
     }
@@ -42,6 +54,7 @@ public class ProductServiceModel extends BaseServiceModel {
         this.price = price;
     }
 
+    @NotNull(message = PRODUCT_IMAGE_EMPTY_FIELD_ERROR_MSG)
     public String getImageUrl() {
         return this.imageUrl;
     }
@@ -50,6 +63,8 @@ public class ProductServiceModel extends BaseServiceModel {
         this.imageUrl = imageUrl;
     }
 
+    @NotNull
+    @NotEmpty(message = PRODUCT_CATEGORIES_EMPTY_FIELD_ERROR_MSG)
     public List<CategoryServiceModel> getCategories() {
         return categories;
     }

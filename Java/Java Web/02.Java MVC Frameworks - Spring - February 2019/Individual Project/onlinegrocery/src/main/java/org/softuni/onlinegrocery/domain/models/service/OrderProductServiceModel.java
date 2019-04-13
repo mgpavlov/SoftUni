@@ -1,5 +1,6 @@
 package org.softuni.onlinegrocery.domain.models.service;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 public class OrderProductServiceModel extends BaseServiceModel {
@@ -10,6 +11,7 @@ public class OrderProductServiceModel extends BaseServiceModel {
     public OrderProductServiceModel() {
     }
 
+    @NotNull
     public ProductServiceModel getProduct() {
         return product;
     }
@@ -18,6 +20,7 @@ public class OrderProductServiceModel extends BaseServiceModel {
         this.product = product;
     }
 
+    @NotNull
     public BigDecimal getPrice() {
         return price;
     }

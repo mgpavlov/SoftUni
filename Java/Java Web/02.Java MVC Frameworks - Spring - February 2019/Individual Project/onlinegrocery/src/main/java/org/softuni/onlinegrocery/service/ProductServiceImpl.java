@@ -4,14 +4,19 @@ import org.hibernate.mapping.Collection;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Product;
 import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
-/*import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
-import org.softuni.onlinegrocery.error.ProductNotFoundException;*/
+import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
+import org.softuni.onlinegrocery.error.ProductNotFoundException;
 import org.softuni.onlinegrocery.repository.OfferRepository;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpClientErrorException.Unauthorized;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.extras.springsecurity5.auth.Authorization;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -44,15 +49,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductServiceModel createProduct(ProductServiceModel productServiceModel, MultipartFile image) throws IOException {
-        /*if(!productValidation.isValid(productServiceModel)) {
-            throw new IllegalArgumentException();
-        }*/
-
+        if(!productValidation.isValid(productServiceModel) || image.isEmpty()) {
+            throw new IllegalArgumentException("Invalid product");
+        }
         if (productRepository.findByName(productServiceModel.getName())
                 .orElse(null) != null) {
-            /*throw new ProductNameAlreadyExistsException("Product already exists");*/
+            throw new ProductNameAlreadyExistsException("Product already exists");
         }
-
         Product product = this.modelMapper.map(productServiceModel, Product.class);
 
         product.setImageUrl(
@@ -60,7 +63,7 @@ public class ProductServiceImpl implements ProductService {
         );
         product = this.productRepository.saveAndFlush(product);
         if (product == null){
-            return null;
+            throw new IllegalArgumentException("Invalid product");
         }
         return this.modelMapper.map(product, ProductServiceModel.class);
     }
@@ -69,8 +72,7 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductServiceModel> findAllProducts() {
         List<Product> products = this.productRepository.findAll();
 
-        return products
-                .stream()
+        return products.stream()
                 .map(p -> this.modelMapper.map(p, ProductServiceModel.class))
                 .collect(Collectors.toList());
     }
@@ -84,19 +86,20 @@ public class ProductServiceImpl implements ProductService {
                             .ifPresent(o -> productServiceModel.setDiscountedPrice(o.getPrice()));
 
                     return productServiceModel;
-                }).orElse(null);
-                /*.orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));*/
+                }).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
     }
 
     @Override
     public ProductServiceModel editProduct(String id, ProductServiceModel productServiceModel, boolean isNewImageUploaded, MultipartFile image) throws IOException {
-        Product product = this.productRepository.findById(id).orElse(null);
-
+        Product product = this.productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
+        if(!productValidation.isValid(productServiceModel)) {
+            throw new IllegalArgumentException("Invalid product");
+        }
         productServiceModel.setId(id);
         Product update = modelMapper.map(productServiceModel, Product.class);
 
         if (product == null || update == null){
-            /*throw new ProductNotFoundException("Product with the given id was not found!");*/
+            throw new ProductNotFoundException("Product with the given id was not found!");
         }
 
         if (isNewImageUploaded){
@@ -109,7 +112,7 @@ public class ProductServiceImpl implements ProductService {
 
         this.offerRepository.findByProduct_Id(product.getId())
                 .ifPresent((o) -> {
-                    o.setPrice(product.getPrice().multiply(new BigDecimal(0.8)));
+                    o.setPrice(product.getPrice().multiply(new BigDecimal(0.75)));
 
                     this.offerRepository.save(o);
                 });
@@ -119,7 +122,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(String id) {
-        Product product = this.productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException());
+        Product product = this.productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
         product.setDeleted(true);
 
         this.productRepository.save(product);
@@ -129,7 +132,8 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductServiceModel> findAllByCategory(String category) {
         List<String> categories = this.categoryService.findAllCategories().stream().map(c -> c.getName()).collect(Collectors.toList());
         if (!categories.contains(category)){
-            throw new IllegalArgumentException();
+            throw new SecurityException("Page Not Found: ERROR 404!\n" +
+                    "This page doesn't exist...");
         }
 
         return this.productRepository.findAll()
@@ -140,8 +144,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-
-    //products for Home Page display sales products
     @Override
     public List<ProductServiceModel> findAllFilteredProducts() {
         return findAllProducts()

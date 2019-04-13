@@ -28,7 +28,7 @@ public class Product extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -46,7 +46,7 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", nullable = false)
     public String getImageUrl() {
         return imageUrl;
     }
@@ -74,7 +74,7 @@ public class Product extends BaseEntity {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
-
+    
     public boolean isDeleted() {
         return this.isDeleted;
     }

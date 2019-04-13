@@ -26,7 +26,7 @@ public class OrderProduct extends BaseEntity {
         this.product = product;
     }
 
-    @Column(name = "price")
+    @Column(name = "price", nullable = false, columnDefinition = "DECIMAL(10, 2) DEFAULT '0.00'")
     public BigDecimal getPrice() {
         return price;
     }

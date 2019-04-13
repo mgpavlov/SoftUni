@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ReceiptRepository extends JpaRepository<Receipt, String> {
-    List<Receipt> findAllReceiptsByRecipient_UsernameOrderByIssuedOn(String customerName);
+
+    List <Receipt> findAllReceiptsByRecipient_UsernameOrderByIssuedOn(String customerName);
 }

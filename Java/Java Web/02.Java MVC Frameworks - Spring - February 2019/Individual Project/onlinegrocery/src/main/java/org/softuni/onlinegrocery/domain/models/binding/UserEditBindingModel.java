@@ -1,3 +1,4 @@
+/*
 package org.softuni.onlinegrocery.domain.models.binding;
 
 public class UserEditBindingModel {
@@ -51,3 +52,4 @@ public class UserEditBindingModel {
         this.email = email;
     }
 }
+*/

@@ -7,8 +7,8 @@ import org.softuni.onlinegrocery.domain.models.service.ProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductAllViewModel;
 import org.softuni.onlinegrocery.domain.models.view.ProductDetailsViewModel;
-/*import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
-import org.softuni.onlinegrocery.error.ProductNotFoundException;*/
+import org.softuni.onlinegrocery.error.ProductNameAlreadyExistsException;
+import org.softuni.onlinegrocery.error.ProductNotFoundException;
 import org.softuni.onlinegrocery.service.*;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -253,24 +253,6 @@ public class ProductController extends BaseController {
         return view("product/add-product", modelAndView);
     }
 
-   /* @ExceptionHandler({ProductNotFoundException.class})
-    public ModelAndView handleProductNotFound(ProductNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
-
-        return modelAndView;
-    }*/
-
-    /*@ExceptionHandler({ProductNameAlreadyExistsException.class})
-    public ModelAndView handleProductNameALreadyExist(ProductNameAlreadyExistsException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
-
-        return modelAndView;
-    }*/
-
     private List<ProductAllViewModel> mapProductServiceToViewModel(List<ProductServiceModel> productServiceModels){
         return productServiceModels.stream()
                 .map(product -> modelMapper.map(product, ProductAllViewModel.class))
@@ -281,5 +263,23 @@ public class ProductController extends BaseController {
         return categoryServiceModels.stream()
                 .map(product -> modelMapper.map(product, CategoryViewModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @ExceptionHandler({ProductNotFoundException.class})
+    public ModelAndView handleProductNotFound(ProductNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
+    }
+
+    @ExceptionHandler({ProductNameAlreadyExistsException.class})
+    public ModelAndView handleProductNameALreadyExist(ProductNameAlreadyExistsException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 }

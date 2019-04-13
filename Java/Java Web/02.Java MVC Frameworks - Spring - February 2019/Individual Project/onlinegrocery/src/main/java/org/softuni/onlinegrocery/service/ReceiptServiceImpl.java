@@ -5,11 +5,15 @@ import org.softuni.onlinegrocery.domain.entities.Order;
 import org.softuni.onlinegrocery.domain.entities.Receipt;
 import org.softuni.onlinegrocery.domain.entities.User;
 import org.softuni.onlinegrocery.domain.models.service.ReceiptServiceModel;
+import org.softuni.onlinegrocery.error.OrderNotFoundException;
+import org.softuni.onlinegrocery.error.ReceiptNotFoundException;
 import org.softuni.onlinegrocery.repository.OrderRepository;
 import org.softuni.onlinegrocery.repository.ReceiptRepository;
 import org.softuni.onlinegrocery.repository.UserRepository;
 import org.softuni.onlinegrocery.util.PdfGenaratorUtil;
+import org.softuni.onlinegrocery.validation.ReceiptValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,11 +24,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReceiptServiceImpl implements ReceiptService {
-
+    private static final String DEFAULT_USER_NOT_FOUND_EX_MSG = "Username not found.";
     private final ReceiptRepository receiptRepository;
     private final OrderRepository orderRepository;
     private final OrderService orderService;
     private final UserRepository userRepository;
+    private final ReceiptValidationService receiptValidationService;
     private final ModelMapper modelMapper;
 
 
@@ -32,11 +37,12 @@ public class ReceiptServiceImpl implements ReceiptService {
     PdfGenaratorUtil pdfGenaratorUtil;
 
     @Autowired
-    public ReceiptServiceImpl(ReceiptRepository receiptRepository, OrderRepository orderRepository, OrderService orderService, UserRepository userRepository, ModelMapper modelMapper) {
+    public ReceiptServiceImpl(ReceiptRepository receiptRepository, OrderRepository orderRepository, OrderService orderService, UserRepository userRepository, ReceiptValidationService receiptValidationService, ModelMapper modelMapper) {
         this.receiptRepository = receiptRepository;
         this.orderRepository = orderRepository;
         this.orderService = orderService;
         this.userRepository = userRepository;
+        this.receiptValidationService = receiptValidationService;
         this.modelMapper = modelMapper;
     }
 
@@ -60,20 +66,25 @@ public class ReceiptServiceImpl implements ReceiptService {
     }
     @Override
     public void receiptRegister(ReceiptServiceModel receiptServiceModel) {
+        if (!receiptValidationService.isValid(receiptServiceModel)){
+            throw new IllegalArgumentException();
+        }
         Receipt receipt = this.modelMapper.map(receiptServiceModel, Receipt.class);
         this.receiptRepository.save(receipt);
     }
 
     @Override
     public ReceiptServiceModel getReceiptById(String id) {
-        Receipt receipt = this.receiptRepository.findById(id).orElse(null);
+        Receipt receipt = this.receiptRepository.findById(id).orElseThrow(ReceiptNotFoundException::new);
         return modelMapper.map(receipt, ReceiptServiceModel.class);
     }
 
     @Override
     public void createReceipt(String orderId, String name) {
-        Order order = this.orderRepository.findById(orderId).orElse(null);
-        User recipient = this.userRepository.findByUsername(name).orElse(null);
+        Order order = this.orderRepository.findById(orderId)
+                .orElseThrow(OrderNotFoundException::new);
+        User recipient = this.userRepository.findByUsername(name)
+                .orElseThrow(() -> new UsernameNotFoundException(DEFAULT_USER_NOT_FOUND_EX_MSG));
 
         Receipt receipt = new Receipt();
 
@@ -90,7 +101,7 @@ public class ReceiptServiceImpl implements ReceiptService {
     @Override
     public ReceiptServiceModel findReceiptById(String receiptId) {
 
-        Receipt receipt = this.receiptRepository.findById(receiptId).orElse(null);
+        Receipt receipt = this.receiptRepository.findById(receiptId).orElseThrow(ReceiptNotFoundException::new);
 
         return modelMapper.map(receipt, ReceiptServiceModel.class);
     }

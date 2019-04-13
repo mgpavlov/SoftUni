@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 
 import org.softuni.onlinegrocery.domain.models.service.ReceiptServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.ReceiptViewModel;
+import org.softuni.onlinegrocery.error.ReceiptNotFoundException;
 import org.softuni.onlinegrocery.service.ReceiptService;
 
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
@@ -99,6 +100,15 @@ public class ReceiptsController extends BaseController {
         return receiptServiceModels.stream()
                 .map(product -> modelMapper.map(product, ReceiptViewModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @ExceptionHandler({ReceiptNotFoundException.class})
+    public ModelAndView handleProductNotFound(ReceiptNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 
 }

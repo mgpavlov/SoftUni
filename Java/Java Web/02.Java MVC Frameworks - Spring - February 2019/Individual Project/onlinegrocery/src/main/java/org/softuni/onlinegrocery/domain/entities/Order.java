@@ -64,7 +64,7 @@ public class Order extends BaseEntity {
         this.totalPrice = totalPrice;
     }
 
-    @Column(name = "issued_on")
+    @Column(name = "issued_on", nullable = false)
     public LocalDateTime getIssuedOn() {
         return this.issuedOn;
     }

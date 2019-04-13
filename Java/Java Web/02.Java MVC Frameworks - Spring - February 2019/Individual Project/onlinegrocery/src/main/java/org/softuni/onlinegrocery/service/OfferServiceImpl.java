@@ -50,9 +50,11 @@ public class OfferServiceImpl implements OfferService {
             return;
         }
 
+        int n = products.size() > 10? 10 : products.size();
+
         Random rnd = new Random();
         List<Offer> offers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < n; i++) {
             Offer offer = new Offer();
             offer.setProduct(this.modelMapper.map(products.get(rnd.nextInt(products.size())), Product.class));
             offer.setPrice(offer.getProduct().getPrice().multiply(new BigDecimal(0.75)));

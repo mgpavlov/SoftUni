@@ -5,6 +5,7 @@ package org.softuni.onlinegrocery.domain.models.service;
 import org.softuni.onlinegrocery.domain.entities.Order;
 import org.softuni.onlinegrocery.domain.entities.User;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -27,6 +28,7 @@ public class ReceiptServiceModel {
         this.id = id;
     }
 
+    @NotNull
     public BigDecimal getFee() {
         return this.fee;
     }
@@ -35,6 +37,7 @@ public class ReceiptServiceModel {
         this.fee = fee;
     }
 
+    @NotNull
     public LocalDateTime getIssuedOn() {
         return this.issuedOn;
     }
@@ -43,6 +46,7 @@ public class ReceiptServiceModel {
         this.issuedOn = issuedOn;
     }
 
+    @NotNull
     public User getRecipient() {
         return this.recipient;
     }
@@ -51,6 +55,7 @@ public class ReceiptServiceModel {
         this.recipient = recipient;
     }
 
+    @NotNull
     public Order getOrder() {
         return this.order;
     }

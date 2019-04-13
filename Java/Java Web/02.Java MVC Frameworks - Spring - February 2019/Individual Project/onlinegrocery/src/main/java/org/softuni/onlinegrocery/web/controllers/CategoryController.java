@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.models.binding.CategoryAddBindingModel;
 import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
+import org.softuni.onlinegrocery.error.CategoryNotFoundException;
 import org.softuni.onlinegrocery.service.CategoryService;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,6 +146,15 @@ public class CategoryController extends BaseController {
         modelAndView.addObject("model", categoryAddBindingModel);
 
         return view("category/add-category", modelAndView);
+    }
+
+    @ExceptionHandler({CategoryNotFoundException.class})
+    public ModelAndView handleProductNotFound(CategoryNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 }
 
