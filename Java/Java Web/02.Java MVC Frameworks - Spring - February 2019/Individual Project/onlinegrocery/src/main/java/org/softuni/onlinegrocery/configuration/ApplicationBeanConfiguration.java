@@ -1,7 +1,7 @@
 package org.softuni.onlinegrocery.configuration;
 
 import org.modelmapper.ModelMapper;
-import org.softuni.onlinegrocery.mappings.MappingsInitializer;
+import org.softuni.onlinegrocery.util.mappings.MappingsInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

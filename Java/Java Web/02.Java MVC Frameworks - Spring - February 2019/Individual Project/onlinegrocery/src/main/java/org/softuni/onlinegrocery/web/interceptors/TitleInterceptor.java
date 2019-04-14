@@ -1,4 +1,4 @@
-package org.softuni.onlinegrocery.interceptors;
+package org.softuni.onlinegrocery.web.interceptors;
 
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.stereotype.Component;

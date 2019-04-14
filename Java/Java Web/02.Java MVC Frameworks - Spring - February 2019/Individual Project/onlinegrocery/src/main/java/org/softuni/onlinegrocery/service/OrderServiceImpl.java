@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Order;
 import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
-import org.softuni.onlinegrocery.error.OrderNotFoundException;
+import org.softuni.onlinegrocery.util.error.OrderNotFoundException;
 import org.softuni.onlinegrocery.repository.OrderRepository;
 import org.softuni.onlinegrocery.repository.ProductRepository;
 import org.softuni.onlinegrocery.validation.ProductValidationService;

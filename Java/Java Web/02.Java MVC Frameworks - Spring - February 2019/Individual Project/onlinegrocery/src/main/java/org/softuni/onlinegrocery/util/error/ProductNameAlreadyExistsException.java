@@ -1,4 +1,4 @@
-package org.softuni.onlinegrocery.error;
+package org.softuni.onlinegrocery.util.error;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

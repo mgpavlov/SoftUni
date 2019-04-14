@@ -1,20 +1,20 @@
-package org.softuni.onlinegrocery.error;
+package org.softuni.onlinegrocery.util.error;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = RECEIPT_NAME_EXIST_EX_MSG)
-public class ReceiptNotFoundException extends RuntimeException {
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = CATEGORY_NOT_FOUND_EX_MSG)
+public class CategoryNotFoundException extends RuntimeException {
 
     private int statusCode;
 
-    public ReceiptNotFoundException() {
+    public CategoryNotFoundException() {
         this.statusCode = 404;
     }
 
-    public ReceiptNotFoundException(String message) {
+    public CategoryNotFoundException(String message) {
         super(message);
         this.statusCode = 404;
     }

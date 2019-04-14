@@ -5,7 +5,7 @@ import org.softuni.onlinegrocery.domain.entities.enumeration.Status;
 import org.softuni.onlinegrocery.domain.models.service.OrderProductServiceModel;
 import org.softuni.onlinegrocery.domain.models.service.OrderServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.*;
-import org.softuni.onlinegrocery.error.OrderNotFoundException;
+import org.softuni.onlinegrocery.util.error.OrderNotFoundException;
 import org.softuni.onlinegrocery.service.OrderService;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.security.access.prepost.PreAuthorize;

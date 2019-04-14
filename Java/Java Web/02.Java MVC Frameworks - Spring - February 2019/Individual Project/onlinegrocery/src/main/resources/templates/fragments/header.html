@@ -3,7 +3,7 @@
         lang="en">
     <nav class="navbar navbar-expand-lg re-background navbar-light rounded mb-5">
         <th:block sec:authorize="isAnonymous()">
-            <a class="navbar-brand brush-script text-white" th:href="@{/}">Grocery Store</a>
+            <a class="navbar-brand brush-script text-white" th:href="@{/}">Online Grocery Store</a>
         </th:block>
         <th:block sec:authorize="isAuthenticated()">
             <a class="navbar-brand brush-script text-white" th:href="@{/home}">Grocery</a>
@@ -18,6 +18,7 @@
             <!--LEFT SIDE-->
             <ul class="navbar-nav mr-auto">
                 <!--everyone-->
+                <th:block sec:authorize="isAuthenticated()">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white brush-script" href="#" id="navbarDropdownCategories"
                        role="button"
@@ -29,9 +30,10 @@
                            href="/products/category/All"> <i class="fas fa-angle-right"></i> All Products</a>
                     </div>
                 </li>
+                </th:block>
 
                 <li class="nav-item active">
-                    <a class="nav-link text-white" th:href="@{/sales}"><i class="fas fa-percent"></i> Sales<span
+                    <a class="nav-link brush-script text-white" th:href="@{/sales}"><i class="fas fa-percent"></i> Sales<span
                             class="sr-only">(current)</span></a>
                 </li>
 
@@ -40,28 +42,28 @@
                     <!--moderator-->
                     <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProducts"
+                            <a class="nav-link dropdown-toggle brush-script text-white" href="#" id="navbarDropdownProducts"
                                role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-tools"></i> Manage Products
                             </a>
                             <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownProducts">
-                                <a class="dropdown-item text-white custom-hover categories-dropdown" th:href="@{/products/add}"><i
+                                <a class="dropdown-item text-white custom-hover brush-script categories-dropdown" th:href="@{/products/add}"><i
                                         class="fas fa-cloud-upload-alt"></i> Add Product</a>
-                                <a class="dropdown-item text-white custom-hover categories-dropdown" th:href="@{/products/all}">
+                                <a class="dropdown-item brush-script text-white custom-hover categories-dropdown" th:href="@{/products/all}">
                                     <i class="fas fa-list-ul"></i> All Products</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownManageCategories"
+                            <a class="nav-link dropdown-toggle text-white brush-script" href="#" id="navbarDropdownManageCategories"
                                role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-tools"></i> Manage Categories
                             </a>
                             <div class="dropdown-menu bg-re" aria-labelledby="navbarDropdownProducts">
-                                <a class="dropdown-item text-white custom-hover categories-dropdown" th:href="@{/categories/add}"><i
+                                <a class="dropdown-item text-white custom-hover brush-script categories-dropdown" th:href="@{/categories/add}"><i
                                         class="fas fa-cloud-upload-alt"></i> Add Category</a>
-                                <a class="dropdown-item text-white custom-hover categories-dropdown" th:href="@{/categories/all}">
+                                <a class="dropdown-item text-white custom-hover brush-script categories-dropdown" th:href="@{/categories/all}">
                                     <i class="fas fa-list-ul"></i> All Categories</a>
                             </div>
                         </li>

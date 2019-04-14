@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Configuration
 public class ApplicationCloudConfiguration {
 
@@ -20,9 +22,9 @@ public class ApplicationCloudConfiguration {
     @Bean
     public Cloudinary cloudinary() {
         return new Cloudinary(new HashMap<String, Object>(){{
-            put("cloud_name", cloudApiName);
-            put("api_key", cloudApiKey);
-            put("api_secret", cloudApiSecret);
+            put(CLOUD_NAME, cloudApiName);
+            put(API_KEY, cloudApiKey);
+            put(API_SECRET, cloudApiSecret);
         }});
     }
 }

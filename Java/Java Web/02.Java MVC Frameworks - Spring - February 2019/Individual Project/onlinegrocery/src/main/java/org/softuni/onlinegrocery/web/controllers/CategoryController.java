@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.models.binding.CategoryAddBindingModel;
 import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.CategoryViewModel;
-import org.softuni.onlinegrocery.error.CategoryNotFoundException;
+import org.softuni.onlinegrocery.util.error.CategoryNotFoundException;
 import org.softuni.onlinegrocery.service.CategoryService;
 import org.softuni.onlinegrocery.web.annotations.PageTitle;
 import org.springframework.beans.factory.annotation.Autowired;

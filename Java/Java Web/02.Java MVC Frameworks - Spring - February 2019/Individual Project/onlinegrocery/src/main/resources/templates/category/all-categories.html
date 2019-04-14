@@ -26,14 +26,14 @@
                 <th class="col-md-2 text-center" th:text="${iter.index + 1}"></th>
                 <td class="col-md-5 text-center" th:text="${category.name}"></td>
                 <td class="col-md-5 text-center">
-                    <a th:href="@{/categories/edit/{id}(id=${category.id})}" class="btn btn-dark">Edit</a>
-                    <a th:href="@{/categories/delete/{id}(id=${category.id})}"  class="btn btn-dark">Delete</a>
+                    <a th:href="@{/categories/edit/{id}(id=${category.id})}" class="btn btn-secondary">Edit</a>
+                    <a th:href="@{/categories/delete/{id}(id=${category.id})}"  class="btn btn-danger font-weight-bold text-white">Delete</a>
                 </td>
             </tr>
         </th:block>
         </tbody>
     </table>
-    <hr class="hr-2 bg-dark">
+    <hr class="hr-2 bg-dark w-75">
 </main>
 <th:block>
     <div th:replace="fragments/footer.html :: footer"></div>

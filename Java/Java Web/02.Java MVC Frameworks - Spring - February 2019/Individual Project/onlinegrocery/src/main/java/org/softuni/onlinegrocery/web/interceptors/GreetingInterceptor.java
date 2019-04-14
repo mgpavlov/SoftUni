@@ -1,4 +1,4 @@
-package org.softuni.onlinegrocery.interceptors;
+package org.softuni.onlinegrocery.web.interceptors;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

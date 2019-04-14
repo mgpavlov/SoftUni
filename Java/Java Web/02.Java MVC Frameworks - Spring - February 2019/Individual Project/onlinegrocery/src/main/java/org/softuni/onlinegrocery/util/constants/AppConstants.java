@@ -4,6 +4,11 @@ public final class AppConstants {
 
     private AppConstants() {
     }
+
+    public static final String CLOUD_NAME = "cloud_name";
+    public static final String API_KEY = "api_key";
+    public static final String API_SECRET = "api_secret";
+
     public static final String FAVICON_URL= "https://res.cloudinary.com/mgpavlov/image/upload/v1554912174/icons8-shopping-cart-96.png";
     public static final String FAVICON= "favicon";
 
@@ -60,11 +65,4 @@ public final class AppConstants {
     public static final String SHOPPING_CART = "shopping-cart";
 
     public static final String REDIRECT_BASE_CONTROLLER = "redirect:";
-
-
-
-
-
-
-
 }

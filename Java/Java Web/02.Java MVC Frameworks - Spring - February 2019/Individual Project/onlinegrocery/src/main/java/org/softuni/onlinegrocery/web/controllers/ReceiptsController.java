@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 
 import org.softuni.onlinegrocery.domain.models.service.ReceiptServiceModel;
 import org.softuni.onlinegrocery.domain.models.view.ReceiptViewModel;
-import org.softuni.onlinegrocery.error.ReceiptNotFoundException;
+import org.softuni.onlinegrocery.util.error.ReceiptNotFoundException;
 import org.softuni.onlinegrocery.service.ReceiptService;
 
 import org.softuni.onlinegrocery.web.annotations.PageTitle;

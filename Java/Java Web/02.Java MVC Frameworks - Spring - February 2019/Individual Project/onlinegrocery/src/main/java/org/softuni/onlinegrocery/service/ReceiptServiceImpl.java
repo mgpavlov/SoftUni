@@ -5,8 +5,8 @@ import org.softuni.onlinegrocery.domain.entities.Order;
 import org.softuni.onlinegrocery.domain.entities.Receipt;
 import org.softuni.onlinegrocery.domain.entities.User;
 import org.softuni.onlinegrocery.domain.models.service.ReceiptServiceModel;
-import org.softuni.onlinegrocery.error.OrderNotFoundException;
-import org.softuni.onlinegrocery.error.ReceiptNotFoundException;
+import org.softuni.onlinegrocery.util.error.OrderNotFoundException;
+import org.softuni.onlinegrocery.util.error.ReceiptNotFoundException;
 import org.softuni.onlinegrocery.repository.OrderRepository;
 import org.softuni.onlinegrocery.repository.ReceiptRepository;
 import org.softuni.onlinegrocery.repository.UserRepository;
@@ -16,9 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;

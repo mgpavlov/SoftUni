@@ -23,6 +23,15 @@ public class CategoryAddBindingModel {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = htmlEscape(name);
+    }
+
+    private String htmlEscape(String input){
+        input = input.replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll("\"", "&quot;");
+
+        return input;
     }
 }

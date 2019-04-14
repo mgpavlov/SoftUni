@@ -1,9 +1,9 @@
 package org.softuni.onlinegrocery.configuration;
 
-import org.softuni.onlinegrocery.interceptors.FaviconInterceptor;
+import org.softuni.onlinegrocery.web.interceptors.FaviconInterceptor;
 
-import org.softuni.onlinegrocery.interceptors.GreetingInterceptor;
-import org.softuni.onlinegrocery.interceptors.TitleInterceptor;
+import org.softuni.onlinegrocery.web.interceptors.GreetingInterceptor;
+import org.softuni.onlinegrocery.web.interceptors.TitleInterceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

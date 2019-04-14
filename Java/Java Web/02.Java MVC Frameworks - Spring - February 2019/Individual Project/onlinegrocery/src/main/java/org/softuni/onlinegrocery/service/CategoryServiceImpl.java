@@ -3,7 +3,7 @@ package org.softuni.onlinegrocery.service;
 import org.modelmapper.ModelMapper;
 import org.softuni.onlinegrocery.domain.entities.Category;
 import org.softuni.onlinegrocery.domain.models.service.CategoryServiceModel;
-import org.softuni.onlinegrocery.error.CategoryNotFoundException;
+import org.softuni.onlinegrocery.util.error.CategoryNotFoundException;
 import org.softuni.onlinegrocery.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -147,7 +147,7 @@ img.img-thumbnail {
     color: white;
 }
 
-.text-center, .brush-script{
+.text-center, .brush-script, .text-white, .font-weight-bold, .d-inline-block, .d-flex {
     /*font-family: "Brush Script MT", serif*/
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }

@@ -8,7 +8,7 @@
 class="product-image-home img-thumbnail px-auto" alt="Image not loaded..."/></a>`
             + '</div>'
             + `<h5 class="text-center font-weight-bold mt-3">Name: ${product.product.name}</h5>`
-            + `<h5 class="text-center font-weight-bold">Price: $${product.product.price.toFixed(2).strike()}</h5>`
+            + `<h5 class="text-center font-weight-bold" style="color: black">Price: $${product.product.price.toFixed(2).strike()}</h5>`
             + `<h5 class="text-center font-weight-bold" style="color: orangered">New Price: $${product.price.toFixed(2)}</h5>`
             + '</div>'
     }

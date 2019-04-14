@@ -2,6 +2,7 @@ package org.softuni.onlinegrocery.domain.models.binding;
 
 import org.softuni.onlinegrocery.util.constants.AppConstants;
 import org.softuni.onlinegrocery.util.constants.ExceptionMessages;
+import org.softuni.onlinegrocery.validation.annotation.FieldMatch;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -11,7 +12,7 @@ import javax.validation.constraints.Size;
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
 import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
 
-
+@FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match")
 public class UserRegisterBindingModel {
     private String username;
     private String password;
@@ -31,7 +32,7 @@ public class UserRegisterBindingModel {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = htmlEscape(username);
     }
 
     @NotNull
@@ -42,7 +43,7 @@ public class UserRegisterBindingModel {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = htmlEscape(password);
     }
 
 
@@ -51,7 +52,7 @@ public class UserRegisterBindingModel {
     }
 
     public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+        this.confirmPassword = htmlEscape(confirmPassword);
     }
 
     @NotNull
@@ -61,7 +62,7 @@ public class UserRegisterBindingModel {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = htmlEscape(address);
     }
 
     @NotNull
@@ -74,6 +75,15 @@ public class UserRegisterBindingModel {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = htmlEscape(email);
+    }
+
+    private String htmlEscape(String input){
+        input = input.replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll("\"", "&quot;");
+
+        return input;
     }
 }

@@ -1,4 +1,4 @@
-package org.softuni.onlinegrocery.mappings;
+package org.softuni.onlinegrocery.util.mappings;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.config.BeanDefinition;
