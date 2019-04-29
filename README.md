@@ -45,7 +45,19 @@ The "Software Technologies" course provides the first steps in 5 technologies:
    - Web development with C#
    - Web development with Java
   
-### [Java Fundamentals:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
+### [Java Fundamentals](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
+„Java Fundamentals“ Module @ SoftUni
+4 times weekly, lots of live coding and exercises
+Part I – Java Advanced
+Arrays, Matrices, Stacks and Queues, Sets and Maps, String, Functions and Lambda
+Expressions, Stream-API
+Part II – Java OOP Basics
+Defining Classes, Encapsulation, Inheritance, Polymorphism, Interfaces and
+Abstraction
+Part III – Java OOP Advanced
+Generics, Iterators and Comparators, Enums and Annotations, Reflection, Unit Testing,
+Dependency Inversion
+
 * #### [Java Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
   - Linear Data Structures
   - Sets and Maps
