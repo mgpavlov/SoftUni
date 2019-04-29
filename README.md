@@ -59,14 +59,18 @@ Generics, Iterators and Comparators, Enums and Annotations, Reflection, Unit Tes
 Dependency Inversion
 
 * #### [Java Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
-  - Linear Data Structures
-  - Sets and Maps
-  - Input/Output, Files and Directories
-  - String processing
-  - Functional Programming
-  - Stream API
+  - Java Intro – Basic Syntax
+  - Linear Data Structures – Arrays, Matrices, Stacks and Queues
+  - Sets and Maps – Overview and basic operations. Different implementations
+  - Files and Directories – File open, File write, File close - texts
+  - String Processing
+  - Functional Programming – Functions, Function types (delegates,predicates, consumers), Lambda code formatting
+  - Build-In Query Methods – Stream API – Introducing Stream API - advanced Stream methods (grouping, flatMap, ...)
+
 * #### [Java OOP Basic](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
   - Classes and OOP Principles
+  
+  
 * #### [Java OOP Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/03.Java%20OOP%20Advanced%20-%20July%202018)
   - Generics
   - Iterators and Comparators
