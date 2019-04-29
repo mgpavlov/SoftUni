@@ -45,17 +45,17 @@ The "Software Technologies" course provides the first steps in 5 technologies:
    - Web development with C#
    - Web development with Java
   
-### Java Fundamentals:
-* #### [Java Advanced](https://github.com/ivelin1936/Java/tree/master/Java%20Fundamentals/Java%20Advanced)
+### [Java Fundamentals:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
+* #### [Java Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
   - Linear Data Structures
   - Sets and Maps
   - Input/Output, Files and Directories
   - String processing
   - Functional Programming
   - Stream API
-* #### [Java OOP Basic](https://github.com/ivelin1936/Java/tree/master/Java%20Fundamentals/Java%20OOP%20Basic)
+* #### [Java OOP Basic](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
   - Classes and OOP Principles
-* #### [Java OOP Advanced](https://github.com/ivelin1936/Java/tree/master/Java%20Fundamentals/Java%20OOP%20Advanced)
+* #### [Java OOP Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/03.Java%20OOP%20Advanced%20-%20July%202018)
   - Generics
   - Iterators and Comparators
   - Enums and Annotations
