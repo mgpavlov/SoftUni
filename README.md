@@ -23,14 +23,17 @@ Mihail Pavlov
 
 ### [Programming Basics](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
 
-### [Programming Fundamentals:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
+
+### [Programming Fundamentals with C#:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
+  - C# Intro: Basic Syntax, Using Visual Studio
   - Conditional Statements and Loops
-  - Git and GitHub
-  - Data Types and Variables
+  - Git & GitHub – Version Control Systems
+  - Data Types – Numeral Types and Type Conversion
   - Methods. Debugging and troubleshooting code
-  - Arrays / List / Set / Map
+  - Arrays / List 
+  - Dictionaries, Lambda and LINQ – Collections and Queries
   - Object and Classes
-  - Files and Exceptions
+  - Files, Directories, Exceptions – Working With the File System and Handling Exceptions
   - Strings and Text processing
   - Regular Expressions REGEX
   
