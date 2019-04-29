@@ -84,7 +84,7 @@ Mihail Pavlov
 
 ## Author
 
-**Ivelin DImitrov** - [ivelin1936](https://github.com/ivelin1936)
+**Mihail Pavlov** - [mgpavlov](https://github.com/mgpavlov)
 
 ## License
 
