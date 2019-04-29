@@ -21,10 +21,10 @@ Mihail Pavlov
 
 <h1 align="center">Description</h1>
 
-### [Programming Basics Course](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
+### [Programming Basics with Java - April 2017 Course](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
 
 
-### [Programming Fundamentals Course with C#:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
+### [Programming Fundamentals with C# - September 2017 Course:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
   - C# Intro: Basic Syntax, Using Visual Studio
   - Conditional Statements and Loops
   - Git & GitHub – Version Control Systems
@@ -37,7 +37,7 @@ Mihail Pavlov
   - Strings and Text processing
   - Regular Expressions REGEX
   
-### [Software Technologies Course](https://softuni.bg/trainings/1714/software-technologies-october-2017/internal)
+### [Software Technologies - October 2017 Course](https://softuni.bg/trainings/1714/software-technologies-october-2017/internal)
 The "Software Technologies" course provides the first steps in 5 technologies:
    - Basics of HTML & CSS
    - Web development with PHP
@@ -50,7 +50,7 @@ In  JS Core,  students are introduced to both the basics of  JavaScript and the 
 At the end of the module, students learn how to create  Simple Page Applications , using concepts such as  Routing  and  Templating , as well as working with  databases .	
 "JS Core"  is the module that gives all students the  basic knowledge base  in JavaScript technology Necessary for  every  one  Web Developer, which will be more prepared and confident when learning a professional Web modules for each technology.
 
-* #### [JS Fundamentals Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/01.JS%20Fundamentals)
+* #### [JS Fundamentals January 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/01.JS%20Fundamentals)
   - JS intro, JS syntax, data types, expressions
   - Operators, conditional statements, loops
   - Functions and arrow functions (lambda)
@@ -60,7 +60,7 @@ At the end of the module, students learn how to create  Simple Page Applications
   - Sets and maps, destructuring
   - Canvas 2D + DOM and events
 
-* #### [JS Advanced Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/02.JS%20Advanced)
+* #### [JS Advanced - February 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/02.JS%20Advanced)
   - DOM and BOM, Manipulating the DOM Tree
   - jQuery: Simplified DOM and Events
   - Advanced Functions: IIFE, this, call, apply, bind
@@ -82,13 +82,13 @@ At the end of the module, students learn how to create  Simple Page Applications
 ### [Java Fundamentals Module](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
 „Java Fundamentals“ Module @ SoftUni
 4 times weekly, lots of live coding and exercises
-Part I – Java Advanced
+  Part I – Java Advanced
 Arrays, Matrices, Stacks and Queues, Sets and Maps, String, Functions and Lambda
 Expressions, Stream-API
-Part II – Java OOP Basics
+  Part II – Java OOP Basics
 Defining Classes, Encapsulation, Inheritance, Polymorphism, Interfaces and
 Abstraction
-Part III – Java OOP Advanced
+  Part III – Java OOP Advanced
 Generics, Iterators and Comparators, Enums and Annotations, Reflection, Unit Testing,
 Dependency Inversion
 
