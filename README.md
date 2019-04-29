@@ -129,4 +129,4 @@ The second course is related to work on databases and the study of the Hibernate
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mgpavlov/SoftUni/blob/master/LICENSE) file for details
