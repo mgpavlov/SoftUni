@@ -110,6 +110,34 @@ The second course is related to work on databases and the study of the Hibernate
     - Auto Mapping Objects (model mapper)
     - JSON Processing (Gson)
     - XML Processing (JAXB)
+    
+### [Java Web](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB)
+
+ * #### [Java Web Development Basics](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/01.Java%20Web%20Development%20Basics%20-%20January%202019)
+    - Web Fundamentals Introduction: HTML & CSS
+    - HTTP Protocol – HTTP Protocol Intro, Requests, Responses
+    - State Management – Cookies & Sessions
+    - Introduction to Java EE – What is Java EE?
+    -Java EE: Servet API – What are Servlets?
+    - Java Web Dev Basics – Course Program
+    - Java EE: JavaServer Pages – What are JSPs?
+    -Java EE: Workshop – Web app with Servelts, JSPs and JPA.
+    - Java EE: JavaServer Faces – What is JSF?
+    - Java EE: JavaServer Faces – Libraries, Tags and Templates – What are JSF libraries, tags and templates?
+    - Java EE: Workshop – Web app with JSF and JPA.
+    
+ * #### [Java MVC Frameworks - Spring](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/02.Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20October%202018)
+    - Maven build automation tool
+    - JDBS
+     - Fetching ResultSets with JDBS
+     - JPQL
+    - Hibernate ORM
+     - Hibernate Code First + Entity Relations
+    - Spring Data (Spring Boot)
+     - JPA Repositories
+    - Auto Mapping Objects (model mapper)
+    - JSON Processing (Gson)
+    - XML Processing (JAXB)
 
 ## Utils
 
