@@ -117,7 +117,7 @@ The second course is related to work on databases and the study of the Hibernate
 
 ## Technologies
 
-* Java JDK: 1.8 / 1.9 / 10 
+* Java JDK: 1.8 / 1.9 / 10 / 11
 
 ## IDE 
 
