@@ -23,11 +23,7 @@ Mihail Pavlov
 
 ### [Programming Basics](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
 
-### Software Technologies:
-* #### [Java Basic Syntax - Software Technologies](https://github.com/ivelin1936/Java/tree/master/Software%20Technologies/Java%20Basic%20Syntax%20-%20Software%20Technologies/src/com/company)
-* #### [Java Basics - Exercises - Software Technologies](https://github.com/ivelin1936/Java/tree/master/Software%20Technologies/Java%20Basics%20-%20Exercises%20-%20Software%20Technologies/src/com/company)
-
-### [Programming Fundamentals:](https://github.com/ivelin1936/Java/tree/master/Programming%20Fundamentals)
+### [Programming Fundamentals:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
   - Conditional Statements and Loops
   - Git and GitHub
   - Data Types and Variables
@@ -37,6 +33,14 @@ Mihail Pavlov
   - Files and Exceptions
   - Strings and Text processing
   - Regular Expressions REGEX
+  
+### [Software Technologies](https://softuni.bg/trainings/1714/software-technologies-october-2017/internal)
+The "Software Technologies" course provides the first steps in 5 technologies:
+   - Basics of HTML & CSS
+   - Web development with PHP
+   - Web development with JavaScript
+   - Web development with C#
+   - Web development with Java
   
 ### Java Fundamentals:
 * #### [Java Advanced](https://github.com/ivelin1936/Java/tree/master/Java%20Fundamentals/Java%20Advanced)
