@@ -4,7 +4,7 @@
 <td align="center" width="33%"><img style="text-align: ce;" src="http://conf.softuni.bg/wp-content/uploads/2015/01/SoftUni-Logo-Flat_square-blue-300x235.png" alt="" /></td>
 <td align="center" width="33%">
 <h1><a href="https://softuni.bg/">SoftUni</a></h1>
-<h2>Java</h2>
+<h2>Java Web Developer - Professional Module @SoftUni</h2>
 </td>
 <td align="center" width="33%"><img src="https://avatars0.githubusercontent.com/u/30524177?s=460&v=4" alt="" />
 <img src="https://www.linkedin.com/favicon.ico" alt="LinkedIn" />
@@ -21,7 +21,7 @@ Mihail Pavlov
 
 <h1 align="center">Description</h1>
 
-### [Programming Basics](https://github.com/ivelin1936/Java/tree/master/Programing%20Basic)
+### [Programming Basics](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
 
 ### Software Technologies:
 * #### [Java Basic Syntax - Software Technologies](https://github.com/ivelin1936/Java/tree/master/Software%20Technologies/Java%20Basic%20Syntax%20-%20Software%20Technologies/src/com/company)
