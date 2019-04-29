@@ -85,13 +85,9 @@ Dependency Inversion
   - Object Communication and eEvents
   
 ### [Java DB](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB)
-
-    The Java DB module acquires knowledge of MySQL and the popular ORMs for database processing with  Java . 
-    The first part of the module   focuses on MySQL, 
-    with students acquainted with basic concepts in the database world 
-    - creating tables, extracting data via queries, implementing programming logic through functions and procedures. 
-    The second course is related to work on databases and the study of the 
-    Hibernate and Spring Data work frames using the object-oriented modeling model in Java.
+The Java DB module acquires knowledge of MySQL and the popular ORMs for database processing with  Java. 
+The first part of the module   focuses on MySQL, with students acquainted with basic concepts in the database world - creating tables, extracting data via queries, implementing programming logic through functions and procedures. 
+The second course is related to work on databases and the study of the Hibernate and Spring Data work frames using the object-       oriented modeling model in Java.
     
  * ### [Databases Frameworks - Hibernate & Spring Data](https://github.com/ivelin1936/Java/tree/master/Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20%D0%BC%D0%B0%D1%80%D1%82%202018)
   - Maven build automation tool
