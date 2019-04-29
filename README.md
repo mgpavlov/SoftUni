@@ -71,13 +71,13 @@ At the end of the module, students learn how to create  Simple Page Applications
   - Modules, Babel Transpiler, CommonJS
   
 * #### [JS Applications - March 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/03.JS%20Applications)
-  - Generics
-  - Iterators and Comparators
-  - Enums and Annotations
-  - Reflection
-  - Unit Testing (jUnit + Mockito)
-  - SOLID Principles
-  - Object Communication and eEvents
+  - HTTP, REST Services, Postman
+  - AJAX and jQuery AJAX
+  - Asynchronous programming and promises
+  - Creating single-page app with jQuery, AJAX, REST and Firebase
+  - Templating: creating UI with Handlebars
+  - Routing with Sammy.js
+  - JS tools and libraries
     
 ### [Java Fundamentals Module](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
 „Java Fundamentals“ Module @ SoftUni
