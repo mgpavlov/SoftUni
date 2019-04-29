@@ -45,6 +45,40 @@ The "Software Technologies" course provides the first steps in 5 technologies:
    - Web development with C#
    - Web development with Java
   
+### [JS Core Module](https://softuni.bg/modules/60/js-core)
+In  JS Core,  students are introduced to both the basics of  JavaScript and the environment in which it is most commonly used and for which the browser is created. The DOM tree is being studied, how to add, remove, and edit the DOM elements. 
+At the end of the module, students learn how to create  Simple Page Applications , using concepts such as  Routing  and  Templating , as well as working with  databases .	
+"JS Core"  is the module that gives all students the  basic knowledge base  in JavaScript technology Necessary for  every  one  Web Developer, which will be more prepared and confident when learning a professional Web modules for each technology.
+
+* #### [JS Fundamentals Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/01.JS%20Fundamentals)
+  - JS intro, JS syntax, data types, expressions
+  - Operators, conditional statements, loops
+  - Functions and arrow functions (lambda)
+  - Arrays and multi-dimensional arrays
+  - Strings and regular expressions
+  - Objects, JSON, associative arrays
+  - Sets and maps, destructuring
+  - Canvas 2D + DOM and events
+
+* #### [JS Advanced Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/02.JS%20Advanced)
+  - DOM and BOM, Manipulating the DOM Tree
+  - jQuery: Simplified DOM and Events
+  - Advanced Functions: IIFE, this, call, apply, bind
+  - Object Composition and Revealing Modules
+  - Unit Testing with Mocha and Sinon
+  - Classes and Members
+  - Class Inheritance and Prototype Chain
+  - Modules, Babel Transpiler, CommonJS
+  
+* #### [JS Applications - March 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/JavaScript/JS%20Core/03.JS%20Applications)
+  - Generics
+  - Iterators and Comparators
+  - Enums and Annotations
+  - Reflection
+  - Unit Testing (jUnit + Mockito)
+  - SOLID Principles
+  - Object Communication and eEvents
+    
 ### [Java Fundamentals Module](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals)
 „Java Fundamentals“ Module @ SoftUni
 4 times weekly, lots of live coding and exercises
