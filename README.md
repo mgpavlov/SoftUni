@@ -112,6 +112,7 @@ The second course is related to work on databases and the study of the Hibernate
     - XML Processing (JAXB)
     
 ### [Java Web](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB)
+The Java Web module explores the basis of web-based technologies and the most popular and the latest workspace in the Java world. The courses begin with basic knowledge of the HTTP protocol and work with it, and gradually come to complicated concepts like websocket.
 
  * #### [Java Web Development Basics](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/01.Java%20Web%20Development%20Basics%20-%20January%202019)
     - Web Fundamentals Introduction: HTML & CSS
@@ -126,18 +127,17 @@ The second course is related to work on databases and the study of the Hibernate
     - Java EE: JavaServer Faces – Libraries, Tags and Templates – What are JSF libraries, tags and templates?
     - Java EE: Workshop – Web app with JSF and JPA.
     
- * #### [Java MVC Frameworks - Spring](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/02.Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20October%202018)
-    - Maven build automation tool
-    - JDBS
-     - Fetching ResultSets with JDBS
-     - JPQL
-    - Hibernate ORM
-     - Hibernate Code First + Entity Relations
-    - Spring Data (Spring Boot)
-     - JPA Repositories
-    - Auto Mapping Objects (model mapper)
-    - JSON Processing (Gson)
-    - XML Processing (JAXB)
+ * #### [Java MVC Frameworks - Spring](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/02.Java%20MVC%20Frameworks%20-%20Spring%20-%20February%202019)
+    - SpringBoot Introduction- What is SpringBoot?
+    - Spring Essentials– Everything important you need to know
+    - Unit Testing & Isolation– Testing our app
+    - Thymeleaf & Controllers– Template engine and controllers
+    - JS & AJAX– JS Basics and AJAX
+    - Integration Testing– Testing our app
+    - Filters & User Authentication– How to secure our app
+    - Workshops
+    - Error Handling– How to handle errors
+    - Workshops
 
 ## Utils
 
