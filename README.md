@@ -98,7 +98,7 @@ The second course is related to work on databases and the study of the Hibernate
     - Subqueries and JOINs
     - Functions, Triggers, Transactions
     
- * #### [Databases Frameworks - Hibernate & Spring Data](https://github.com/ivelin1936/Java/tree/master/Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20%D0%BC%D0%B0%D1%80%D1%82%202018)
+ * #### [Databases Frameworks - Hibernate & Spring Data](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/02.Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20October%202018)
     - Maven build automation tool
     - JDBS
      - Fetching ResultSets with JDBS
