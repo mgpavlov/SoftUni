@@ -58,7 +58,7 @@ Part III – Java OOP Advanced
 Generics, Iterators and Comparators, Enums and Annotations, Reflection, Unit Testing,
 Dependency Inversion
 
-* #### [Java Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
+* #### [Java Advanced:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
   - Java Intro – Basic Syntax
   - Linear Data Structures – Arrays, Matrices, Stacks and Queues
   - Sets and Maps – Overview and basic operations. Different implementations
@@ -67,9 +67,13 @@ Dependency Inversion
   - Functional Programming – Functions, Function types (delegates,predicates, consumers), Lambda code formatting
   - Build-In Query Methods – Stream API – Introducing Stream API - advanced Stream methods (grouping, flatMap, ...)
 
-* #### [Java OOP Basic](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
-  - Classes and OOP Principles
-  
+* #### [Java OOP Basic:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
+  - Defining Classes – Class structure, Object creation, Naming convention, Static members
+  - Encapsulation – Properties, Encapsulating data, exceptions
+  - Inheritance – What is inheritance, inheriting members and constructors
+  - Polymorphism – What is abstract class, polymorphism
+  - Interfaces and Abstraction – what is interface, what is abstraction
+  - Workshop – Practical Workshop – Prelude to Java OOP Advanced
   
 * #### [Java OOP Advanced](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/03.Java%20OOP%20Advanced%20-%20July%202018)
   - Generics
