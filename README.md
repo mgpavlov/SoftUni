@@ -92,7 +92,7 @@ Abstraction
 Generics, Iterators and Comparators, Enums and Annotations, Reflection, Unit Testing,
 Dependency Inversion
 
-* #### [Java Advanced Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
+* #### [Java Advanced - May 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/01.Java%20Advanced%20-%20May%202018)
   - Java Intro – Basic Syntax
   - Linear Data Structures – Arrays, Matrices, Stacks and Queues
   - Sets and Maps – Overview and basic operations. Different implementations
@@ -101,7 +101,7 @@ Dependency Inversion
   - Functional Programming – Functions, Function types (delegates,predicates, consumers), Lambda code formatting
   - Build-In Query Methods – Stream API – Introducing Stream API - advanced Stream methods (grouping, flatMap, ...)
 
-* #### [Java OOP Basic Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
+* #### [Java OOP Basics - June 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/02.Java%20OOP%20Basics%20-%20Jun%202018)
   - Defining Classes – Class structure, Object creation, Naming convention, Static members
   - Encapsulation – Properties, Encapsulating data, exceptions
   - Inheritance – What is inheritance, inheriting members and constructors
@@ -109,7 +109,7 @@ Dependency Inversion
   - Interfaces and Abstraction – what is interface, what is abstraction
   - Workshop – Practical Workshop – Prelude to Java OOP Advanced
   
-* #### [Java OOP Advanced Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/03.Java%20OOP%20Advanced%20-%20July%202018)
+* #### [Java OOP Advanced - July 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Fundamentals/03.Java%20OOP%20Advanced%20-%20July%202018)
   - Generics
   - Iterators and Comparators
   - Enums and Annotations
@@ -123,7 +123,7 @@ The Java DB module acquires knowledge of MySQL and the popular ORMs for database
 The first part of the module   focuses on MySQL, with students acquainted with basic concepts in the database world - creating tables, extracting data via queries, implementing programming logic through functions and procedures. 
 The second course is related to work on databases and the study of the Hibernate and Spring Data work frames using the object-       oriented modeling model in Java.
 
- * #### [Database Basic - MySQL Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/01.Database%20Basics%20MySQL%20-%20September%202018)
+ * #### Database Basics - MySQL - September 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/01.Database%20Basics%20MySQL%20-%20September%202018)
     - Introduction to Databases. Data Definition and Datatypes
     - Basic CRUD, intro to SQL
     - Built-in functions
@@ -132,7 +132,7 @@ The second course is related to work on databases and the study of the Hibernate
     - Subqueries and JOINs
     - Functions, Triggers, Transactions
     
- * #### [Databases Frameworks - Hibernate & Spring Data Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/02.Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20October%202018)
+ * #### [Databases Frameworks - Hibernate & Spring Data - October 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/02.Databases%20Frameworks%20-%20Hibernate%20%26%20Spring%20Data%20-%20October%202018)
     - Maven build automation tool
     - JDBS
      - Fetching ResultSets with JDBS
@@ -148,7 +148,7 @@ The second course is related to work on databases and the study of the Hibernate
 ### [Java Web Module](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB)
 The Java Web module explores the basis of web-based technologies and the most popular and the latest workspace in the Java world. The courses begin with basic knowledge of the HTTP protocol and work with it, and gradually come to complicated concepts like websocket.
 
- * #### [Java Web Development Basics Course](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/01.Java%20Web%20Development%20Basics%20-%20January%202019)
+ * #### [Java Web Development Basics - January 2019 Course](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/01.Java%20Web%20Development%20Basics%20-%20January%202019)
     - Web Fundamentals Introduction: HTML & CSS
     - HTTP Protocol – HTTP Protocol Intro, Requests, Responses
     - State Management – Cookies & Sessions
@@ -161,7 +161,7 @@ The Java Web module explores the basis of web-based technologies and the most po
     - Java EE: JavaServer Faces – Libraries, Tags and Templates – What are JSF libraries, tags and templates?
     - Java EE: Workshop – Web app with JSF and JPA.
     
- * #### [Java MVC Frameworks - Spring Course](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/02.Java%20MVC%20Frameworks%20-%20Spring%20-%20February%202019)
+ * #### [Java MVC Frameworks - Spring - February 2019 Course](https://github.com/mgpavlov/SoftUni/tree/master/Java/Java%20Web/02.Java%20MVC%20Frameworks%20-%20Spring%20-%20February%202019)
     - SpringBoot Introduction- What is SpringBoot?
     - Spring Essentials– Everything important you need to know
     - Unit Testing & Isolation– Testing our app
