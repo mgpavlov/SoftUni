@@ -21,10 +21,10 @@ Mihail Pavlov
 
 <h1 align="center">Description</h1>
 
-### [Programming Basics with Java - April 2017 Course](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
+#### [Programming Basics with Java - April 2017 Course](https://softuni.bg/trainings/1659/programming-basics-with-java-april-2017/interna)
 
 
-### [Programming Fundamentals with C# - September 2017 Course:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
+#### [Programming Fundamentals with C# - September 2017 Course:](https://softuni.bg/trainings/1712/programming-fundamentals-september-2017)
   - C# Intro: Basic Syntax, Using Visual Studio
   - Conditional Statements and Loops
   - Git & GitHub – Version Control Systems
@@ -37,7 +37,7 @@ Mihail Pavlov
   - Strings and Text processing
   - Regular Expressions REGEX
   
-### [Software Technologies - October 2017 Course](https://softuni.bg/trainings/1714/software-technologies-october-2017/internal)
+#### [Software Technologies - October 2017 Course](https://softuni.bg/trainings/1714/software-technologies-october-2017/internal)
 The "Software Technologies" course provides the first steps in 5 technologies:
    - Basics of HTML & CSS
    - Web development with PHP
