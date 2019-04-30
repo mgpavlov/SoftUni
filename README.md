@@ -123,7 +123,7 @@ The Java DB module acquires knowledge of MySQL and the popular ORMs for database
 The first part of the module   focuses on MySQL, with students acquainted with basic concepts in the database world - creating tables, extracting data via queries, implementing programming logic through functions and procedures. 
 The second course is related to work on databases and the study of the Hibernate and Spring Data work frames using the object-       oriented modeling model in Java.
 
- * #### Database Basics - MySQL - September 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/01.Database%20Basics%20MySQL%20-%20September%202018)
+ * #### [Database Basics - MySQL - September 2018 Course:](https://github.com/mgpavlov/SoftUni/tree/master/Java/JavaDB/01.Database%20Basics%20MySQL%20-%20September%202018)
     - Introduction to Databases. Data Definition and Datatypes
     - Basic CRUD, intro to SQL
     - Built-in functions
